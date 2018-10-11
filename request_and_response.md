@@ -82,8 +82,7 @@ ZPLAY Ads 和 开发者 之间的基础通信协议采用 HTTP 协议、POST 方
 | -------- | ------ | ---- | ------------------------------------------------------------------------------------------------------------------------------------ |
 | app_id   | string | 是   | 应用 ID，请提前将您的应用注册到 ZPLAY Ads 平台 [https://www.zplayads.com](https://www.zplayads.com)，该 ID 为注册后平台生成的应用 ID |
 | app_name     | string | 是   | 应用名称                                                                                                                             |
-| bundle_id   | string | 是   | 应用包名或者 bundle id                                                                                                               |
-| bundel_name   | string | 是   | 应用包名或者 bundle name                                                                                                               |
+| bundle_id   | string | 是   | 对于 Android，是应用的 packageName；对于 iOS，是 iTunes ID                                                                                                               |
 | version      | string | 是   | 应用版本号                                                                                                                           |
 | cat      | string | 否   | 应用类别，如“Action”，内容详见[应用类别](#应用类别)                                                                                  |
 
@@ -205,9 +204,10 @@ ZPLAY Ads 和 开发者 之间的基础通信协议采用 HTTP 协议、POST 方
 | ----------------- | ------ | ---- | ------------------------------------------------------------------------------------------------------------------------- |
 | id                | string | 是   | 广告 id                                                                                                                   |
 | ad_unit_id        | string | 是   | 广告位 id，与 request 中的 ad_unit_id 对应                                                                                |
-| app_bundle        | string | 是   | 对于 Android，是应用的 packageName；对于 iOS，是 Bundle identifier ，请监听可玩广告的 `user_did_tap_install` 事件，在监听到时在 APP 内部打开 APP Store 或者 Google Play，并打开跳转链接                                                       |
+| app_bundle        | string | 是   | 对于 Android，是应用的 packageName；对于 iOS，是 iTunes ID ，请监听可玩广告的 `user_did_tap_install` 事件，在监听到时在 APP 内部打开 APP Store 或者 Google Play，并打开跳转链接                                                       |
 | playable_ads_html | string | 是   | 可玩广告的 html 代码，请确保使用应用内的 webview 中打开                                                                   |
-| url               | string | 否   | 可玩广告的跳转地址 |
+| target_url               | string | 是   | 可玩广告的跳转地址 |
+| target_url_type         | int    | 是   | 打开可玩广告跳转地址时的打开方式，1：在 app 内 webview 打开目标链接，2：在系统浏览器打开目标链接，3：打开地图，4：拨打电话，5：播放视频，6：App 下载，请确保在应用内打开 APP Store 或者 Google Play |
 | price             | float  | 否   | 广告价格，若没有该数据则为 0，单位为分                                                                                    |
 | native            | 对象   | 否   | 原生广告对象，如果广告位类型是原生时，返回此对象                                                                          |
 
@@ -217,7 +217,7 @@ ZPLAY Ads 和 开发者 之间的基础通信协议采用 HTTP 协议、POST 方
 | ---------- | -------------- | ---- | -------------------------------------------------------------------------------------------------------------- |
 | assets     | Asset 对象数组 | 是   | 原生广告元素列表，当前主要支持 4 种元素，分别为标题 (title)， 图标(img)， 大图(img)， 描述 (data)，得分 (data) |
 | imp_tracker | 数组           | 否   | 展示跟踪地址数组，需要返回一个 1x1 像素图片                                                                    |
-| link       | 对象           | 否   | 原生广告的目标链接，默认链接对象，当 assets 中不包括 link 对象时，使用此对象                                   |
+| link       | 对象           | 是   | 原生广告的目标链接，默认链接对象，当 assets 中不包括 link 对象时，使用此对象                                   |
 
 ##### Asset 对象信息
 
@@ -255,10 +255,10 @@ ZPLAY Ads 和 开发者 之间的基础通信协议采用 HTTP 协议、POST 方
 
 | 字段名称     | 类型   | 必须 | 描述                                                                                                                                                                            |
 | ------------ | ------ | ---- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| url          | string | 是   | 目标链接，优先使用外层的app_bundle字段跳转                                                                                                                                                                        |
-| app_bundle        | string | 是   | 对于 Android，是应用的 packageName；对于 iOS，是 Bundle identifier ，请监听可玩广告的 `user_did_tap_install` 事件，在监听到时在 APP 内部打开 APP Store 或者 Google Play，并打开跳转链接                                                       |
+| target_url          | string | 是   | 目标链接，优先使用外层的app_bundle字段跳转                                                                                                                                                                        |
+| app_bundle        | string | 是   | 对于 Android，是应用的 packageName；对于 iOS，是 iTunes ID ，请监听可玩广告的 `user_did_tap_install` 事件，在监听到时在 APP 内部打开 APP Store 或者 Google Play，并打开跳转链接                                                       |
 | click_tracker | 数组   | 否   | 点击追踪链接                                                                                                                                                                    |
-| type         | int    | 否   | 点击动作类型，1：在 app 内 webview 打开目标链接，2：在系统浏览器打开目标链接，3：打开地图，4：拨打电话，5：播放视频，6：App 下载，请确保在应用内打开 APP Store 或者 Google Play |
+| target_url_type         | int    | 是   | 打开可玩广告跳转地址时的打开方式，1：在 app 内 webview 打开目标链接，2：在系统浏览器打开目标链接，3：打开地图，4：拨打电话，5：播放视频，6：App 下载，请确保在应用内打开 APP Store 或者 Google Play |
 
 #### 附件
 

@@ -104,10 +104,10 @@ ZPLAY Ads 和 开发者 之间的基础通信协议采用 HTTP 协议、POST 方
 | imei            | string  | 否   | IMEI 码，md5 散列。iOS 没有                                           |
 | imsi            | string  | 否   | imsi，md5 散列                                                        |
 | android_id      | string  | 否   | Android Device ID，md5 散列。Android 手机不传会影响填充               |
-| android_ad_id    | string  | 否   | Android Advertising ID                                                |
+| android_adid    | string  | 否   | Android Advertising ID                                                |
 | idfa            | string  | 是   | iOS 系统的 idfa。                                                     |
 | idfv            | string  | 否   | idfv                                                                  |
-| open_ud_id        | string  | 否   | openudid                                                              |
+| openudid        | string  | 否   | openudid                                                              |
 | local           | string  | 否   | 设备上的本地首选项设置                                                |
 | language        | string  | 是   | 系统语言                                                              |
 | os_type         | string  | 是   | 操作系统类型，值为"iOS"， "Android"， "WP"(windows phone)             |
@@ -205,7 +205,7 @@ ZPLAY Ads 和 开发者 之间的基础通信协议采用 HTTP 协议、POST 方
 | ----------------- | ------ | ---- | ------------------------------------------------------------------------------------------------------------------------- |
 | id                | string | 是   | 广告 id                                                                                                                   |
 | ad_unit_id        | string | 是   | 广告位 id，与 request 中的 ad_unit_id 对应                                                                                |
-| app_bundle        | string | 是   | 对于 Android，是应用的 packageName；对于 iOS，是 Bundle identifier ，请监听可玩广告的 clickAds()事件，在监听到时在 APP 内部打开 APP Store 或者 Google Play，并打开跳转链接                                                       |
+| app_bundle        | string | 是   | 对于 Android，是应用的 packageName；对于 iOS，是 Bundle identifier ，请监听可玩广告的 `user_did_tap_install` 事件，在监听到时在 APP 内部打开 APP Store 或者 Google Play，并打开跳转链接                                                       |
 | playable_ads_html | string | 是   | 可玩广告的 html 代码，请确保使用应用内的 webview 中打开                                                                   |
 | url               | string | 否   | 可玩广告的跳转地址 |
 | price             | float  | 否   | 广告价格，若没有该数据则为 0，单位为分                                                                                    |
@@ -256,6 +256,8 @@ ZPLAY Ads 和 开发者 之间的基础通信协议采用 HTTP 协议、POST 方
 | 字段名称     | 类型   | 必须 | 描述                                                                                                                                                                            |
 | ------------ | ------ | ---- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | url          | string | 是   | 目标链接，优先使用外层的app_bundle字段跳转                                                                                                                                                                        |
+| app_bundle        | string | 是   | 对于 Android，是应用的 packageName；对于 iOS，是 Bundle identifier ，请监听可玩广告的 `user_did_tap_install` 事件，在监听到时在 APP 内部打开 APP Store 或者 Google Play，并打开跳转链接                                                       |
+
 | click_tracker | 数组   | 否   | 点击追踪链接                                                                                                                                                                    |
 | type         | int    | 否   | 点击动作类型，1：在 app 内 webview 打开目标链接，2：在系统浏览器打开目标链接，3：打开地图，4：拨打电话，5：播放视频，6：App 下载，请确保在应用内打开 APP Store 或者 Google Play |
 

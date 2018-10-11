@@ -15,7 +15,7 @@
 
 ## 3. 关闭事件监听并关闭webview
 
-* 请监听 ZPLAY Ads 的关闭事件 `close`，在监听到该事件后，关闭 Webview，返回游戏或者应用
+* 请监听 ZPLAY Ads 的关闭事件 `close_playable_ads`，在监听到该事件后，关闭 Webview，返回游戏或者应用
 
 ## 4. 点击事件监听并打开应用市场
 

@@ -7,63 +7,92 @@
 ```json
 
 	{
-	    "ads": [
-	        {
-	            "floor_price": 0,
-	            "h": 960,
-	            "inventory_types": [
-	                3
-	            ],
-	            "place_id": "FPA52248",
-	            "pos": 0,
-	            "type": 4,
-	            "w": 640
-	        }
-	    ],
-	    "ad": {},
-	    "app": {
-	        "app_key": "zplay提供的app_key",
-	        "bundle": "",
-	        "id": "zplay提供的app_id",
-	        "name": "app name",
-	        "ver": "5.0.0"
-	    },
-	    "device": {
-	        "adt": 1,
-	        "android_id": "bdd66b6d38c69335",
-	        "carrier": 0,
-	        "connection_type": "wifi",
-	        "geo": {
-	            "accu": 0,
-	            "lat": 0,
-	            "lon": 0
-	        },
-	        "imei": "861619032588944",
-	        "ios_adid": "",
-	        "local": "",
-	        "mac": "26:28:46:09:1d:4f",
-	        "make": "samsung",
-	        "model": "SM-T810",
-	        "orientation": 1,
-	        "os_type": "android",
-	        "os_version": "6.0",
-	        "plmn": "",
-	        "screen": {
-	            "dpi": 240,
-	            "h": 1536,
-	            "w": 1152
-	        }
-	    },
-	    "is_tail": 0,
-	    "is_test": 0,
-	    "sdk_ver": "androidmedia1.2.1.2",
-	    "ssp_token": "10000",
-	    "user": {
-	        "age": 0,
-	        "gender": 0
-	    },
-	    "ver": "1.1"
-	}
+    	"version": "1.0",
+    	"developer_token": "123",
+    	"need_https": 1,
+    	"app": {
+    		"app_id": "A650AB0D-7BFC-2A81-3066-D3170947C3DA",
+    		"app_name": "app_name",
+    		"bundel_name": "bundel_name",
+    		"bundle_id": "bundle_id",
+    		"version": "version",
+    		"cat": "cat"
+    	},
+    	"device": {
+    		"model": "model",
+    		"manufacturer": "manufacturer",
+    		"brand": "brand",
+    		"plmn": "plmn",
+    		"device_type": "device_type",
+    		"adt": 1,
+    		"connection_type": "wifi",
+    		"carrier": 1,
+    		"orientation": 0,
+    		"mac": "mac",
+    		"imei": "imei",
+    		"imsi": "imsi",
+    		"android_id": "android_id",
+    		"android_ad_id": "android_ad_id",
+    		"idfa": "idfa",
+    		"idfv": "idfv",
+    		"open_ud_id": "open_ud_id",
+    		"local": "local",
+    		"language": "language",
+    		"os_type": "ios",
+    		"os_version": "11.4.1",
+    		"screen": {
+    			"width": 123,
+    			"height": 234,
+    			"dpi": 2,
+    			"pxratio": 34567
+    		},
+    		"geo": {
+    			"lat": 34.567,
+    			"lon": 107.67,
+    			"horizontal_accu": 45,
+    			"vertical_accu": 56
+    		}
+    	},
+    	"user": {
+    		"id": "34ddd",
+    		"gender": 0,
+    		"age": 34,
+    		"keywords": ["45", "56", "abd"]
+    	},
+    	"ads": [{
+    		"unit_type": 1,
+    		"ad_unit_id": "DC9E199C-7C0B-FBFC-7E5A-26E7B5EE6BB3",
+    		"native": {
+    			"layout": 1,
+    			"assets": [{
+    					"id": 1,
+    					"required": 0,
+    					"title": {
+    						"len": 5
+    					}
+    				},
+    				{
+    					"id": 2,
+    					"required": 1,
+    					"image": {
+    						"type": 2,
+    						"width": 345,
+    						"height": 234
+    					}
+    				},
+    				{
+    					"id": 3,
+    					"required": 1,
+    					"data": {
+    						"type": 2,
+    						"len": 34
+    					}
+    				}
+
+    			]
+    		}
+    	}]
+    }
 ```
 
 ## 返回示例

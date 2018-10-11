@@ -15,8 +15,8 @@
 
 ## 3. 关闭事件监听并关闭webview
 
-* 请监听 ZPLAY Ads 的关闭事件 closeAds()，在监听到该事件后，关闭 Webview，返回游戏或者应用
+* 请监听 ZPLAY Ads 的关闭事件 `close`，在监听到该事件后，关闭 Webview，返回游戏或者应用
 
 ## 4. 点击事件监听并打开应用市场
 
-* 请监听 ZPLAY Ads 的点击事件 clickAds()，在监听到该事件后，在应用内打开 APP Store 或者 Google Play，并打开跳转链接。
+* 请监听 ZPLAY Ads 的点击事件 `user_did_tap_install`，在监听到该事件后，在应用内打开 APP Store 或者 Google Play，并打开跳转链接。

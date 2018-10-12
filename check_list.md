@@ -4,7 +4,7 @@
 
 ## 1. 客户端UA和IP地址上报
 
-** 请确认 `客户端UA` 和 `客户端IP地址` 通过 `http header头` 在请求 ZPLAY Ads平台 的时候传递 **
+**请确认 `客户端UA` 和 `客户端IP地址` 通过 `http header头` 在请求 ZPLAY Ads平台 的时候传递**
 
 > 客户端UA、IP 如果不通过header传过来，将会取服务端的IP做为客户端地址, ZPLAY Ads平台 会将重复过多的IP当做作弊流量被屏蔽掉
 

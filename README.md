@@ -6,6 +6,7 @@
 2. [接入文档](request_and_response.md)
 3. [接入代码示例](sample_of_reqeust_and_response.md)
 
+## This document is used when the developer requests the ZPLAY Ads advertising platform according to API interface.
 ### document in English
 1. [check_list](check_list.md)
 2. [integration document](request_and_response.md)

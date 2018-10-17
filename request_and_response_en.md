@@ -100,9 +100,9 @@ Data format: UTF-8
 | plmn            | string  | Y   | Public land mobile network (PLMN), as defined in telecommunications regulation, is a network that is established and operated by an administration or by a recognized operating agency (ROA) for the specific purpose of providing land mobile telecommunications services to the public, such as "46000"                                                        |
 | device_type     | string  | Y   | Device type, "phone", "tablet"                                           |
 | adt             | boolean | N   | Whether to allow targeted usersy by tracking user behavior, 0: not allowed, 1: allowed, default is 1    |
-| connection_type | string  | Y   | 网络类型，空串表示未知，值为 wifi，2g，3g，4g，ethernet，cell_unknown |
-| carrier         | int     | Y   | 运营商，0：移动，1：电信，3：联通，4：unknown                         |
-| orientation     | int     | N   | 设备方向，“0”为横屏，“1”为竖屏                                        |
+| connection_type | string  | Y   | Connection type, empty means unknown, the value is wifi, 4g, 3g, 2g, ethernet，cell_unknown |
+| carrier         | int     | Y   | Carrier, 0:China Mobile，1:Telecom，3:Unicom, 4:unknown                         |
+| orientation     | int     | N   | Device orientation, 0: landscape, 1: portrait                                        |
 | mac             | string  | N   | MAC 地址, md5 散列                                                    |
 | imei            | string  | N   | IMEI 码，md5 散列。iOS 没有                                           |
 | imsi            | string  | N   | imsi，md5 散列                                                        |

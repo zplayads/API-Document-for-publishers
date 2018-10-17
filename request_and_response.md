@@ -53,7 +53,7 @@ Please get 'Account ID' and 'Token' from your account manager.
 
 ### Request URL
 
-When you send a request, send a HTTP POST to the following address:api.zplayads.com/api
+When you send a request, send a HTTP POST to the following address: pa-engine.zplayads.com/v1/api/ads
 
 ### Communication Mode and Encoding
 
@@ -73,11 +73,11 @@ Data format: UTF-8
 | Parameter   | Type        | Mendatory | Description                                                                                                                                 |
 | ---------- | ----------- | ---- | ------------------------------------------------------------------------------------------------------------------------------------ |
 | ver        | string      | Y   | Protocal version,                                                                                                              |
-| developer_token  | string      | YES   | 开发者 token，由 ZPLAY Ads 平台商务人员提供                                                                                          |
-| need_https | int         | NO   | 是否需要 https 链接的标识，默认为 0。0 标识不需要，1 标识需要。当为 1 时，指的是开发者 要求返回的所有素材及追踪链接必须是 https 链接 |
-| app        | object        | YES   | app 对象信息                                                                                                                         |
-| device     | object        | YES   | 设备信息                                                                                                                             |
-| user       | object        | NO   | 用户信息                                                                                                                             |
+| developer_token  | string      | Y   | Developer token, offered by ZPLAY Ads account nameger                                                                                          |
+| need_https | int         | N   | For material's link or tracking url link, whether the prefix is https. 0 as default. 0: don’t need https, 1: need https for all materials and links. |
+| app        | object        | Y   | APP information                                                                                                                         |
+| device     | object        | Y   | 设备信息                                                                                                                             |
+| user       | object        | N   | 用户信息                                                                                                                             |
 | ads        | ad rray of object | YES   | 广告信息数组                                                                                                                         |
 
 #### app 对象信息

@@ -1,4 +1,4 @@
-## API 对接文档协议
+## API OF INTEGRATION
 
 - [API 对接文档协议](#api-%E5%AF%B9%E6%8E%A5%E6%96%87%E6%A1%A3%E5%8D%8F%E8%AE%AE)
 - [文档说明](#%E6%96%87%E6%A1%A3%E8%AF%B4%E6%98%8E)
@@ -29,31 +29,33 @@
         - [附件](#%E9%99%84%E4%BB%B6)
             - [应用类别](#%E5%BA%94%E7%94%A8%E7%B1%BB%E5%88%AB)
 
-## 文档说明
+## Introduction of document
 
-此文档仅供开发者 与 ZPLAY Ads 平台 使用 API 方式对接时使用
+This document is only for developers who use the API with ZPLAY Ads.
 
-## 文档更新记录
+## Changelog
 
-| 版本 | 作者 | 时间       | 备注 |
+| Version | Modifier | Time       | Description |
 | ---- | ---- | ---------- | ---- |
-| v0.1 | niu  | 2018.09.20 | 创建 |
+| v0.1 | niu  | 2018.09.20 | Creat |
 
-## 接入准备
+## Preparation before integration
 
-在 开发者 和 ZPLAY Ads 平台 商务人员沟通后，由 ZPLAY Ads 平台商务人员提供 开发者 “账号 ID”和相应的 “Token” 信息。
+Please get 'Account ID' and 'Token' from your account manager.
 
-## 广告获取流程
+## Steps of request
 
-在用户访问开发者的应用，产生广告曝光机会时，开发者 向 ZPLAY Ads 平台 按照该文档约定的格式发起广告请求，ZPLAY Ads 平台根据开发者的请求信息，返回符合该文档规范的响应信息，开发者将 ZPLAY Ads 平台返回的广告展示给用户。
+1. When the user visit the APP of developer, developer should send a request to ZPLAY Ads.
+2. ZPLAY Ads return a response to developer, both request and response should obey the format agreed by this document.
+3. Developer renders the ads according specification of this document
 
-## 接入说明
+## Instruction
 
-### 请求 URL
+### Request URL
 
-当需要请求广告时，发送一个 HTTP POST 请求到下面的地址：api.zplayads.com/api
+When you send a request, send a HTTP POST to the following address:api.zplayads.com/api
 
-### 通信方式及编码
+### Communication Mode and Encoding
 
 ZPLAY Ads 和 开发者 之间的基础通信协议采用 HTTP 协议、POST 方法，数据使用 JSON 格式，编码采用 UTF-8 编码。
 

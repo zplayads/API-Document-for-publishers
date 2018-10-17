@@ -76,47 +76,47 @@ Data format: UTF-8
 | developer_token  | string      | Y   | Developer token, offered by ZPLAY Ads account nameger                                                                                          |
 | need_https | int         | N   | For material's link or tracking url link, whether the prefix is https. 0 as default. 0: don’t need https, 1: need https for all materials and links. |
 | app        | object        | Y   | APP information                                                                                                                         |
-| device     | object        | Y   | 设备信息                                                                                                                             |
-| user       | object        | N   | 用户信息                                                                                                                             |
-| ads        | ad rray of object | YES   | 广告信息数组                                                                                                                         |
+| device     | object        | Y   | Device information                                                                                                                             |
+| user       | object        | N   | User information                                                                                                                             |
+| ads        | ad rray of object | Y   | Ad information                                                                                                                         |
 
-#### app 对象信息
+#### APP Information
 
-| 字段类型 | 类型   | 必须 | 描述                                                                                                                                 |
+| Parameter | Type   | Mendatory | Description                                                                                                                                 |
 | -------- | ------ | ---- | ------------------------------------------------------------------------------------------------------------------------------------ |
-| app_id   | string | 是   | 应用 ID，请提前将您的应用注册到 ZPLAY Ads 平台 [https://www.zplayads.com](https://www.zplayads.com)，该 ID 为注册后平台生成的应用 ID |
-| app_name     | string | 是   | 应用名称                                                                                                                             |
-| bundle_id   | string | 是   | 对于 Android，是应用的 packageName；对于 iOS，是 iTunes ID                                                                                                               |
-| version      | string | 是   | 应用版本号                                                                                                                           |
-| cat      | string | 否   | 应用类别，如“Action”，内容详见[应用类别](#应用类别)                                                                                  |
+| app_id   | string | Y   | APP ID, generted by ZPLAYAds after you registered the app on ZPLAY Ads[https://www.zplayads.com](https://www.zplayads.com) |
+| app_name     | string | Y   | APP name                                                                                                                             |
+| bundle_id   | string | Y   | PackageName in Android；iTunes ID in iOS, such as "com.zplayads.demo"                                                                                                               |
+| version      | string | Y   | application version                                                                                                                       |
+| cat      | string | N   | application category, such as"Action"，category refer to [CATEGORY](#CATEGORY)                                                                                  |
 
-#### Device 对象信息
+#### Device Information
 
-| 字段名称        | 类型    | 必须 | 描述                                                                  |
+| Parameter        | Type    | Mendatory | Description                                                                  |
 | --------------- | ------- | ---- | --------------------------------------------------------------------- |
-| model           | string  | 是   | 设备型号                                                              |
-| manufacturer    | string  | 否   | 生产厂商，例如：“Samsung”                                             |
-| brand           | string  | 否   | 手机品牌，例如：“MI4”                                                 |
-| plmn            | string  | 是   | 国家运营商编号                                                        |
-| device_type     | string  | 是   | 设备类型，“phone”，“tablet”                                           |
-| adt             | boolean | 否   | 是否允许通过追踪用户行为进行定向投放，0：不允许，1：允许，默认为 1    |
-| connection_type | string  | 是   | 网络类型，空串表示未知，值为 wifi，2g，3g，4g，ethernet，cell_unknown |
-| carrier         | int     | 是   | 运营商，0：移动，1：电信，3：联通，4：unknown                         |
-| orientation     | int     | 否   | 设备方向，“0”为横屏，“1”为竖屏                                        |
-| mac             | string  | 否   | MAC 地址, md5 散列                                                    |
-| imei            | string  | 否   | IMEI 码，md5 散列。iOS 没有                                           |
-| imsi            | string  | 否   | imsi，md5 散列                                                        |
-| android_id      | string  | 否   | Android Device ID，md5 散列。Android 手机不传会影响填充               |
-| android_adid    | string  | 否   | Android Advertising ID                                                |
-| idfa            | string  | 是   | iOS 系统的 idfa。                                                     |
-| idfv            | string  | 否   | idfv                                                                  |
-| openudid        | string  | 否   | openudid                                                              |
-| local           | string  | 否   | 设备上的本地首选项设置                                                |
-| language        | string  | 是   | 系统语言                                                              |
-| os_type         | string  | 是   | 操作系统类型，值为"iOS"， "Android"， "WP"(windows phone)             |
-| os_version      | string  | 是   | 操作系统版本，值为 11.4.1，12.0，7.1.0                                |
-| screen          | 对象    | 是   | 设备的屏幕信息                                                        |
-| geo             | 对象    | 否   | 设备的位置信息                                                        |
+| model           | string  | Y   | Device model                                                              |
+| manufacturer    | string  | N   |Manufactor, such as "Samsung"                                             |
+| brand           | string  | N   | Brand, such as "MI4"                                                 |
+| plmn            | string  | Y   | Public land mobile network (PLMN), as defined in telecommunications regulation, is a network that is established and operated by an administration or by a recognized operating agency (ROA) for the specific purpose of providing land mobile telecommunications services to the public, such as "46000"                                                        |
+| device_type     | string  | Y   | Device type, "phone", "tablet"                                           |
+| adt             | boolean | N   | Whether to allow targeted usersy by tracking user behavior, 0: not allowed, 1: allowed, default is 1    |
+| connection_type | string  | Y   | 网络类型，空串表示未知，值为 wifi，2g，3g，4g，ethernet，cell_unknown |
+| carrier         | int     | Y   | 运营商，0：移动，1：电信，3：联通，4：unknown                         |
+| orientation     | int     | N   | 设备方向，“0”为横屏，“1”为竖屏                                        |
+| mac             | string  | N   | MAC 地址, md5 散列                                                    |
+| imei            | string  | N   | IMEI 码，md5 散列。iOS 没有                                           |
+| imsi            | string  | N   | imsi，md5 散列                                                        |
+| android_id      | string  | N   | Android Device ID，md5 散列。Android 手机不传会影响填充               |
+| android_adid    | string  | N   | Android Advertising ID                                                |
+| idfa            | string  | Y   | iOS 系统的 idfa。                                                     |
+| idfv            | string  | N   | idfv                                                                  |
+| openudid        | string  | N   | openudid                                                              |
+| local           | string  | N   | 设备上的本地首选项设置                                                |
+| language        | string  | Y   | 系统语言                                                              |
+| os_type         | string  | Y   | 操作系统类型，值为"iOS"， "Android"， "WP"(windows phone)             |
+| os_version      | string  | Y   | 操作系统版本，值为 11.4.1，12.0，7.1.0                                |
+| screen          | 对象    | Y   | 设备的屏幕信息                                                        |
+| geo             | 对象    | N   | 设备的位置信息                                                        |
 
 ##### Screen 对象信息
 
@@ -266,7 +266,7 @@ Data format: UTF-8
 
 #### 附件
 
-##### 应用类别
+##### CATEGORY
 
 | ID                                   | 应用类别     | Category      |
 | ------------------------------------ | ------------ | ------------- |

@@ -109,8 +109,7 @@ Data format: UTF-8
 | android_id      | string  | N   | Android ID is an unique ID to each device. It is used to identify your device for market downloads, Md5 Hash, no value in Android device will affect ad fill.               |
 | android_adid    | string  | N   | AAID(Google Advertising ID)                                              |
 | idfa            | string  | Y   | IDFA( Identifier for Advertising)                                                     |
-| idfv            | string  | N   | identifierForVendor, please view [more info](https://developer.apple.com/documentation/uikit/uidevice/1620059-identifierforvendor) 
-                  |
+| idfv            | string  | N   | identifierForVendor, please view [more info](https://developer.apple.com/documentation/uikit/uidevice/1620059-identifierforvendor)  |
 | openudid        | string  | N   | openudid                                                              |
 | local           | string  | N   | 设备上的本地首选项设置                                                |
 | language        | string  | Y   | Device language                                                              |

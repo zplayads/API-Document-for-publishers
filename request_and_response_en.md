@@ -1,6 +1,6 @@
 ## API OF INTEGRATION
 
-- [API OF INTEGRATION](#api-%E5%AF%B9%E6%8E%A5%E6%96%87%E6%A1%A3%E5%8D%8F%E8%AE%AE)
+- [API OF INTEGRATION](#api-of-integration)
 - [Introduction of document](#%E6%96%87%E6%A1%A3%E8%AF%B4%E6%98%8E)
 - [Changelog](#%E6%96%87%E6%A1%A3%E6%9B%B4%E6%96%B0%E8%AE%B0%E5%BD%95)
 - [接入准备](#%E6%8E%A5%E5%85%A5%E5%87%86%E5%A4%87)

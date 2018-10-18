@@ -1,8 +1,8 @@
 ## API OF INTEGRATION
 
-- [API 对接文档协议](#api-%E5%AF%B9%E6%8E%A5%E6%96%87%E6%A1%A3%E5%8D%8F%E8%AE%AE)
-- [文档说明](#%E6%96%87%E6%A1%A3%E8%AF%B4%E6%98%8E)
-- [文档更新记录](#%E6%96%87%E6%A1%A3%E6%9B%B4%E6%96%B0%E8%AE%B0%E5%BD%95)
+- [API OF INTEGRATION](#api-%E5%AF%B9%E6%8E%A5%E6%96%87%E6%A1%A3%E5%8D%8F%E8%AE%AE)
+- [Introduction of document](#%E6%96%87%E6%A1%A3%E8%AF%B4%E6%98%8E)
+- [Changelog](#%E6%96%87%E6%A1%A3%E6%9B%B4%E6%96%B0%E8%AE%B0%E5%BD%95)
 - [接入准备](#%E6%8E%A5%E5%85%A5%E5%87%86%E5%A4%87)
 - [广告获取流程](#%E5%B9%BF%E5%91%8A%E8%8E%B7%E5%8F%96%E6%B5%81%E7%A8%8B)
 - [接入说明](#%E6%8E%A5%E5%85%A5%E8%AF%B4%E6%98%8E)
@@ -26,8 +26,8 @@
                 - [Title 对象信息](#title-%E5%AF%B9%E8%B1%A1%E4%BF%A1%E6%81%AF)
                 - [Data 对象信息](#data-%E5%AF%B9%E8%B1%A1%E4%BF%A1%E6%81%AF)
             - [Link 对象信息](#link-%E5%AF%B9%E8%B1%A1%E4%BF%A1%E6%81%AF)
-        - [附件](#%E9%99%84%E4%BB%B6)
-            - [应用类别](#%E5%BA%94%E7%94%A8%E7%B1%BB%E5%88%AB)
+        - [ATTACHMENT](#%E9%99%84%E4%BB%B6)
+            - [CATEGORY](#%E5%BA%94%E7%94%A8%E7%B1%BB%E5%88%AB)
 
 ## Introduction of document
 
@@ -88,7 +88,7 @@ Data format: UTF-8
 | app_name     | string | Y   | APP name                                                                                                                             |
 | bundle_id   | string | Y   | PackageName in Android；iTunes ID in iOS, such as "com.zplayads.demo"                                                                                                               |
 | version      | string | Y   | application version                                                                                                                       |
-| cat      | string | N   | application category, such as"Action"，category refer to [CATEGORY](# ATTACHMENT)                                                                                  |
+| cat      | string | N   | application category, such as"Action"，category refer to [CATEGORY](# CATEGORY)                                                                                  |
 
 #### Device Information
 

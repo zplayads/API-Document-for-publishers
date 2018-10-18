@@ -103,168 +103,170 @@ Data format: UTF-8
 | connection_type | string  | Y   | Connection type, empty means unknown, the value is wifi, 4g, 3g, 2g, ethernet，cell_unknown |
 | carrier         | int     | Y   | Carrier, 0:China Mobile，1:Telecom，3:Unicom, 4:unknown                         |
 | orientation     | int     | N   | Device orientation, 0: landscape, 1: portrait                                        |
-| mac             | string  | N   | MAC 地址, md5 散列                                                    |
-| imei            | string  | N   | IMEI 码，md5 散列。iOS 没有                                           |
-| imsi            | string  | N   | imsi，md5 散列                                                        |
-| android_id      | string  | N   | Android Device ID，md5 散列。Android 手机不传会影响填充               |
-| android_adid    | string  | N   | Android Advertising ID                                                |
-| idfa            | string  | Y   | iOS 系统的 idfa。                                                     |
-| idfv            | string  | N   | idfv                                                                  |
+| mac             | string  | N   | Media access control address, is a unique identifier assigned to a network interface controller (NIC) for communications at the data link layer of a network segment. MAC addresses are used as a network address for most IEEE 802 network technologies, including Ethernet and Wi-Fi. In this context, MAC addresses are used in the medium access control protocol sublayer. Md5 Hash                                                   |
+| imei            | string  | N   | International Mobile Equipment Identity, is a number, usually unique, to identify 3GPP and iDEN mobile phones, as well as some satellite phones. (sending meid(mobile equipment identifier) if the mobile is CDMA2000). Md5 Hash                                           |
+| imsi            | string  | N   | International mobile subscriber identity, is used to identify the user of a cellular network and is a unique identification associated with all cellular networks. Md5 Hash                                                       |
+| android_id      | string  | N   | Android ID is an unique ID to each device. It is used to identify your device for market downloads, Md5 Hash, no value in Android device will affect ad fill.               |
+| android_adid    | string  | N   | AAID(Google Advertising ID)                                              |
+| idfa            | string  | Y   | IDFA( Identifier for Advertising)                                                     |
+| idfv            | string  | N   | identifierForVendor, please view [more info](https://developer.apple.com/documentation/uikit/uidevice/1620059-identifierforvendor) 
+                  |
 | openudid        | string  | N   | openudid                                                              |
 | local           | string  | N   | 设备上的本地首选项设置                                                |
-| language        | string  | Y   | 系统语言                                                              |
-| os_type         | string  | Y   | 操作系统类型，值为"iOS"， "Android"， "WP"(windows phone)             |
-| os_version      | string  | Y   | 操作系统版本，值为 11.4.1，12.0，7.1.0                                |
-| screen          | 对象    | Y   | 设备的屏幕信息                                                        |
-| geo             | 对象    | N   | 设备的位置信息                                                        |
+| language        | string  | Y   | Device language                                                              |
+| os_type         | string  | Y   | Operation system, "iOS", " Android", "WP"(windows phone)             |
+| os_version      | string  | Y   | Operation system,such as 11.4.1，12.0，7.1.0                                |
+| screen          | 对象    | Y   | Device screen info                                                        |
+| geo             | 对象    | N   | Device geo info                                                        |
 
-##### Screen 对象信息
+##### Screen Information
 
-| 字段名称 | 类型  | 必须 | 描述                                                                    |
+| Parameter | Type  | Mandatory | Description                                                                    |
 | -------- | ----- | ---- | ----------------------------------------------------------------------- |
-| width        | int   | 是   | 水平分辨率，单位：像素                                                  |
-| height        | int   | 是   | 纵向分辨率，单位：像素                                                  |
-| dpi      | int   | 是   | 像素密度，单位：每英寸像素个数                                          |
-| pxratio  | float | 否   | 屏幕物理像素密度，例：iPhone 3 为 1，iPhone 4 为 2，iPhone 6S plus 为 3 |
+| width        | int   | Y   | Landscape resolution, unit: pixel                                                  |
+| height        | int   | Y   | Portrait resolution, unit: pixel                                                  |
+| dpi      | int   | Y   | Pixel density，unit: pixel numbers per inch                                        |
+| pxratio  | float | N   | Physical pixel density, e.g. 1 on iPhone 3, 2 on iPhone 4, 3 on iPhone 6s Plus |
 
-##### Geo 对象信息
+##### Geo Information
 
-| 字段名称        | 类型   | 必须 | 描述                   |
+| Parameter        | Type   | Mandatory | Description                   |
 | --------------- | ------ | ---- | ---------------------- |
-| lat             | double | 是   | 纬度                   |
-| lon             | double | 是   | 经度                   |
-| horizontal_accu | int    | 否   | 水平方向精度，单位：米 |
-| vertical_accu   | int    | 否   | 垂直方向精度，单位：米 |
+| lat             | double | Y   | Latitude                   |
+| lon             | double | Y   | Lonitude                   |
+| horizontal_accu | int    | N   | Horizen accurate, unit: meter |
+| vertical_accu   | int    | N   | Vertiacl accurate, unit: meter |
 
-#### User 对象信息
+#### User Information
 
-| 字段名称 | 类别   | 必须 | 描述                                 |
+| Parameter | Type   | Mandatory | Description                                 |
 | -------- | ------ | ---- | ------------------------------------ |
-| id       | string | 否   | 用户 id                              |
-| gender   | int    | 否   | 性别，0：女，1：男，2：其他，3：未知 |
-| age      | int    | 否   | 年龄                                 |
-| keywords | array  | 否   | 用户感兴趣的关键词                   |
+| id       | string | N   | User id                              |
+| gender   | int    | N   | Gender, 0: female, 2: other, 3: unknown |
+| age      | int    | N   | Age                                 |
+| keywords | array  | N   | Keyword interested by user                   |
 
-#### Ad 对象信息
+#### Ad Information
 
-| 字段名称   | 类别   | 必须 | 描述                                                                                                                              |
+| Parameter   | Type   | Mandatory | Description                                                                                                                              |
 | ---------- | ------ | ---- | --------------------------------------------------------------------------------------------------------------------------------- |
-| unit_type  | int    | 是   | 广告位类型，0：横幅，1：插屏，2：开屏，3：原生，4：视频，当前仅支持插屏，原生和视频三种类型，类型需与您广告位 ID 类型保持一致     |
-| ad_unit_id | string | 否   | 广告位 id，请提前将您的广告位注册到 ZPLAY Ads 平台 [https://www.zplayads.com](https://www.zplayads.com) ，该 ID 为注册后生成的 ID |
-| native     | 对象   | 否   | 原生广告位信息                                                                                                                    |
+| unit_type  | int    | Y   | Ad type, 1: interstitial, 3: native, 4: reawrded video, unit_type should be same with your ad unit type     |
+| ad_unit_id | string | N   | Ad unit id, generated by ZPLAYAds after you registered your ad unit on [ZPLAY Ads](https://www.zplayads.com)  |
+| native     | object   | N   | Native information                                                                                                                    |
 
-##### Native 对象信息
+##### Native Information
 
-| 字段名称 | 类型       | 必须 | 描述                                                                                                                   |
+| Parameter | Type       | Mandatory | Description                                                                                                                   |
 | -------- | ---------- | ---- | ---------------------------------------------------------------------------------------------------------------------- |
-| layout   | int        | 是   | 原生广告类型，1： 内容墙， 2： 应用墙，3：新闻流， 4：聊天列表，5：走马灯广告，6：内容流，7：矩阵                      |
-| assets   | Asset 数组 | 是   | 原生广告元素列表，当前有 5 种元素，分别为标题 (title)， Icon(img)， Large image (img)，Description (data)，得分 (data) |
+| layout   | int        | Y   | Native types，1: content wall, 2: app wall, 3:news stream， 4:chat list，5:scroll ads，6:content stream，7:matrix, only content stream is supported now                      |
+| assets   | Arrey of asset | Y   | Native assets，currently there’re four element: Title(data), Icon(img), Large image (img), Description (data)  |
 
-###### Asset 对象信息
+###### Asset Information
 
-| 字段名称 | 类型 | 必须 | 描述                                         |
+| Parameter | Type | Mandatory | Description                                         |
 | -------- | ---- | ---- | -------------------------------------------- |
-| id       | int  | 是   | 广告元素 id                                  |
-| required | int  | 否   | 广告元素是否必须，1：必须，0：可选，默认为 0 |
-| title    | 对象 | 否   | 文字元素                                     |
-| image      | 对象 | 否   | 图像元素                                     |
-| data     | 对象 | 否   | 其他数据元素                                 |
+| id       | int  | Y   | Element id                                  |
+| required | int  | N   | Whether the element is required, 1: required, 0: optional, default is 0 |
+| title    | object | N   | Title element, content is text                                     |
+| image      | object | N   | Title element, content is image                                     |
+| data     | object | N   | Other element data                                 |
 
-> image，title，data 这三个元素，一个 asset 只能存在一个
+> One asset only include one element of image，title and data
 
-**Image 对象信息**
+**Image Information**
 
-| 字段名称 | 类型 | 必须 | 描述                                                                                                                                                               |
+| Parameter | Type | Mandatory | Description                                                                                                                                                               |
 | -------- | ---- | ---- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| type     | int  | 是   | image 元素的类型，1：图标，2：品牌 Logo，3：大图，4：“免安装试玩”按钮，当用户点击“免安装试玩”按钮时，请将response.ads中的 playable_ads_html 加载到 webview 中 |
-| width        | int  | 是   | image 元素的宽度，单位为像素                                                                                                                                       |
-| height        | int  | 是   | image 元素的高度，单位为像素                                                                                                                                       |
+| type     | int  | Y   | Image element type, 1: icon, 2: Logo, 3: main picture, 4: "DOWNLOAD" button, when user click download button, please load playable_ads_html in response.ads into webview |
+| width        | int  | Y   | Image width，unit: pixel.                                                                                                                                       |
+| height        | int  | Y   | Image height，unit: pixel.                                                                                                                                       |
 
-**Title 对象信息**
+**Title Information**
 
-| 字段名称 | 类型 | 必须 | 描述                   |
+| Parameter | Type | Mandatory | Description                   |
 | -------- | ---- | ---- | ---------------------- |
-| len      | int  | 是   | title 元素最大文字长度 |
+| len      | int  | Y   | Length of title |
 
-**Data 对象信息**
+**Data Information**
 
-| 字段名称 | 类型 | 必须 | 描述                                                                                                                                                                                                                                        |
+| Parameter | Type | Mandatory | Description                                                                                                                                                                                                                                        |
 | -------- | ---- | ---- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| type     | int  | 是   | 数据类型 1：Sponsor 名称，应该包含品牌名称，2：描述，3：打分，4：点赞个数，5：下载个数，6： 产品价格，7：销售价格，往往和前者结合，表示折扣价，8：电话，9：地址，10：描述 2，11：显示的链接，12：行动按钮名称，1001：视频 url，1002：评论数 |
-| len      | int  | 是   | 元素最大文字长度                                                                                                                                                                                                                            |
+| type     | int  | Y   | Type of data, 1: Sponsor name, should include brand name, 2: description, 3: score, 4: number of likes, 5: number of downloads, 6: price of product, 7: price of sales, always display with price of product together and show user the discount, 8: phone number, 9: address, 10: second description, 11: link that show to user, 12: click-to-action button, 1001: video URL, 1002: number of comments |
+| len      | int  | Y   | Length of data                                                                                                                                                                                                                            |
 
-### Response 返回信息
+### Response Information
 
-| 字段名称 | 类型        | 必须 | 描述                                                           |
+| Parameter | Type        | Mandatory | Description                                                           |
 | -------- | ----------- | ---- | -------------------------------------------------------------- |
-| result   | int         | 是   | 返回结果，0：成功，小于 0 表示失败                             |
-| msg      | string      | 否   | 失败的话，会填写失败原因，例："网络错误"，在这里列出具体的原因 |
-| ads      | ad 对象数组 | 否   | 如果失败，或者无对应广告则无此数据                             |
-| cur      | string      | 否   | 广告价格货币类型，默认为"CNY"                                  |
+| result   | int         | Y   | Response result, 0: success, <0: fail                             |
+| msg      | string      | N   | The reason for failure if response result is fail, such as "Internet error" |
+| ads      | array of objects | N   | No data if response result is fail                             |
+| cur      | string      | N   | Ad currency, such as "CNY" or "USD", default is "CNY"                                  |
 
-#### Ad 对象信息
+#### Ad Information
 
-| 字段名称          | 类型   | 必须 | 描述                                                                                                                      |
+| Parameter          | Type   | Mandatory | Description                                                                                                                      |
 | ----------------- | ------ | ---- | ------------------------------------------------------------------------------------------------------------------------- |
-| id                | string | 是   | 广告 id                                                                                                                   |
-| ad_unit_id        | string | 是   | 广告位 id，与 request 中的 ad_unit_id 对应                                                                                |
-| app_bundle        | string | 是   | 对于 Android，是应用的 packageName；对于 iOS，是 iTunes ID ，请监听可玩广告的 `user_did_tap_install` 事件，在监听到时在 APP 内部打开 APP Store 或者 Google Play，并打开跳转链接                                                       |
-| playable_ads_html | string | 是   | 可玩广告的 html 代码，请确保使用应用内的 webview 中打开                                                                   |
-| target_url               | string | 是   | 可玩广告的跳转地址 |
-| target_url_type         | int    | 是   | 打开可玩广告跳转地址时的打开方式，1：在 app 内 webview 打开目标链接，2：在系统浏览器打开目标链接，3：打开地图，4：拨打电话，5：播放视频，6：App 下载，请确保在应用内打开 APP Store 或者 Google Play |
-| price             | float  | 否   | 广告价格，若没有该数据则为 0，单位为分                                                                                    |
-| native            | 对象   | 否   | 原生广告对象，如果广告位类型是原生时，返回此对象                                                                          |
+| id                | string | Y   | Ad id                                                                                                                   |
+| ad_unit_id        | string | Y   | Ad unit id, it's the same with ad_unit_id in request                                                                                |
+| app_bundle        | string | Y   | APP packageName for Android, Bundle ID for iOS, please listen to "user_did_tap_install" event, open build-in APP Store or jumpto Google Play                                                       |
+| playable_ads_html | string | Y   | Playable ad HTML snippet, make sure open it with in-app webview                                                                   |
+| target_url               | string | Y   | Target url to download APP, which wil jump to when user click ad |
+| target_url_type         | int    | Y   | Type of data, 1: Sponsor name, should include brand name, 2: description, 3: score, 4: number of likes, 5: number of downloads, 6: price of product, 7: price of sales, always display with price of product together and show user the discount, 8: phone number, 9: address, 10: second description, 11: link that show to user, 12: click-to-action button, 1001: video URL, 1002: number of comments |
+| len      | int  | Y   | Length of data   |
+| price             | float  | N   | Ad price, empty means 0, unit: cent                                            |
+| native            | object   | N   | Native object, it will return native object if ad type is native                                                                     |
 
-##### Native 对象信息
+##### Native Information
 
-| 字段名称   | 类型           | 必须 | 描述                                                                                                           |
+| Parameter   | Type          | Mandatory | Description                                                             |
 | ---------- | -------------- | ---- | -------------------------------------------------------------------------------------------------------------- |
-| assets     | Asset 对象数组 | 是   | 原生广告元素列表，当前主要支持 4 种元素，分别为标题 (title)， 图标(img)， 大图(img)， 描述 (data)，得分 (data) |
-| imp_tracker | 数组           | 否   | 展示跟踪地址数组，需要返回一个 1x1 像素图片                                                                    |
-| link       | 对象           | 是   | 原生广告的目标链接，默认链接对象，当 assets 中不包括 link 对象时，使用此对象                                   |
+| assets     | array of asset  | Y   | Native ad element list, four type elements supported currently, tile (data), icon (img), picture (img), description (data) |
+| imp_tracker | arrey           | N   | Impression tracker address array, a 1-pixel picture need to be returned                                                               |
+| link       | object           | N   | Target link, default is link object, please use this object when link object does not included in assets                                   |
 
-##### Asset 对象信息
+##### Asset Information
 
-| 字段名称 | 类型 | 必须 | 描述                                              |
+| Parameter | Type | Mandatory | Description                                              |
 | -------- | ---- | ---- | ------------------------------------------------- |
-| id       | int  | 是   | 广告元素 ID                                       |
-| required | int  | 否   | 广告元素是否必须显示，1：必须，0：可选， 默认为 0 |
-| title    | 对象 | 否   | 文字元素                                          |
-| image      | 对象 | 否   | 图像元素                                          |
-| data     | 对象 | 否   | 其他数据元素                                      |
-| link     | 对象 | 否   | 点击目标链接                                      |
+| id       | int  | Y   | Ad element ID                                       |
+| required | int  | N   | Whether the element must be displayed, 1: required, 0: optional, default is 0 |
+| title    | object | N   | Title element, content is text                                          |
+| image      | object | N   |  Image element, content is picture                                         |
+| data     | object | N   | Other element data                                      |
+| link     | object | N   | Target link to download APP                                     |
 
-###### Image 对象信息
+###### Image Information
 
-| 字段名称 | 类型   | 必须 | 描述                         |
+| Parameter | Type   | Mandatory | Description                         |
 | -------- | ------ | ---- | ---------------------------- |
-| url      | string | 是   | image url 地址               |
-| width    | int    | 否   | image 元素的宽度，单位为像素 |
-| height   | int    | 否   | image 元素的宽度，单位为像素 |
+| url      | string | Y   | Image url                |
+| width    | int    | N   | Image width，unit: pixel |
+| height   | int    | N   | Image height，unit: pixel |
 
-###### Title 对象信息
+###### Title Information
 
-| 字段名称 | 类型   | 必须 | 描述     |
+| Parameter | Type   | Mandatory | Description     |
 | -------- | ------ | ---- | -------- |
-| text     | string | 是   | 标题文字 |
+| text     | string | Y   | Title content |
 
-###### Data 对象信息
+###### Data Information
 
-| 字段名称 | 类型   | 必须 | 描述     |
+| Prameter | Type   | Mandatory | Description     |
 | -------- | ------ | ---- | -------- |
-| label    | string | 否   | 数据名称 |
-| value    | string | 是   | 数据正文 |
+| label    | string | N   | Data name |
+| value    | string | Y   | Data content |
 
-##### Link 对象信息
+##### Link Information
 
-| 字段名称     | 类型   | 必须 | 描述                                                                                                                                                                            |
+| Parameter     | Type   | Mandatory | Description                                                             |
 | ------------ | ------ | ---- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| target_url          | string | 是   | 目标链接，优先使用外层的app_bundle字段跳转                                                                                                                                                                        |
-| app_bundle        | string | 是   | 对于 Android，是应用的 packageName；对于 iOS，是 iTunes ID ，请监听可玩广告的 `user_did_tap_install` 事件，在监听到时在 APP 内部打开 APP Store 或者 Google Play，并打开跳转链接                                                       |
-| click_tracker | 数组   | 否   | 点击追踪链接                                                                                                                                                                    |
-| target_url_type         | int    | 是   | 打开可玩广告跳转地址时的打开方式，1：在 app 内 webview 打开目标链接，2：在系统浏览器打开目标链接，3：打开地图，4：拨打电话，5：播放视频，6：App 下载，请确保在应用内打开 APP Store 或者 Google Play |
+| target_url          | string | Y   | Target link to download APP, please use app_bundle in ad information first                                                                                                                              |
+| app_bundle        | string | Y   | APP packageName for Android, Bundle ID for iOS, please listen to "user_did_tap_install" event, open build-in APP Store or jumpto Google Play                                                       |
+| click_tracker | array   | N   | click tracker                                                                                                                                                                    |
+| target_url_type         | int    | Y   | Type of actions when user click ad, 1: open the url within webview in-app, 2: open the url within system browser, 3: open map, 4: open dial, 5: play video, 6: download App, 7: arouse App   |
 
-#### 附件
+#### attachment
 
 ##### CATEGORY
 

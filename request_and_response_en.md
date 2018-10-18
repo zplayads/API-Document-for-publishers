@@ -88,7 +88,7 @@ Data format: UTF-8
 | app_name     | string | Y   | APP name                                                                                                                             |
 | bundle_id   | string | Y   | PackageName in Android；iTunes ID in iOS, such as "com.zplayads.demo"                                                                                                               |
 | version      | string | Y   | application version                                                                                                                       |
-| cat      | string | N   | application category, such as"Action"，category refer to [CATEGORY](#CATEGORY)                                                                                  |
+| cat      | string | N   | application category, such as"Action"，category refer to [CATEGORY](# ATTACHMENT)                                                                                  |
 
 #### Device Information
 
@@ -265,7 +265,7 @@ Data format: UTF-8
 | click_tracker | array   | N   | click tracker                                                                                                                                                                    |
 | target_url_type         | int    | Y   | Type of actions when user click ad, 1: open the url within webview in-app, 2: open the url within system browser, 3: open map, 4: open dial, 5: play video, 6: download App, 7: arouse App   |
 
-#### attachment
+#### ATTACHMENT
 
 ##### CATEGORY
 

@@ -116,8 +116,8 @@ Data format: UTF-8
 | language        | string  | Y   | Device language                                                              |
 | os_type         | string  | Y   | Operation system, "iOS", " Android", "WP"(windows phone)             |
 | os_version      | string  | Y   | Operation system,such as 11.4.1，12.0，7.1.0                                |
-| screen          | 对象    | Y   | Device screen info                                                        |
-| geo             | 对象    | N   | Device geo info                                                        |
+| screen          | object    | Y   | Device screen info                                                        |
+| geo             | object    | N   | Device geo info                                                        |
 
 ##### Screen Information
 

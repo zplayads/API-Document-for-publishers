@@ -9,5 +9,5 @@
 ## This document is used when the developer requests the ZPLAY Ads advertising platform according to API interface.
 ### Document in English
 1. [Check_list](check_list.md)
-2. [Integration document](request_and_response.md)
-3. [Sample of code](sample_of_reqeust_and_response.md)
+2. [Integration document](request_and_response_en.md)
+3. [Sample of code](sample_of_reqeust_and_response_en.md)

@@ -88,7 +88,7 @@ Data format: UTF-8
 
 | Parameter | Type   | Mendatory | Description                                                                                                                                 |
 | -------- | ------ | ---- | ------------------------------------------------------------------------------------------------------------------------------------ |
-| app_id   | string | Y   | APP ID, generted by ZPLAYAds after you registered the app on ZPLAY Ads[https://www.zplayads.com](https://www.zplayads.com) |
+| app_id   | string | Y   | APP ID, generted by ZPLAYAds after you registered the app on [ZPLAY Ads](https://www.zplayads.com) |
 | app_name     | string | Y   | APP name                                                                                                                             |
 | bundle_id   | string | Y   | PackageName in Android；iTunes ID in iOS, such as "com.zplayads.demo"                                                                                                               |
 | version      | string | Y   | application version                                                                                                                       |

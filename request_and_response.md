@@ -1,4 +1,4 @@
-## API OF INTEGRATION
+## API对接文档协议
 
 - [API 对接文档协议](#api-%E5%AF%B9%E6%8E%A5%E6%96%87%E6%A1%A3%E5%8D%8F%E8%AE%AE)
 - [文档说明](#%E6%96%87%E6%A1%A3%E8%AF%B4%E6%98%8E)
@@ -29,56 +29,53 @@
         - [附件](#%E9%99%84%E4%BB%B6)
             - [应用类别](#%E5%BA%94%E7%94%A8%E7%B1%BB%E5%88%AB)
 
-## Introduction of document
+## 文档说明
 
-This document is only for developers who use the API with ZPLAY Ads.
+此文档仅供开发者与ZPLAY Ads平台使用API方法对接时使用
 
-## Changelog
+## 文档更新记录
 
-| Version | Modifier | Time       | Description |
+| 版本 | 作者 | 时间       | 备注 |
 | ---- | ---- | ---------- | ---- |
-| v0.1 | niu  | 2018.09.20 | Creat |
+| v0.1 | niu  | 2018.09.20 | 创建 |
 
-## Preparation before integration
+## 接入准备
 
-Please get 'Account ID' and 'Token' from your account manager.
+在 开发者 和 ZPLAY Ads 平台 商务人员沟通后，由 ZPLAY Ads 平台商务人员提供 开发者 “账号 ID”和相应的 “Token” 信息。
 
-## Steps of request
+## 广告获取流程
 
-1. When the user visit the APP of developer, developer should send a request to ZPLAY Ads.
-2. ZPLAY Ads return a response to developer, both request and response should obey the format agreed by this document.
-3. Developer renders the ads according specification of this document
+在用户访问开发者的应用，产生广告曝光机会时，开发者 向 ZPLAY Ads 平台 按照该文档约定的格式发起广告请求，ZPLAY Ads 平台根据开发者的请求信息，返回符合该文档规范的响应信息，开发者将 ZPLAY Ads 平台返回的广告展示给用户。
 
-## Instruction
+## 接入说明
 
-### Request URL
+### 请求 URL
 
-When you send a request, send a HTTP POST to the following address: pa-engine.zplayads.com/v1/api/ads
+当需要请求广告时，发送一个 HTTP POST 请求到下面的地址： pa-engine.zplayads.com/v1/api/ads
 
-### Communication Mode and Encoding
+### 通信方式及编码
 
-Communication protocal: HTTP
-Method: POST
-Data format: UTF-8
+ZPLAY Ads 和 开发者 之间的基础通信协议采用 HTTP 协议、POST 方法，数据使用 JSON 格式，编码采用 UTF-8 编码。
 
-### Request Header
+### 请求头
 
-| http header information  | instrction                                                                                                                                                                                                              |
+| http 头信息段  | 说明                                                                                                                                                                                                             |
 | --------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| X-Forwarded-For | Include the real request address of the client, e.g. “8.8.8.8”. If integrated via server, please pass client address because server address will be blocked and regarded as fraud.                                                                             |
-| User-Agent      | User Agent of mobile device，e.g. “Mozilla/5.0 (iPad; CPU OS 5_0 like Mac OS X) AppleWebKit/534.46 (KHTML, like Gecko) Version/5.1 Mobile/9A334 Safari/7534.48.3”. Non-real User-Agent from server will be regarded as problematic traffic. |
+| X-Forwarded-For | 包含客户端真正的请求地址，例：“8.8.8.8”。如果通过服务端对接，请务必传递客户端的地址，使用服务器地址会被视为作弊流量屏蔽                                                                             |
+| User-Agent      | 移动设备的 User-Agent，从服务端使用非真实 User-Agent 会被视为问题流量。
+例：“Mozilla/5.0 (iPad; CPU OS 5_0 like Mac OS X)， AppleWebKit/534.46 (KHTML， like Gecko)， Version/5.1 Mobile/9A334 Safari/7534.48.3” |
 
-### Request 
+### Request 信息
 
-| Parameter   | Type        | Mendatory | Description                                                                                                                                 |
+| 字段名称   | 类型        | 必须 | 描述                      |
 | ---------- | ----------- | ---- | ------------------------------------------------------------------------------------------------------------------------------------ |
-| ver        | string      | Y   | Protocal version,                                                                                                              |
-| developer_token  | string      | Y   | Developer token, offered by ZPLAY Ads account nameger                                                                                          |
-| need_https | int         | N   | For material's link or tracking url link, whether the prefix is https. 0 as default. 0: don’t need https, 1: need https for all materials and links. |
-| app        | object        | Y   | APP information                                                                                                                         |
-| device     | object        | Y   | 设备信息                                                                                                                             |
-| user       | object        | N   | 用户信息                                                                                                                             |
-| ads        | ad rray of object | YES   | 广告信息数组                                                                                                                         |
+| ver        | string      | 是   | 协议版本，当前版本号 1.1                                                                                 |
+| developer_token  | string      | 是   | 开发者 token，由 ZPLAY Ads 平台商务人员提供                                                                                          |
+| need_https | int         | 否   | 是否需要 https 链接的标识，默认为 0。0 标识不需要，1 标识需要。当为 1 时，指的是开发者 要求返回的所有素材及追踪链接必须是 https 链接 |
+| app        | object        | 是   | APP 对象信息                                                                                                                         |
+| device     | object        | 是   | 设备信息                                                                                                                             |
+| user       | object        | 否   | 用户信息                                                                                                                             |
+| ads        | ad rray of object | 是  | 广告信息数组                                                                                                                         |
 
 #### app 对象信息
 

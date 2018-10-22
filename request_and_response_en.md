@@ -92,7 +92,7 @@ Data format: UTF-8
 | app_name     | string | Y   | APP name                                                                                                                             |
 | bundle_id   | string | Y   | PackageName in Android；iTunes ID in iOS, such as "com.zplayads.demo"                                                                                                               |
 | version      | string | Y   | application version                                                                                                                       |
-| cat      | string | N   | application category, such as"Action"，category refer to [CATEGORY](# CATEGORY)                                                                                  |
+| cat      | string | N   | application category, such as"Action"，category refer to [CATEGORY](#CATEGORY)                                                                                  |
 
 #### Device Information
 

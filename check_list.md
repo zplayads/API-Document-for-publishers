@@ -97,4 +97,4 @@ private class ZPLAYAdsJavascriptInterface {
 
 参考 **iOS监听WKWebView的关闭事件**，点击事件会返回```user_did_tap_install```，在```handlePlayablePageMessage:```处理您的跳转逻辑。
 
-打开内置AppStore代码示例：[点击此处]()
+打开内置AppStore代码示例：[点击此处](AppStore)

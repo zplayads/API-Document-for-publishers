@@ -16,7 +16,8 @@
 ## 3. 关闭事件监听并关闭webview
 
 * 请监听 ZPLAY Ads 的关闭事件 `close_playable_ads`，在监听到该事件后，关闭 Webview，返回游戏或者应用
-### Android响应WebView的close事件示例
+
+#### 3.1 Android响应WebView的close事件示例
 1. 允许WebView执行Javascript代码
 ```
 mWebView.getSettings().setJavaScriptEnabled(true);
@@ -42,7 +43,7 @@ private class ZPLAYAdsJavascriptInterface {
 ```
 3. ZPLAY Ads关闭事件会调用```ZPLAYAdsJavascriptInterface.onCloseSelected()```方法，请在此回调中处理关闭事务。
 
-### iOS监听WKWebView的关闭事件
+#### 3.2 iOS监听WKWebView的关闭事件
 
 1.WKWebView添加```zplayads```脚本消息处理程序
 
@@ -90,10 +91,11 @@ private class ZPLAYAdsJavascriptInterface {
 ## 4. 点击事件监听并打开应用市场
 
 * 请监听 ZPLAY Ads 的点击事件  `user_did_tap_install`，在监听到该事件后，在应用内打开 APP Store 或者 Google Play，并打开跳转链接。
-### Android响应WebView的install事件示例
+
+#### 4.1 Android响应WebView的install事件示例
 参考 **Android响应WebView的close事件示例** ，点击事件会回调```ZPLAYAdsJavascriptInterface.onInstallSelected()```方法，请在此方法中处理打开应用市场事务。
 
-### iOS监听WKWebView的安装事件
+#### 4.2 iOS监听WKWebView的安装事件
 
 参考 **iOS监听WKWebView的关闭事件**，点击事件会返回```user_did_tap_install```，在```handlePlayablePageMessage:```处理您的跳转逻辑。
 

@@ -42,8 +42,59 @@ private class ZPLAYAdsJavascriptInterface {
 ```
 3. ZPLAY Ads关闭事件会调用```ZPLAYAdsJavascriptInterface.onCloseSelected()```方法，请在此回调中处理关闭事务。
 
+### iOS监听WKWebView的关闭事件
+
+1.WKWebView添加```zplayads```脚本消息处理程序
+
+```objective-c
+- (WKWebView *)previewAdWebView {
+    if (!_previewAdWebView) {
+        WKWebViewConfiguration *config = [[WKWebViewConfiguration alloc] init];
+        [config.userContentController addScriptMessageHandler:self name:@"zplayads"];
+        config.allowsInlineMediaPlayback = YES;
+        CGRect frame =
+            CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height);
+        _previewAdWebView = [[WKWebView alloc] initWithFrame:frame configuration:config];
+        _previewAdWebView.scrollView.bounces = NO;
+        _previewAdWebView.navigationDelegate = self;
+        _previewAdWebView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
+      
+        if (@available(iOS 11.0, *)) {
+            [_previewAdWebView.scrollView setContentInsetAdjustmentBehavior:UIScrollViewContentInsetAdjustmentNever];
+        } 
+    }
+    return _previewAdWebView;
+}
+```
+
+2.监听```WKScriptMessageHandler```的代理方法
+
+```objective-c
+#pragma mark - WKScriptMessageHandler
+- (void)userContentController:(WKUserContentController *)userContentController
+      didReceiveScriptMessage:(WKScriptMessage *)message {
+    if ([message.name isEqualToString:@"zplayads"]) {
+        [self handlePlayablePageMessage:message.body];
+    }
+}
+// handle message
+- (void)handlePlayablePageMessage:(NSString *)msg {
+   if ([msg isEqualToString:@"user_did_tap_install"]) {
+        NSLog(@"user_did_tap_install");
+    }else if ([msg isEqualToString:@"close_playable_ads"]) {
+        NSLog(@"close zplayads...");
+    } 
+}
+```
+
 ## 4. 点击事件监听并打开应用市场
 
 * 请监听 ZPLAY Ads 的点击事件  `user_did_tap_install`，在监听到该事件后，在应用内打开 APP Store 或者 Google Play，并打开跳转链接。
 ### Android响应WebView的install事件示例
 参考 **Android响应WebView的close事件示例** ，点击事件会回调```ZPLAYAdsJavascriptInterface.onInstallSelected()```方法，请在此方法中处理打开应用市场事务。
+
+### iOS监听WKWebView的安装事件
+
+参考 **iOS监听WKWebView的关闭事件**，点击事件会返回```user_did_tap_install```，在```handlePlayablePageMessage:```处理您的跳转逻辑。
+
+打开内置AppStore代码示例：[点击此处]()

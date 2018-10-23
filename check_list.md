@@ -26,22 +26,21 @@ b. 添加Javascript接口
 ```
 mWebView.addJavascriptInterface(new ZPLAYAdsJavascriptInterface(), "ZPLAYAds");
 ```
-类ZPLAYAdsJavascriptInterface.java实现如下
+ZPLAYAdsJavascriptInterface.java类实现如下
 ```
 private class ZPLAYAdsJavascriptInterface {
 
         @JavascriptInterface
         public void onCloseSelected() {
-            // 可玩广告点击关闭按钮时，触发该方法
+            // 可玩广告点击关闭按钮时，触发该方法，请在此回调中处理广告关闭事务
         }
 
         @JavascriptInterface
         public void onInstallSelected() {
-            // 当点击"安装"按钮时，触发该方法
+            // 当点击"安装"按钮时，触发该方法，请在此回调中处理广告关闭事务
         }
     }
 ```
-c. ZPLAY Ads关闭事件会调用```ZPLAYAdsJavascriptInterface.onCloseSelected()```方法，请在此回调中处理关闭事务。
 
 #### 3.2 iOS监听WKWebView的关闭事件
 

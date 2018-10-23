@@ -18,34 +18,33 @@ Please listen to ZPLAY Ads closing event `close_playable_ads`, after listening t
 
 
 #### 3.1 Code Sample for Android
-a. 允许WebView执行Javascript代码
+a. Makesure Javascript is enabled in a WebView.
 ```
 mWebView.getSettings().setJavaScriptEnabled(true);
 ```
-b. 添加Javascript接口
+b. Add Javascript interface
 ```
 mWebView.addJavascriptInterface(new ZPLAYAdsJavascriptInterface(), "ZPLAYAds");
 ```
-类ZPLAYAdsJavascriptInterface.java实现如下
+The class ZPLAYAdsJavascriptInterface.java implemented as follows,
 ```
 private class ZPLAYAdsJavascriptInterface {
 
         @JavascriptInterface
         public void onCloseSelected() {
-            // 可玩广告点击关闭按钮时，触发该方法
+            // This method will be called when user close the playable ad, you can handle ad close event in this method
         }
 
         @JavascriptInterface
         public void onInstallSelected() {
-            // 当点击"安装"按钮时，触发该方法
+            // This method will be called when user click "download" button, you can handle app download event in this method
         }
     }
 ```
-c. ZPLAY Ads关闭事件会调用```ZPLAYAdsJavascriptInterface.onCloseSelected()```方法，请在此回调中处理关闭事务。
 
-#### 3.2 iOS监听WKWebView的关闭事件
+#### 3.2 Code Sample for iOS
 
-a.WKWebView添加```zplayads```脚本消息处理程序
+a. Add ```zplayads``` script message handle in WKWebView
 
 ```objective-c
 - (WKWebView *)previewAdWebView {
@@ -68,7 +67,7 @@ a.WKWebView添加```zplayads```脚本消息处理程序
 }
 ```
 
-b.监听```WKScriptMessageHandler```的代理方法
+b. Listening to ```WKScriptMessageHandler``` delegate method
 
 ```objective-c
 #pragma mark - WKScriptMessageHandler
@@ -91,13 +90,13 @@ b.监听```WKScriptMessageHandler```的代理方法
 
 ## 4. Listen to Click Event and Open Application Market
 
-Please listen to ZPLAY Ads click event `user_did_tap_install`, after listening to this event, open build-in APP Store or jump to Google Play.
+Please listen to ZPLAY Ads click event `user_did_tap_install`, after listening to this event, open built-in APP Store or jump to Google Play.
 
-#### 4.1 Android响应WebView的install事件示例
-参考 **Android响应WebView的close事件示例** ，点击事件会回调```ZPLAYAdsJavascriptInterface.onInstallSelected()```方法，请在此方法中处理打开应用市场事务。
+#### 4.1 Code Sample for Android
+Refer to **Code Sample for Android in 3.1**, ```ZPLAYAdsJavascriptInterface.onInstallSelected()``` method will be called when ad is clicked, please jump to Goole Play in this method.
 
-#### 4.2 iOS监听WKWebView的安装事件
+#### 4.2 Code Sample for iOS
 
-参考 **iOS监听WKWebView的关闭事件**，点击事件会返回```user_did_tap_install```，在```handlePlayablePageMessage:```处理您的跳转逻辑。
+Refer to **Code Sample for iOS in 3.2**, ```user_did_tap_install``` method will be called when ad is clicked, please open built-in App Store in ```handlePlayablePageMessage:()```.
 
-打开内置AppStore代码示例：[点击此处](AppStore)
+[CLICK HERE](AppStore) to see code sample of open built-in AppStore.

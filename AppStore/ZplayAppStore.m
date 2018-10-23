@@ -65,8 +65,8 @@
 }
 
 - (void)preloadBelowIOS11 {
-    // 使用内置appstore预缓存功能在 iOS11.0 ~ 11.2.x的系统上会出现白屏现象，打开App Store链接
-    // 如果 itunesID == nil, 就直接返回
+    //Using the built-in AppStore pre-caching feature will appear white screen on iOS11.0 ~ 11.2.x system, please open the App Store link.
+    // If iTunesLink is nil, return
     NSString *osVersion = [UIDevice currentDevice].systemVersion;
     if (!self.itunesID || [osVersion hasPrefix:@"11.0"] || [osVersion hasPrefix:@"11.1"] ||
         [osVersion hasPrefix:@"11.2"]) {
@@ -91,7 +91,7 @@
 }
 
 - (void)openAppStore:(NSString *)iTunesLink {
-    // iTunesLink 为空 就直接返回
+    // If iTunesLink is nil, return
     if (iTunesLink.length == 0) {
         return;
     }
@@ -109,7 +109,8 @@
                                        completion:^{
                                            [self.appStoreDelegate appStoreDidDisappear];
                                        }];
-    // 11.3 以上第二次还是打开内置浏览器，11.0以下第二次就跳转App Store
+    //If OS version is 11.3 and above, still open built-in App Store after first time opening.
+    //If OS version below 11.0, it will jump to App Store after first time opening.
     if (SYSTEM_VERSION_LESS_THAN(@"11.0")) {
         self.appStoreLoaded = NO;
     }

@@ -18,11 +18,11 @@
 * 请监听 ZPLAY Ads 的关闭事件 `close_playable_ads`，在监听到该事件后，关闭 Webview，返回游戏或者应用
 
 #### 3.1 Android响应WebView的close事件示例
-1. 允许WebView执行Javascript代码
+a. 允许WebView执行Javascript代码
 ```
 mWebView.getSettings().setJavaScriptEnabled(true);
 ```
-2. 添加Javascript接口
+b. 添加Javascript接口
 ```
 mWebView.addJavascriptInterface(new ZPLAYAdsJavascriptInterface(), "ZPLAYAds");
 ```
@@ -41,11 +41,11 @@ private class ZPLAYAdsJavascriptInterface {
         }
     }
 ```
-3. ZPLAY Ads关闭事件会调用```ZPLAYAdsJavascriptInterface.onCloseSelected()```方法，请在此回调中处理关闭事务。
+c. ZPLAY Ads关闭事件会调用```ZPLAYAdsJavascriptInterface.onCloseSelected()```方法，请在此回调中处理关闭事务。
 
 #### 3.2 iOS监听WKWebView的关闭事件
 
-1.WKWebView添加```zplayads```脚本消息处理程序
+a.WKWebView添加```zplayads```脚本消息处理程序
 
 ```objective-c
 - (WKWebView *)previewAdWebView {
@@ -68,7 +68,7 @@ private class ZPLAYAdsJavascriptInterface {
 }
 ```
 
-2.监听```WKScriptMessageHandler```的代理方法
+b.监听```WKScriptMessageHandler```的代理方法
 
 ```objective-c
 #pragma mark - WKScriptMessageHandler

@@ -2,7 +2,7 @@
 
 ### 中文文档
 
-1. [接入后的检查文档](check_list.md)
+1. [接入时的检查清单](check_list.md)
 2. [接入文档](request_and_response.md)
 3. [接入代码示例](sample_of_request_and_response.md)
 

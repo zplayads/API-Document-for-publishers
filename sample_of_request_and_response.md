@@ -6,12 +6,12 @@
 
 | 操作系统 | 测试应用<br>（app_id） | 测试广告位<br>（ad_unit_id） | 广告位类型<br>（unit_type） |
 | -------- | ---------------------- | ---------------------------- | --------------------------- |
-| iOS      |                        |                              | 1: 插屏                     |
-| iOS      |                        |                              | 3: 原生                     |
-| iOS      |                        |                              | 4: 激励视频                 |
-| Android  |                        |                              | 1: 插屏                     |
-| Android  |                        |                              | 3: 原生                     |
-| Android  |                        |                              | 4: 激励视频                 |
+| iOS      | A650AB0D-7BFC-2A81-3066-D3170947C3DA | 19393189-C4EB-3886-60B9-13B39407064E | 1: 插屏                     |
+| iOS      | A650AB0D-7BFC-2A81-3066-D3170947C3DA | 25AED008-6B6F-BADB-F873-AE7CA61DFE98 | 3: 原生                     |
+| iOS      | A650AB0D-7BFC-2A81-3066-D3170947C3DA | BAE5DAAC-04A2-2591-D5B0-38FA846E45E7 | 4: 激励视频                 |
+| Android  | 5C5419C7-A2DE-88BC-A311-C3E7A646F6AF | 0868EBC0-7768-40CA-4226-F9924221C8EB | 1: 插屏                     |
+| Android  | 5C5419C7-A2DE-88BC-A311-C3E7A646F6AF | BB8452AD-06E7-140B-00DC-FD6CB6B40FAA | 3: 原生                     |
+| Android  | 5C5419C7-A2DE-88BC-A311-C3E7A646F6AF | 3FBEFA05-3A8B-2122-24C7-A87D0BC9FEEC | 4: 激励视频                 |
 
 ## 请求示例
 

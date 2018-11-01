@@ -75,7 +75,7 @@ Data format: UTF-8
 
 | Parameter       | Type               | mandatory | Description                                                                                                                             |
 | --------------- | ------------------ | --------- | --------------------------------------------------------------------------------------------------------------------------------------- |
-| ver             | string             | Y         | Protocol version,                                                                                                                       |
+| ver             | string             | Y         | Protocol version, current version is 1.0                                                                                                                      |
 | developer_token | string             | Y         | Developer token, offered by ZPLAY Ads account manager                                                                                   |
 | need_https      | int                | N         | For material's link or tracking url link, whether the prefix is https. 0 as default. 0: don’t need https, 1: need https for all links. |
 | app             | object             | Y         | APP information                                                                                                                         |

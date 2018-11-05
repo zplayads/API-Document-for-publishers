@@ -2,7 +2,7 @@
 
 ## Test token, app_id and ad_unit_id
 
-> After integration is complete, you can use test token（D0C85086-DC66-433E-9304-49EAB171D008）, test app and test ad unit to request an ad (as follows), check whether the integration is successful. 
+> After integration is complete, you can use test token（D0C85086-DC66-433E-9304-49EAB171D008）, test app and test ad unit to request an ad (as follows), check whether the integration is successful.
 
 | OS | TEST APP<br>（app_id） | TEST AD UNIT<br>（ad_unit_id） | AD UNIT TYPE<br>（unit_type） |
 | -------- | ---------------------- | ---------------------------- | --------------------------- |

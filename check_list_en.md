@@ -14,6 +14,8 @@
 
 - If the request from Android device, please be sure to pass at least one of parameter in `IMEI` `AdvertisingID` `AndroidID` `MAC`, otherwise no ad fill
 
+- Please make sure the app_id, app_name, app_cat, ad_unit_id, unit_type in request are same with the corresponding values that you have registered on [ZPLAY Ads Platform](https://wwww.zplayads.com) in advance.
+
 ## 3. Using WebView to Load ZPALY Ads HTML on Android device
 
 a. allow WebView to execute Javascript

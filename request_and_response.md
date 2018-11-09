@@ -1,37 +1,37 @@
-# API对接文档协议
+# API 对接文档协议
 
 - [API 对接文档协议](#api-%E5%AF%B9%E6%8E%A5%E6%96%87%E6%A1%A3%E5%8D%8F%E8%AE%AE)
-- [文档说明](#%E6%96%87%E6%A1%A3%E8%AF%B4%E6%98%8E)
-- [文档更新记录](#%E6%96%87%E6%A1%A3%E6%9B%B4%E6%96%B0%E8%AE%B0%E5%BD%95)
-- [接入准备](#%E6%8E%A5%E5%85%A5%E5%87%86%E5%A4%87)
-- [广告获取流程](#%E5%B9%BF%E5%91%8A%E8%8E%B7%E5%8F%96%E6%B5%81%E7%A8%8B)
-- [接入说明](#%E6%8E%A5%E5%85%A5%E8%AF%B4%E6%98%8E)
-    - [请求 URL](#%E8%AF%B7%E6%B1%82-url)
-    - [通信方式及编码](#%E9%80%9A%E4%BF%A1%E6%96%B9%E5%BC%8F%E5%8F%8A%E7%BC%96%E7%A0%81)
-    - [请求头](#%E8%AF%B7%E6%B1%82%E5%A4%B4)
-    - [Request 信息](#request-%E4%BF%A1%E6%81%AF)
-        - [app 对象信息](#app-%E5%AF%B9%E8%B1%A1%E4%BF%A1%E6%81%AF)
-        - [Device 对象信息](#device-%E5%AF%B9%E8%B1%A1%E4%BF%A1%E6%81%AF)
-            - [Screen 对象信息](#screen-%E5%AF%B9%E8%B1%A1%E4%BF%A1%E6%81%AF)
-            - [Geo 对象信息](#geo-%E5%AF%B9%E8%B1%A1%E4%BF%A1%E6%81%AF)
-        - [User 对象信息](#user-%E5%AF%B9%E8%B1%A1%E4%BF%A1%E6%81%AF)
-        - [Ad 对象信息](#ad-%E5%AF%B9%E8%B1%A1%E4%BF%A1%E6%81%AF)
-            - [Native 对象信息](#native-%E5%AF%B9%E8%B1%A1%E4%BF%A1%E6%81%AF)
-                - [Asset 对象信息](#asset-%E5%AF%B9%E8%B1%A1%E4%BF%A1%E6%81%AF)
-    - [Response 返回信息](#response-%E8%BF%94%E5%9B%9E%E4%BF%A1%E6%81%AF)
-        - [Ad 对象信息](#ad-%E5%AF%B9%E8%B1%A1%E4%BF%A1%E6%81%AF)
-            - [Native 对象信息](#native-%E5%AF%B9%E8%B1%A1%E4%BF%A1%E6%81%AF)
-            - [Asset 对象信息](#asset-%E5%AF%B9%E8%B1%A1%E4%BF%A1%E6%81%AF)
-                - [Image 对象信息](#image-%E5%AF%B9%E8%B1%A1%E4%BF%A1%E6%81%AF)
-                - [Title 对象信息](#title-%E5%AF%B9%E8%B1%A1%E4%BF%A1%E6%81%AF)
-                - [Data 对象信息](#data-%E5%AF%B9%E8%B1%A1%E4%BF%A1%E6%81%AF)
-            - [Link 对象信息](#link-%E5%AF%B9%E8%B1%A1%E4%BF%A1%E6%81%AF)
-        - [附件](#%E9%99%84%E4%BB%B6)
-            - [应用类别](#%E5%BA%94%E7%94%A8%E7%B1%BB%E5%88%AB)
+    - [文档说明](#%E6%96%87%E6%A1%A3%E8%AF%B4%E6%98%8E)
+    - [文档更新记录](#%E6%96%87%E6%A1%A3%E6%9B%B4%E6%96%B0%E8%AE%B0%E5%BD%95)
+    - [接入准备](#%E6%8E%A5%E5%85%A5%E5%87%86%E5%A4%87)
+    - [广告获取流程](#%E5%B9%BF%E5%91%8A%E8%8E%B7%E5%8F%96%E6%B5%81%E7%A8%8B)
+    - [接入说明](#%E6%8E%A5%E5%85%A5%E8%AF%B4%E6%98%8E)
+        - [请求 URL](#%E8%AF%B7%E6%B1%82-url)
+        - [通信方式及编码](#%E9%80%9A%E4%BF%A1%E6%96%B9%E5%BC%8F%E5%8F%8A%E7%BC%96%E7%A0%81)
+        - [请求头](#%E8%AF%B7%E6%B1%82%E5%A4%B4)
+        - [Request 信息](#request-%E4%BF%A1%E6%81%AF)
+            - [app 对象信息](#app-%E5%AF%B9%E8%B1%A1%E4%BF%A1%E6%81%AF)
+            - [Device 对象信息](#device-%E5%AF%B9%E8%B1%A1%E4%BF%A1%E6%81%AF)
+                - [Screen 对象信息](#screen-%E5%AF%B9%E8%B1%A1%E4%BF%A1%E6%81%AF)
+                - [Geo 对象信息](#geo-%E5%AF%B9%E8%B1%A1%E4%BF%A1%E6%81%AF)
+            - [User 对象信息](#user-%E5%AF%B9%E8%B1%A1%E4%BF%A1%E6%81%AF)
+            - [Ad 对象信息](#ad-%E5%AF%B9%E8%B1%A1%E4%BF%A1%E6%81%AF)
+                - [Native 对象信息](#native-%E5%AF%B9%E8%B1%A1%E4%BF%A1%E6%81%AF)
+                    - [Asset 对象信息](#asset-%E5%AF%B9%E8%B1%A1%E4%BF%A1%E6%81%AF)
+        - [Response 返回信息](#response-%E8%BF%94%E5%9B%9E%E4%BF%A1%E6%81%AF)
+            - [Ad 对象信息](#ad-%E5%AF%B9%E8%B1%A1%E4%BF%A1%E6%81%AF-1)
+                - [Native 对象信息](#native-%E5%AF%B9%E8%B1%A1%E4%BF%A1%E6%81%AF-1)
+                - [Asset 对象信息](#asset-%E5%AF%B9%E8%B1%A1%E4%BF%A1%E6%81%AF-1)
+                    - [Image 对象信息](#image-%E5%AF%B9%E8%B1%A1%E4%BF%A1%E6%81%AF)
+                    - [Title 对象信息](#title-%E5%AF%B9%E8%B1%A1%E4%BF%A1%E6%81%AF)
+                    - [Data 对象信息](#data-%E5%AF%B9%E8%B1%A1%E4%BF%A1%E6%81%AF)
+                - [Link 对象信息](#link-%E5%AF%B9%E8%B1%A1%E4%BF%A1%E6%81%AF)
+            - [附件](#%E9%99%84%E4%BB%B6)
+                - [应用类别](#%E5%BA%94%E7%94%A8%E7%B1%BB%E5%88%AB)
 
 ## 文档说明
 
-此文档仅供开发者与ZPLAY Ads平台使用API方法对接时使用。
+此文档仅供开发者与 ZPLAY Ads 平台使用 API 方法对接时使用。
 
 ## 文档更新记录
 
@@ -59,8 +59,8 @@ ZPLAY Ads 和 开发者 之间的基础通信协议采用 HTTP 协议、POST 方
 
 ### 请求头
 
-| http 头信息段   | 说明                                                                                                                                                                                                              |
-| --------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| http 头信息段   | 说明                                                                                                                                                                                                            |
+| --------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | X-Forwarded-For | 包含客户端真正的请求地址，例：“8.8.8.8”。如果通过服务端对接，请务必传递客户端的地址，使用服务器地址会被视为作弊流量屏蔽                                                                                         |
 | User-Agent      | 移动设备的 User-Agent，从服务端使用非真实 User-Agent 会被视为问题流量。例：“Mozilla/5.0 (iPad; CPU OS 5_0 like Mac OS X)， AppleWebKit/534.46 (KHTML， like Gecko)， Version/5.1 Mobile/9A334 Safari/7534.48.3” |
 
@@ -78,40 +78,39 @@ ZPLAY Ads 和 开发者 之间的基础通信协议采用 HTTP 协议、POST 方
 
 #### app 对象信息
 
-| 字段类型  | 类型   | 必须 | 描述                                                                                                        |
-| --------- | ------ | ---- | ----------------------------------------------------------------------------------------------------------- |
-| app_id    | string | 是   | 应用 ID，请提前将您的应用注册到 [ZPLAY Ads 平台](https://www.zplayads.com)，该 ID 为注册后平台生成的应用 ID |
-| app_name  | string | 是   | 应用名称                                                                                                    |
-| bundle_id | string | 是   | 对于 Android，是应用的 packageName；对于 iOS，是 iTunes ID                                                  |
-| version   | string | 是   | 应用版本号                                                                                                  |
-| cat       | string | 否   | 应用类别，如“Action”，内容详见[应用类别](#应用类别)                                                       |
+| 字段类型  | 类型   | 必须 | 描述                                                                                                                                      |
+| --------- | ------ | ---- | ----------------------------------------------------------------------------------------------------------------------------------------- |
+| app_id    | string | 是   | 应用 ID，请提前将您的应用注册到 [ZPLAY Ads 平台](https://www.zplayads.com)，该 ID 为注册后平台生成的应用 ID                               |
+| app_name  | string | 否   | 应用名称，如果填写，请确保与注册到[ZPLAY Ads 平台](https://www.zplayads.com)的应用名称保持一致                                            |
+| bundle_id | string | 是   | 对于 Android，是应用的 packageName；对于 iOS，是 iTunes ID                                                                                |
+| version   | string | 是   | 应用版本号                                                                                                                                |
+| cat       | string | 否   | 应用类别，如“Action”，内容详见[应用类别](#应用类别)，如果填写，请确保与注册到[ZPLAY Ads 平台](https://www.zplayads.com)的应用分类保持一致 |
 
 #### Device 对象信息
 
-| 字段名称        | 类型    | 必须 | 描述                                                                  |
-| --------------- | ------- | ---- | --------------------------------------------------------------------- |
-| model           | string  | 是   | 设备型号                                                              |
-| manufacturer    | string  | 否   | 生产厂商，例如：“Samsung”                                           |
-| brand           | string  | 否   | 手机品牌，例如：“MI4”                                               |
-| plmn            | string  | 是   | 国家运营商编号                                                        |
-| device_type     | string  | 是   | 设备类型，“phone”，“tablet”                                       |
-| adt             | boolean | 否   | 是否允许通过追踪用户行为进行定向投放，0：不允许，1：允许，默认为 1    |
-| connection_type | string  | 是   | 网络类型，空串表示未知，值为 wifi，2g，3g，4g，ethernet，cell_unknown |
-| carrier         | int     | 是   | 运营商，0：移动，1：电信，3：联通，4：unknown                         |
-| orientation     | int     | 否   | 设备方向，“0”为横屏，“1”为竖屏                                    |
-| mac             | string  | 否   | MAC 地址, md5 散列                                                    |
-| imei            | string  | 否   | IMEI 码，md5 散列。iOS 没有                                           |
-| imsi            | string  | 否   | imsi，md5 散列                                                        |
-| android_id      | string  | 否   | Android Device ID，md5 散列。Android 手机不传会影响填充               |
-| android_adid    | string  | 否   | Android Advertising ID                                                |
-| idfa            | string  | 是   | iOS 系统的 idfa。                                                     |
-| idfv            | string  | 否   | idfv                                                                  |
-| openudid        | string  | 否   | openudid                                                              |
-| language        | string  | 是   | 系统语言                                                              |
-| os_type         | string  | 是   | 操作系统类型，值为"iOS"， "Android"， "WP"(windows phone)             |
-| os_version      | string  | 是   | 操作系统版本，值为 11.4.1，12.0，7.1.0                                |
-| screen          | 对象    | 是   | 设备的屏幕信息                                                        |
-| geo             | 对象    | 否   | 设备的位置信息                                                        |
+| 字段名称        | 类型    | 必须 | 描述                                                                                                                                   |
+| --------------- | ------- | ---- | -------------------------------------------------------------------------------------------------------------------------------------- |
+| model           | string  | 是   | 设备型号                                                                                                                               |
+| manufacturer    | string  | 否   | 生产厂商，例如：“Samsung”                                                                                                              |
+| brand           | string  | 否   | 手机品牌，例如：“MI4”                                                                                                                  |
+| plmn            | string  | 是   | 国家运营商编号                                                                                                                         |
+| device_type     | string  | 是   | 设备类型，“phone”，“tablet”                                                                                                            |
+| adt             | boolean | 否   | 是否允许通过追踪用户行为进行定向投放，0：不允许，1：允许，默认为 1                                                                     |
+| connection_type | string  | 是   | 网络类型，空串表示未知，值为 wifi，2g，3g，4g，ethernet，cell_unknown                                                                  |
+| carrier         | int     | 是   | 运营商，0：移动，1：电信，3：联通，4：unknown                                                                                          |
+| orientation     | int     | 否   | 设备方向，“0”为横屏，“1”为竖屏                                                                                                         |
+| mac             | string  | 否   | MAC 地址, md5 散列                                                                                                                     |
+| imei            | string  | 否   | IMEI 码，md5 散列。iOS 没有                                                                                                            |
+| android_id      | string  | 否   | Android Device ID，md5 散列。Android 手机不传会影响填充                                                                                |
+| android_adid    | string  | 否   | Android Advertising ID                                                                                                                 |
+| idfa            | string  | 是   | iOS 系统的 idfa                                                                                                                        |
+| idfv            | string  | 否   | idfv                                                                                                                                   |
+| openudid        | string  | 否   | openudid                                                                                                                               |
+| language        | string  | 是   | 系统语言                                                                                                                               |
+| os_type         | string  | 是   | 操作系统类型，值为"iOS"， "Android"                                                                                                    |
+| os_version      | string  | 是   | 操作系统版本，值为 11.4.1，12.0，7.1.0 等，请注意：iOS 的主系统版本为 9.x，10.x，11.x，12.x；Android 的主系统版本为 5.x，6.x，7.x，8.x |
+| screen          | 对象    | 是   | 设备的屏幕信息                                                                                                                         |
+| geo             | 对象    | 否   | 设备的位置信息                                                                                                                         |
 
 ##### Screen 对象信息
 
@@ -142,17 +141,17 @@ ZPLAY Ads 和 开发者 之间的基础通信协议采用 HTTP 协议、POST 方
 
 #### Ad 对象信息
 
-| 字段名称   | 类别   | 必须 | 描述                                                                                                                              |
-| ---------- | ------ | ---- | --------------------------------------------------------------------------------------------------------------------------------- |
-| unit_type  | int    | 是   | 广告位类型，0：横幅，1：插屏，2：开屏，3：原生，4：视频，当前仅支持插屏，原生和视频三种类型，类型需与您广告位 ID 类型保持一致     |
-| ad_unit_id | string | 否   | 广告位 id，请提前将您的广告位注册到 [ZPLAY Ads 平台](https://www.zplayads.com) ，该 ID 为注册后生成的 ID |
-| native     | 对象   | 否   | 原生广告位信息                                                                                                                    |
+| 字段名称   | 类别   | 必须 | 描述                                                                                                                          |
+| ---------- | ------ | ---- | ----------------------------------------------------------------------------------------------------------------------------- |
+| unit_type  | int    | 是   | 广告位类型，0：横幅，1：插屏，2：开屏，3：原生，4：视频，当前仅支持插屏，原生和视频三种类型，类型需与您广告位 ID 类型保持一致 |
+| ad_unit_id | string | 是   | 广告位 id，请提前将您的广告位注册到 [ZPLAY Ads 平台](https://www.zplayads.com) ，该 ID 为注册后生成的 ID                      |
+| native     | 对象   | 否   | 原生广告位信息，当广告位是原生广告位时，必须填写；当广告位为激励视频和插屏时，必须不填写                                      |
 
 ##### Native 对象信息
 
 | 字段名称 | 类型       | 必须 | 描述                                                                                                                   |
 | -------- | ---------- | ---- | ---------------------------------------------------------------------------------------------------------------------- |
-| layout   | int        | 是   | 原生广告类型，1： 内容墙， 2： 应用墙，3：新闻流，4：聊天列表，5：走马灯广告，6：内容流，7：矩阵                      |
+| layout   | int        | 否   | 原生广告类型，1： 内容墙， 2： 应用墙，3：新闻流，4：聊天列表，5：走马灯广告，6：内容流，7：矩阵                       |
 | assets   | Asset 数组 | 是   | 原生广告元素列表，当前有 5 种元素，分别为标题 (title)， Icon(img)， Large image (img)，Description (data)，得分 (data) |
 
 ###### Asset 对象信息
@@ -169,11 +168,11 @@ ZPLAY Ads 和 开发者 之间的基础通信协议采用 HTTP 协议、POST 方
 
 **Image 对象信息**
 
-| 字段名称 | 类型 | 必须 | 描述                                                                                                                                                              |
-| -------- | ---- | ---- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| type     | int  | 是   | image 元素的类型，1：图标，2：品牌 Logo，3：大图，4：“免安装试玩”按钮，当用户点击“免安装试玩”按钮时，请将response.ads中的 playable_ads_html 加载到 webview 中 |
-| width    | int  | 是   | image 元素的宽度，单位为像素                                                                                                                                      |
-| height   | int  | 是   | image 元素的高度，单位为像素                                                                                                                                      |
+| 字段名称 | 类型 | 必须 | 描述                                                                                                                                                            |
+| -------- | ---- | ---- | --------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| type     | int  | 是   | image 元素的类型，1：图标，2：品牌 Logo，3：大图，4：“免安装试玩”按钮，当用户点击“免安装试玩”按钮时，请将 response.ads 中的 playable_ads_html 加载到 webview 中 |
+| width    | int  | 是   | image 元素的宽度，单位为像素                                                                                                                                    |
+| height   | int  | 是   | image 元素的高度，单位为像素                                                                                                                                    |
 
 **Title 对象信息**
 
@@ -203,7 +202,7 @@ ZPLAY Ads 和 开发者 之间的基础通信协议采用 HTTP 协议、POST 方
 | ----------------- | ------ | ---- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | id                | string | 是   | 广告 id                                                                                                                                                                                             |
 | ad_unit_id        | string | 是   | 广告位 id，与 request 中的 ad_unit_id 对应                                                                                                                                                          |
-| app_bundle        | string | 是   | 对于 Android，是应用的 packageName；对于 iOS，是 iTunes ID ，请监听可玩广告的下载事件，在监听到时在 APP 内部打开 APP Store 或者 Google Play，并打开跳转链接                     |
+| app_bundle        | string | 是   | 对于 Android，是应用的 packageName；对于 iOS，是 iTunes ID ，请监听可玩广告的下载事件，在监听到时在 APP 内部打开 APP Store 或者 Google Play，并打开跳转链接                                         |
 | playable_ads_html | string | 是   | 可玩广告的 html 代码，请确保使用应用内的 webview 中打开                                                                                                                                             |
 | target_url        | string | 是   | 可玩广告的跳转地址                                                                                                                                                                                  |
 | target_url_type   | int    | 是   | 打开可玩广告跳转地址时的打开方式，1：在 app 内 webview 打开目标链接，2：在系统浏览器打开目标链接，3：打开地图，4：拨打电话，5：播放视频，6：App 下载，请确保在应用内打开 APP Store 或者 Google Play |
@@ -214,7 +213,7 @@ ZPLAY Ads 和 开发者 之间的基础通信协议采用 HTTP 协议、POST 方
 
 | 字段名称    | 类型           | 必须 | 描述                                                                                                           |
 | ----------- | -------------- | ---- | -------------------------------------------------------------------------------------------------------------- |
-| assets      | Asset 对象数组 | 是   | 原生广告元素列表，当前主要支持5种元素，分别为标题 (title)， 图标(img)， 大图(img)， 描述 (data)，得分 (data) |
+| assets      | Asset 对象数组 | 是   | 原生广告元素列表，当前主要支持 5 种元素，分别为标题 (title)， 图标(img)， 大图(img)， 描述 (data)，得分 (data) |
 | imp_tracker | 数组           | 否   | 展示跟踪地址数组，需要返回一个 1x1 像素图片                                                                    |
 | link        | 对象           | 是   | 原生广告的目标链接，默认链接对象，当 assets 中不包括 link 对象时，使用此对象                                   |
 
@@ -252,35 +251,35 @@ ZPLAY Ads 和 开发者 之间的基础通信协议采用 HTTP 协议、POST 方
 
 ##### Link 对象信息
 
-| 字段名称        | 类型   | 必须 | 描述                                                                                                                                                                                                |
-| --------------- | ------ | ---- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| target_url      | string | 是   | 目标链接                                                                                                                                                          |
-| app_bundle      | string | 是   | 对于 Android，是应用的 packageName；对于 iOS，是 iTunes ID ，请监听可玩广告安装事件，在监听到时在 APP 内部打开 APP Store 或者 Google Play，并打开跳转链接，监听事件可参考[接入时的检查清单](check_list.md)                     |
-| click_tracker   | 数组   | 否   | 点击追踪链接                                                                                                                                                                                        |
-| target_url_type | int    | 是   | 打开可玩广告跳转地址时的打开方式，1：在 app 内 webview 打开目标链接，2：在系统浏览器打开目标链接，3：打开地图，4：拨打电话，5：播放视频，6：App 下载，请确保在应用内打开 APP Store 或者 Google Play |
+| 字段名称        | 类型   | 必须 | 描述                                                                                                                                                                                                       |
+| --------------- | ------ | ---- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| target_url      | string | 是   | 目标链接                                                                                                                                                                                                   |
+| app_bundle      | string | 是   | 对于 Android，是应用的 packageName；对于 iOS，是 iTunes ID ，请监听可玩广告安装事件，在监听到时在 APP 内部打开 APP Store 或者 Google Play，并打开跳转链接，监听事件可参考[接入时的检查清单](check_list.md) |
+| click_tracker   | 数组   | 否   | 点击追踪链接                                                                                                                                                                                               |
+| target_url_type | int    | 是   | 打开可玩广告跳转地址时的打开方式，1：在 app 内 webview 打开目标链接，2：在系统浏览器打开目标链接，3：打开地图，4：拨打电话，5：播放视频，6：App 下载，请确保在应用内打开 APP Store 或者 Google Play        |
 
 #### 附件
 
 ##### 应用类别
 
-| ID                                   | 应用类别     | Category      |
-| ------------------------------------ | ------------ | ------------- |
-| AD9C1D4C-272D-7E6B-BB64-B770A8A5B9B0 | 动作游戏     | Action        |
-| AED099F1-2B7E-9A52-9F2E-D4F7CFE500AA | 益智解谜     | Puzzle        |
-| 7AD7776C-20D1-7A2A-9388-0D67A44FF399 | 卡牌游戏     | Card          |
-| 36FBA1A1-C5E7-D9F6-9170-9BA0DA13CBF9 | 休闲         | Casual        |
-| 1CF3914A-E099-92A5-0ECF-D3C05A177253 | 冒险游戏     | Adventure     |
-| 40E3C001-ADF6-A950-6E73-5DB66B0648E3 | 角色扮演游戏 | Role-playing  |
-| 7DA00174-66E2-5119-6355-331049316283 | 策略游戏     | Strategy game |
-| F3C58318-6A2E-223E-C3D5-5936C48196B1 | 街机游戏     | Arcade        |
-| AEDADC6C-562B-751F-E137-907A605BAA6C | 儿童         | Kids          |
-| 34879F45-896A-FFA9-582E-D576345F1D9A | 竞速游戏     | Racing        |
-| C91C130E-3166-FB45-8951-25DC86850C12 | 聚会游戏     | Family        |
-| E13A497E-BCFA-1E66-05E4-31B716765B5B | 模拟游戏     | Simulation    |
-| CEDC63B5-9A57-DFD0-75CB-1289DEB7578A | 体育         | Sports        |
-| 48EF79CA-B384-F7A8-736A-423E8D62A023 | 文字游戏     | Word          |
-| 7F43E937-69EA-5C4A-954B-E52B10094225 | 问答游戏     | Trivia        |
-| 59B07A55-A40B-0D29-BF2D-CF29AFED540E | 音乐         | Music         |
-| EC5336A4-A434-BDDA-4246-6F50DA2EF63E | 桌面游戏     | Board         |
-| 57728DCB-9EC5-DC08-B999-3F9DDDF66083 | 赌场         | Casino        |
-| CB45DD59-EF28-EC0D-423B-2ED10F54C8D7 | 教育         | Education     |
+| 应用类别     | Category      |
+| ------------ | ------------- |
+| 动作游戏     | Action        |
+| 益智解谜     | Puzzle        |
+| 卡牌游戏     | Card          |
+| 休闲         | Casual        |
+| 冒险游戏     | Adventure     |
+| 角色扮演游戏 | Role-playing  |
+| 策略游戏     | Strategy game |
+| 街机游戏     | Arcade        |
+| 儿童         | Kids          |
+| 竞速游戏     | Racing        |
+| 聚会游戏     | Family        |
+| 模拟游戏     | Simulation    |
+| 体育         | Sports        |
+| 文字游戏     | Word          |
+| 问答游戏     | Trivia        |
+| 音乐         | Music         |
+| 桌面游戏     | Board         |
+| 赌场         | Casino        |
+| 教育         | Education     |

@@ -1,36 +1,33 @@
 # API OF INTEGRATION
 
 - [API OF INTEGRATION](#api-of-integration)
-- [Introduction of document](#Introduction-of-document)
-- [Changelog](#Changelog)
-- [Preparation before integration](#preparation-before-integration)
-- [Steps of request](#steps-of-request)
-- [Instruction](#instruction)
-    - [Request URL](#request-url)
-    - [Communication Mode and Encoding](#communication-mode-and-encoding)
-    - [Request Header](#request-header)
-    - [Request](#request)
-        - [APP Information](#app-information)
-        - [Device Information](#device-information)
-            - [Screen Information](#screen-information)
-            - [Geo Information](#Geo-information)
-        - [User Information](#User-information)
-        - [Ad Information](#Ad-information)
-            - [Native Information](#native-information)
-                - [Asset Information](#asset-information)
-                - [Image Information](#image-information)
-                - [Title Information](#title-information)
-                - [Data Information](#data-information)
-    - [Response Information](#response-information)
-        - [Ad Information](#ad-information)
-            - [Native Information](#native-information)
-            - [Asset Information](#asset-information)
-                - [Image Information](#image-information)
-                - [Title Information](#title-information)
-                - [Data Information](#aata-information)
-            - [Link Information](#link-information)
-        - [ATTACHMENT](#attachment)
-            - [CATEGORY](#category)
+    - [Introduction of document](#introduction-of-document)
+    - [Changelog](#changelog)
+    - [Preparation before integration](#preparation-before-integration)
+    - [Steps of getting ads](#steps-of-getting-ads)
+    - [Instruction](#instruction)
+        - [Request URL](#request-url)
+        - [Communication Mode and Encoding](#communication-mode-and-encoding)
+        - [Request Header](#request-header)
+        - [Request](#request)
+            - [APP Information](#app-information)
+            - [Device Information](#device-information)
+                - [Screen Information](#screen-information)
+                - [Geo Information](#geo-information)
+            - [User Information](#user-information)
+            - [Ad Information](#ad-information)
+                - [Native Information](#native-information)
+                    - [Asset Information](#asset-information)
+        - [Response Information](#response-information)
+            - [Ad Information](#ad-information-1)
+                - [Native Information](#native-information-1)
+                - [Asset Information](#asset-information-1)
+                    - [Image Information](#image-information)
+                    - [Title Information](#title-information)
+                    - [Data Information](#data-information)
+                - [Link Information](#link-information)
+            - [ATTACHMENT](#attachment)
+                - [CATEGORY](#category)
 
 ## Introduction of document
 
@@ -66,32 +63,32 @@ Data format: UTF-8
 
 ### Request Header
 
-| http header information | instruction                                                                                                                                                                                                                                   |
-| ----------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| http header information | instruction                                                                                                                                                                                                                                 |
+| ----------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | X-Forwarded-For         | Include the real request address of the client, e.g. “8.8.8.8”. If integrated via server, please pass client address because server address will be blocked and regarded as fraud traffic.                                                  |
 | User-Agent              | User Agent of mobile device，e.g. “Mozilla/5.0 (iPad; CPU OS 5_0 like Mac OS X) AppleWebKit/534.46 (KHTML, like Gecko) Version/5.1 Mobile/9A334 Safari/7534.48.3”. Non-real User-Agent from server will be regarded as problematic traffic. |
 
 ### Request
 
-| Parameter       | Type               | mandatory | Description                                                                                                                             |
-| --------------- | ------------------ | --------- | --------------------------------------------------------------------------------------------------------------------------------------- |
-| ver             | string             | Y         | Protocol version, current version is 1.0                                                                                                                      |
-| developer_token | string             | Y         | Developer token, offered by ZPLAY Ads account manager                                                                                   |
+| Parameter       | Type               | mandatory | Description                                                                                                                            |
+| --------------- | ------------------ | --------- | -------------------------------------------------------------------------------------------------------------------------------------- |
+| ver             | string             | Y         | Protocol version, current version is 1.0                                                                                               |
+| developer_token | string             | Y         | Developer token, offered by ZPLAY Ads account manager                                                                                  |
 | need_https      | int                | N         | For material's link or tracking url link, whether the prefix is https. 0 as default. 0: don’t need https, 1: need https for all links. |
-| app             | object             | Y         | APP information                                                                                                                         |
-| device          | object             | Y         | Device information                                                                                                                      |
-| user            | object             | N         | User information                                                                                                                        |
-| ads             | ad array of object | Y         | Ad information                                                                                                                          |
+| app             | object             | Y         | APP information                                                                                                                        |
+| device          | object             | Y         | Device information                                                                                                                     |
+| user            | object             | N         | User information                                                                                                                       |
+| ads             | ad array of object | Y         | Ad information                                                                                                                         |
 
 #### APP Information
 
-| Parameter | Type   | mandatory | Description                                                                                         |
-| --------- | ------ | --------- | --------------------------------------------------------------------------------------------------- |
-| app_id    | string | Y         | APP ID, generated by ZPLAYAds after you registered the app on [ZPLAY Ads](https://www.zplayads.com) |
-| app_name  | string | Y         | APP name                                                                                            |
-| bundle_id | string | Y         | PackageName in Android，such as "com.zplayads.demo"；iTunes ID in iOS, such as "834878585"                               |
-| version   | string | Y         | application version                                                                                 |
-| cat       | string | N         | application category, such as"Action"，category refer to [CATEGORY](#CATEGORY)                      |
+| Parameter | Type   | mandatory | Description                                                                                                                                                                                                            |
+| --------- | ------ | --------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| app_id    | string | Y         | APP ID, generated by ZPLAYAds after you registered the app on [ZPLAY Ads](https://www.zplayads.com)                                                                                                                    |
+| app_name  | string | N         | APP name, please make sure this value is same with the name that you have registered on[ZPLAY Ads 平台](https://www.zplayads.com) in advance                                                                           |
+| bundle_id | string | Y         | PackageName in Android，such as "com.zplayads.demo"；iTunes ID in iOS, such as "834878585"                                                                                                                             |
+| version   | string | Y         | application version                                                                                                                                                                                                    |
+| cat       | string | N         | application category, such as"Action"，category refer to [CATEGORY](#CATEGORY). please make sure this value is same with the category that you have registered on[ZPLAY Ads 平台](https://www.zplayads.com) in advance |
 
 #### Device Information
 
@@ -108,15 +105,14 @@ Data format: UTF-8
 | orientation     | int     | N         | Device orientation, 0: landscape, 1: portrait                                                                                                                                                                                                                                                                                                                                            |
 | mac             | string  | N         | Media access control address, is a unique identifier assigned to a network interface controller (NIC) for communications at the data link layer of a network segment. MAC addresses are used as a network address for most IEEE 802 network technologies, including Ethernet and Wi-Fi. In this context, MAC addresses are used in the medium access control protocol sublayer. Md5 Hash |
 | imei            | string  | N         | International Mobile Equipment Identity, is a number, usually unique, to identify 3GPP and iDEN mobile phones, as well as some satellite phones. (sending meid(mobile equipment identifier) if the mobile is CDMA2000). Md5 Hash                                                                                                                                                         |
-| imsi            | string  | N         | International mobile subscriber identity, is used to identify the user of a cellular network and is a unique identification associated with all cellular networks. Md5 Hash                                                                                                                                                                                                              |
 | android_id      | string  | N         | Android ID is an unique ID to each device. It is used to identify your device for market downloads, Md5 Hash, no value in Android device will affect ad fill.                                                                                                                                                                                                                            |
 | android_adid    | string  | N         | AAID(Google Advertising ID)                                                                                                                                                                                                                                                                                                                                                              |
 | idfa            | string  | Y         | IDFA( Identifier for Advertising)                                                                                                                                                                                                                                                                                                                                                        |
 | idfv            | string  | N         | identifierForVendor, please view [more info](https://developer.apple.com/documentation/uikit/uidevice/1620059-identifierforvendor)                                                                                                                                                                                                                                                       |
 | openudid        | string  | N         | openudid                                                                                                                                                                                                                                                                                                                                                                                 |
 | language        | string  | Y         | Device language                                                                                                                                                                                                                                                                                                                                                                          |
-| os_type         | string  | Y         | Operation system, "iOS", " Android", "WP"(windows phone)                                                                                                                                                                                                                                                                                                                                 |
-| os_version      | string  | Y         | Operation system version, such as 11.4.1，12.0，7.1.0                                                                                                                                                                                                                                                                                                                                    |
+| os_type         | string  | Y         | Operation system, "iOS", " Android"                                                                                                                                                                                                                                                                                                                                                      |
+| os_version      | string  | Y         | Operation system version, such as 11.4.1，12.0，7.1.0. Please note: the main version of iOS are limited in 9.x，10.x，11.x，12.x；the main version of Android are limited in 5.x，6.x，7.x，8.x                                                                                                                                                                                          |
 | screen          | object  | Y         | Device screen info                                                                                                                                                                                                                                                                                                                                                                       |
 | geo             | object  | N         | Device geo info                                                                                                                                                                                                                                                                                                                                                                          |
 
@@ -152,15 +148,15 @@ Data format: UTF-8
 | Parameter  | Type   | Mandatory | Description                                                                                                                        |
 | ---------- | ------ | --------- | ---------------------------------------------------------------------------------------------------------------------------------- |
 | unit_type  | int    | Y         | ad unit type, 0: banner, 1: interstitial, 2: splash, 3: native, 4: rewarded video, unit_type should be same with your ad unit type |
-| ad_unit_id | string | N         | Ad unit id, generated by ZPLAYAds after you registered your ad unit on [ZPLAY Ads](https://www.zplayads.com)                       |
-| native     | object | N         | Native information                                                                                                                 |
+| ad_unit_id | string | Y         | Ad unit id, generated by ZPLAYAds after you registered your ad unit on [ZPLAY Ads](https://www.zplayads.com)                       |
+| native     | object | N         | Native information, it's mandatory when unit_type is 3; it should not fill when unit_type isn't 3                                  |
 
 ##### Native Information
 
 | Parameter | Type           | Mandatory | Description                                                                                                                                               |
 | --------- | -------------- | --------- | --------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| layout    | int            | Y         | Native types，1: content wall, 2: app wall, 3: news stream， 4: chat list，5:scroll ads，6:content stream，7:matrix, only content stream is supported now |
-| assets    | array of asset | Y         | Native assets，currently there’re five elements: Title(data), Icon(img), Large image (img), Description (data) and score(data)                           |
+| layout    | int            | N         | Native types，1: content wall, 2: app wall, 3: news stream， 4: chat list，5:scroll ads，6:content stream，7:matrix, only content stream is supported now |
+| assets    | array of asset | Y         | Native assets，currently there’re five elements: Title(data), Icon(img), Large image (img), Description (data) and score(data)                            |
 
 ###### Asset Information
 
@@ -206,16 +202,16 @@ Data format: UTF-8
 
 #### Ad Information
 
-| Parameter         | Type   | Mandatory | Description                                                                                                                                                                                                                                                                                                                                                                                              |
-| ----------------- | ------ | --------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| id                | string | Y         | Ad id                                                                                                                                                                                                                                                                                                                                                                                                    |
-| ad_unit_id        | string | Y         | Ad unit id, it's the same with ad_unit_id in request                                                                                                                                                                                                                                                                                                                                                     |
-| app_bundle        | string | Y         | APP packageName for Android, Bundle ID for iOS, please listen to install event, open build-in APP Store or Google Play                                                                                                                                                                                                                                                                                   |
-| playable_ads_html | string | Y         | Playable ad HTML snippet, make sure to load it with in-app webview                                                                                                                                                                                                                                                                                                                                       |
-| target_url        | string | Y         | Target url to download APP, which will jump to when user click ad                                                                                                                                                                                                                                                                                                                                        |
+| Parameter         | Type   | Mandatory | Description                                                                                                                                                                                                                        |
+| ----------------- | ------ | --------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| id                | string | Y         | Ad id                                                                                                                                                                                                                              |
+| ad_unit_id        | string | Y         | Ad unit id, it's the same with ad_unit_id in request                                                                                                                                                                               |
+| app_bundle        | string | Y         | APP packageName for Android, Bundle ID for iOS, please listen to install event, open build-in APP Store or Google Play                                                                                                             |
+| playable_ads_html | string | Y         | Playable ad HTML snippet, make sure to load it with in-app webview                                                                                                                                                                 |
+| target_url        | string | Y         | Target url to download APP, which will jump to when user click ad                                                                                                                                                                  |
 | target_url_type   | int    | Y         | Type of actions when user click ad, 1: open the url within webview in-app, 2: open the url within system browser, 3: open map, 4: open dial, 5: play video, 6: download App, make sure to open App Store or Google Play in the app |
-| price             | float  | N         | Ad price, empty means 0, unit: cent                                                                                                                                                                                                                                                                                                                                                                      |
-| native            | object | N         | Native object, it will return native object if unit_type is native                                                                                                                                                                                                                                                                                                                                       |
+| price             | float  | N         | Ad price, empty means 0, unit: cent                                                                                                                                                                                                |
+| native            | object | N         | Native object, it will return native object if unit_type is native                                                                                                                                                                 |
 
 ##### Native Information
 
@@ -223,7 +219,7 @@ Data format: UTF-8
 | ----------- | -------------- | --------- | --------------------------------------------------------------------------------------------------------------------------------------- |
 | assets      | array of asset | Y         | Native ad element list, five type elements supported currently, tile (data), icon (img), picture (img), description (data), score(data) |
 | imp_tracker | array          | N         | Impression tracking URL array, a 1-pixel picture need to be returned for tracking URL                                                   |
-| link        | object         | Y         | Target link, this is a default link object of native ads. Use this object when link object does not included in assets                                   |
+| link        | object         | Y         | Target link, this is a default link object of native ads. Use this object when link object does not included in assets                  |
 
 ##### Asset Information
 
@@ -259,35 +255,35 @@ Data format: UTF-8
 
 ##### Link Information
 
-| Parameter       | Type   | Mandatory | Description                                                                                                                                                                                |
-| --------------- | ------ | --------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| target_url      | string | Y         | Target link to download APP                                                                                                                                                                |
-| app_bundle      | string | Y         | APP packageName for Android, Bundle ID for iOS, please listen to install event, open build-in APP Store or Google Play, for install event, refer to [Check_list](check_list_en.md)                                                                    |
-| click_tracker   | array  | N         | click tracker                                                                                                                                                                              |
+| Parameter       | Type   | Mandatory | Description                                                                                                                                                                                                                        |
+| --------------- | ------ | --------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| target_url      | string | Y         | Target link to download APP                                                                                                                                                                                                        |
+| app_bundle      | string | Y         | APP packageName for Android, Bundle ID for iOS, please listen to install event, open build-in APP Store or Google Play, for install event, refer to [Check_list](check_list_en.md)                                                 |
+| click_tracker   | array  | N         | click tracker                                                                                                                                                                                                                      |
 | target_url_type | int    | Y         | Type of actions when user click ad, 1: open the url within webview in-app, 2: open the url within system browser, 3: open map, 4: open dial, 5: play video, 6: download App, make sure to open App Store or Google Play in the app |
 
 #### ATTACHMENT
 
 ##### CATEGORY
 
-| ID                                   | 应用类别     | Category      |
-| ------------------------------------ | ------------ | ------------- |
-| AD9C1D4C-272D-7E6B-BB64-B770A8A5B9B0 | 动作游戏     | Action        |
-| AED099F1-2B7E-9A52-9F2E-D4F7CFE500AA | 益智解谜     | Puzzle        |
-| 7AD7776C-20D1-7A2A-9388-0D67A44FF399 | 卡牌游戏     | Card          |
-| 36FBA1A1-C5E7-D9F6-9170-9BA0DA13CBF9 | 休闲         | Casual        |
-| 1CF3914A-E099-92A5-0ECF-D3C05A177253 | 冒险游戏     | Adventure     |
-| 40E3C001-ADF6-A950-6E73-5DB66B0648E3 | 角色扮演游戏 | Role-playing  |
-| 7DA00174-66E2-5119-6355-331049316283 | 策略游戏     | Strategy game |
-| F3C58318-6A2E-223E-C3D5-5936C48196B1 | 街机游戏     | Arcade        |
-| AEDADC6C-562B-751F-E137-907A605BAA6C | 儿童         | Kids          |
-| 34879F45-896A-FFA9-582E-D576345F1D9A | 竞速游戏     | Racing        |
-| C91C130E-3166-FB45-8951-25DC86850C12 | 聚会游戏     | Family        |
-| E13A497E-BCFA-1E66-05E4-31B716765B5B | 模拟游戏     | Simulation    |
-| CEDC63B5-9A57-DFD0-75CB-1289DEB7578A | 体育         | Sports        |
-| 48EF79CA-B384-F7A8-736A-423E8D62A023 | 文字游戏     | Word          |
-| 7F43E937-69EA-5C4A-954B-E52B10094225 | 问答游戏     | Trivia        |
-| 59B07A55-A40B-0D29-BF2D-CF29AFED540E | 音乐         | Music         |
-| EC5336A4-A434-BDDA-4246-6F50DA2EF63E | 桌面游戏     | Board         |
-| 57728DCB-9EC5-DC08-B999-3F9DDDF66083 | 赌场         | Casino        |
-| CB45DD59-EF28-EC0D-423B-2ED10F54C8D7 | 教育         | Education     |
+| 应用类别     | Category      |
+| ------------ | ------------- |
+| 动作游戏     | Action        |
+| 益智解谜     | Puzzle        |
+| 卡牌游戏     | Card          |
+| 休闲         | Casual        |
+| 冒险游戏     | Adventure     |
+| 角色扮演游戏 | Role-playing  |
+| 策略游戏     | Strategy game |
+| 街机游戏     | Arcade        |
+| 儿童         | Kids          |
+| 竞速游戏     | Racing        |
+| 聚会游戏     | Family        |
+| 模拟游戏     | Simulation    |
+| 体育         | Sports        |
+| 文字游戏     | Word          |
+| 问答游戏     | Trivia        |
+| 音乐         | Music         |
+| 桌面游戏     | Board         |
+| 赌场         | Casino        |
+| 教育         | Education     |

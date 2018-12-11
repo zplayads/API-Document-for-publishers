@@ -122,7 +122,7 @@ Data format: UTF-8
 | --------- | ----- | --------- | ------------------------------------------------------------------------------ |
 | width     | int   | Y         | Landscape resolution, unit: pixel                                              |
 | height    | int   | Y         | Portrait resolution, unit: pixel                                               |
-| dpi       | int   | Y         | Pixel density，unit: pixel numbers per inch                                    |
+| dpi       | int   | N         | Pixel density，unit: pixel numbers per inch                                    |
 | pxratio   | float | N         | Physical pixel density, e.g. 1 on iPhone 3, 2 on iPhone 4, 3 on iPhone 6s Plus |
 
 ##### Geo Information

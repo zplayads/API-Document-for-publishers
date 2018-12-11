@@ -1,28 +1,28 @@
 # Sample of Request and Response
 
 - [Sample of Request and Response](#sample-of-request-and-response)
-    - [Test token, app_id and ad_unit_id](#test-token-appid-and-adunitid)
-    - [Sample of Request](#sample-of-request)
-        - [iOS](#ios)
-            - [interstitial](#interstitial)
-                - [sample of request](#sample-of-request)
-                - [sample of response](#sample-of-response)
-            - [native](#native)
-                - [sample of request](#sample-of-request-1)
-                - [sample of response](#sample-of-response-1)
-            - [rewarded video](#rewarded-video)
-                - [sample of request](#sample-of-request-2)
-                - [sample of response](#sample-of-response-2)
-        - [Android](#android)
-            - [interstitial](#interstitial-1)
-                - [sample of request](#sample-of-request-3)
-                - [sample of response](#sample-of-response-3)
-            - [native](#native-1)
-                - [sample of request](#sample-of-request-4)
-                - [sample of response](#sample-of-response-4)
-            - [rewarded video](#rewarded-video-1)
-                - [sample of request](#sample-of-request-5)
-                - [sample of response](#sample-of-response-5)
+  - [Test token, app_id and ad_unit_id](#test-token-appid-and-adunitid)
+  - [Sample of Request](#sample-of-request)
+    - [iOS](#ios)
+      - [interstitial](#interstitial)
+        - [sample of request](#sample-of-request)
+        - [sample of response](#sample-of-response)
+      - [native](#native)
+        - [sample of request](#sample-of-request-1)
+        - [sample of response](#sample-of-response-1)
+      - [rewarded video](#rewarded-video)
+        - [sample of request](#sample-of-request-2)
+        - [sample of response](#sample-of-response-2)
+    - [Android](#android)
+      - [interstitial](#interstitial-1)
+        - [sample of request](#sample-of-request-3)
+        - [sample of response](#sample-of-response-3)
+      - [native](#native-1)
+        - [sample of request](#sample-of-request-4)
+        - [sample of response](#sample-of-response-4)
+      - [rewarded video](#rewarded-video-1)
+        - [sample of request](#sample-of-request-5)
+        - [sample of response](#sample-of-response-5)
 
 ## Test token, app_id and ad_unit_id
 
@@ -80,8 +80,8 @@
     "screen": {
       "width": 123,
       "height": 234,
-      "dpi": 2,
-      "pxratio": 34567
+      "dpi": 324,
+      "pxratio": 2
     },
     "geo": {
       "lat": 34.567,
@@ -166,8 +166,8 @@
     "screen": {
       "width": 123,
       "height": 234,
-      "dpi": 2,
-      "pxratio": 34567
+      "dpi": 324,
+      "pxratio": 2
     },
     "geo": {
       "lat": 34.567,
@@ -325,8 +325,8 @@
     "screen": {
       "width": 123,
       "height": 234,
-      "dpi": 2,
-      "pxratio": 34567
+      "dpi": 324,
+      "pxratio": 2
     },
     "geo": {
       "lat": 34.567,
@@ -413,8 +413,8 @@
     "screen": {
       "width": 123,
       "height": 234,
-      "dpi": 2,
-      "pxratio": 34567
+      "dpi": 432,
+      "pxratio": 3
     },
     "geo": {
       "lat": 34.567,
@@ -499,8 +499,8 @@
     "screen": {
       "width": 123,
       "height": 234,
-      "dpi": 2,
-      "pxratio": 34567
+      "dpi": 432,
+      "pxratio": 3
     },
     "geo": {
       "lat": 34.567,
@@ -658,8 +658,8 @@
     "screen": {
       "width": 123,
       "height": 234,
-      "dpi": 2,
-      "pxratio": 34567
+      "dpi": 432,
+      "pxratio": 3
     },
     "geo": {
       "lat": 34.567,

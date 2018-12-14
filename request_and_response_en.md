@@ -211,7 +211,7 @@ Data format: UTF-8
 | target_url        | string | Y         | Target url to download APP, which will jump to when user click ad                                                                                                                                                                  |
 | target_url_type   | int    | Y         | Type of actions when user click ad, 1: open the url within webview in-app, 2: open the url within system browser, 3: open map, 4: open dial, 5: play video, 6: download App, make sure to open App Store or Google Play in the app |
 | price             | float  | N         | Ad price, empty means 0, unit: cent                                                                                                                                                                                                |
-| currency     | string | N | Currency. If the price is null, currency is null; If the price is not null, currency is not null, refer to [ISO-4217 alpha codes]((https://en.wikipedia.org/wiki/ISO_4217) )                                                                                         |
+| currency     | string | N | Currency. If the price is null, currency is null; If the price is not null, currency is not null, refer to [ISO-4217 alpha codes](https://en.wikipedia.org/wiki/ISO_4217)                                                                                     |
 | native            | object | N         | Native object, it will return native object if unit_type is native                                                                                                                                                                 |
 
 ##### Native Information

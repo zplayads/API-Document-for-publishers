@@ -1,33 +1,33 @@
 # API 对接文档协议
 
 - [API 对接文档协议](#api-%E5%AF%B9%E6%8E%A5%E6%96%87%E6%A1%A3%E5%8D%8F%E8%AE%AE)
-    - [文档说明](#%E6%96%87%E6%A1%A3%E8%AF%B4%E6%98%8E)
-    - [文档更新记录](#%E6%96%87%E6%A1%A3%E6%9B%B4%E6%96%B0%E8%AE%B0%E5%BD%95)
-    - [接入准备](#%E6%8E%A5%E5%85%A5%E5%87%86%E5%A4%87)
-    - [广告获取流程](#%E5%B9%BF%E5%91%8A%E8%8E%B7%E5%8F%96%E6%B5%81%E7%A8%8B)
-    - [接入说明](#%E6%8E%A5%E5%85%A5%E8%AF%B4%E6%98%8E)
-        - [请求 URL](#%E8%AF%B7%E6%B1%82-url)
-        - [通信方式及编码](#%E9%80%9A%E4%BF%A1%E6%96%B9%E5%BC%8F%E5%8F%8A%E7%BC%96%E7%A0%81)
-        - [请求头](#%E8%AF%B7%E6%B1%82%E5%A4%B4)
-        - [Request 信息](#request-%E4%BF%A1%E6%81%AF)
-            - [app 对象信息](#app-%E5%AF%B9%E8%B1%A1%E4%BF%A1%E6%81%AF)
-            - [Device 对象信息](#device-%E5%AF%B9%E8%B1%A1%E4%BF%A1%E6%81%AF)
-                - [Screen 对象信息](#screen-%E5%AF%B9%E8%B1%A1%E4%BF%A1%E6%81%AF)
-                - [Geo 对象信息](#geo-%E5%AF%B9%E8%B1%A1%E4%BF%A1%E6%81%AF)
-            - [User 对象信息](#user-%E5%AF%B9%E8%B1%A1%E4%BF%A1%E6%81%AF)
-            - [Ad 对象信息](#ad-%E5%AF%B9%E8%B1%A1%E4%BF%A1%E6%81%AF)
-                - [Native 对象信息](#native-%E5%AF%B9%E8%B1%A1%E4%BF%A1%E6%81%AF)
-                    - [Asset 对象信息](#asset-%E5%AF%B9%E8%B1%A1%E4%BF%A1%E6%81%AF)
-        - [Response 返回信息](#response-%E8%BF%94%E5%9B%9E%E4%BF%A1%E6%81%AF)
-            - [Ad 对象信息](#ad-%E5%AF%B9%E8%B1%A1%E4%BF%A1%E6%81%AF-1)
-                - [Native 对象信息](#native-%E5%AF%B9%E8%B1%A1%E4%BF%A1%E6%81%AF-1)
-                - [Asset 对象信息](#asset-%E5%AF%B9%E8%B1%A1%E4%BF%A1%E6%81%AF-1)
-                    - [Image 对象信息](#image-%E5%AF%B9%E8%B1%A1%E4%BF%A1%E6%81%AF)
-                    - [Title 对象信息](#title-%E5%AF%B9%E8%B1%A1%E4%BF%A1%E6%81%AF)
-                    - [Data 对象信息](#data-%E5%AF%B9%E8%B1%A1%E4%BF%A1%E6%81%AF)
-                - [Link 对象信息](#link-%E5%AF%B9%E8%B1%A1%E4%BF%A1%E6%81%AF)
-            - [附件](#%E9%99%84%E4%BB%B6)
-                - [应用类别](#%E5%BA%94%E7%94%A8%E7%B1%BB%E5%88%AB)
+  - [文档说明](#%E6%96%87%E6%A1%A3%E8%AF%B4%E6%98%8E)
+  - [文档更新记录](#%E6%96%87%E6%A1%A3%E6%9B%B4%E6%96%B0%E8%AE%B0%E5%BD%95)
+  - [接入准备](#%E6%8E%A5%E5%85%A5%E5%87%86%E5%A4%87)
+  - [广告获取流程](#%E5%B9%BF%E5%91%8A%E8%8E%B7%E5%8F%96%E6%B5%81%E7%A8%8B)
+  - [接入说明](#%E6%8E%A5%E5%85%A5%E8%AF%B4%E6%98%8E)
+    - [请求 URL](#%E8%AF%B7%E6%B1%82-url)
+    - [通信方式及编码](#%E9%80%9A%E4%BF%A1%E6%96%B9%E5%BC%8F%E5%8F%8A%E7%BC%96%E7%A0%81)
+    - [请求头](#%E8%AF%B7%E6%B1%82%E5%A4%B4)
+    - [Request 信息](#request-%E4%BF%A1%E6%81%AF)
+      - [app 对象信息](#app-%E5%AF%B9%E8%B1%A1%E4%BF%A1%E6%81%AF)
+      - [Device 对象信息](#device-%E5%AF%B9%E8%B1%A1%E4%BF%A1%E6%81%AF)
+        - [Screen 对象信息](#screen-%E5%AF%B9%E8%B1%A1%E4%BF%A1%E6%81%AF)
+        - [Geo 对象信息](#geo-%E5%AF%B9%E8%B1%A1%E4%BF%A1%E6%81%AF)
+      - [User 对象信息](#user-%E5%AF%B9%E8%B1%A1%E4%BF%A1%E6%81%AF)
+      - [Ad 对象信息](#ad-%E5%AF%B9%E8%B1%A1%E4%BF%A1%E6%81%AF)
+        - [Native 对象信息](#native-%E5%AF%B9%E8%B1%A1%E4%BF%A1%E6%81%AF)
+          - [Asset 对象信息](#asset-%E5%AF%B9%E8%B1%A1%E4%BF%A1%E6%81%AF)
+    - [Response 返回信息](#response-%E8%BF%94%E5%9B%9E%E4%BF%A1%E6%81%AF)
+      - [Ad 对象信息](#ad-%E5%AF%B9%E8%B1%A1%E4%BF%A1%E6%81%AF-1)
+        - [Native 对象信息](#native-%E5%AF%B9%E8%B1%A1%E4%BF%A1%E6%81%AF-1)
+        - [Asset 对象信息](#asset-%E5%AF%B9%E8%B1%A1%E4%BF%A1%E6%81%AF-1)
+          - [Image 对象信息](#image-%E5%AF%B9%E8%B1%A1%E4%BF%A1%E6%81%AF)
+          - [Title 对象信息](#title-%E5%AF%B9%E8%B1%A1%E4%BF%A1%E6%81%AF)
+          - [Data 对象信息](#data-%E5%AF%B9%E8%B1%A1%E4%BF%A1%E6%81%AF)
+        - [Link 对象信息](#link-%E5%AF%B9%E8%B1%A1%E4%BF%A1%E6%81%AF)
+      - [附件](#%E9%99%84%E4%BB%B6)
+        - [应用类别](#%E5%BA%94%E7%94%A8%E7%B1%BB%E5%88%AB)
 
 ## 文档说明
 
@@ -207,6 +207,7 @@ ZPLAY Ads 和 开发者 之间的基础通信协议采用 HTTP 协议、POST 方
 | target_url        | string | 是   | 可玩广告的跳转地址                                                                                                                                                                                  |
 | target_url_type   | int    | 是   | 打开可玩广告跳转地址时的打开方式，1：在 app 内 webview 打开目标链接，2：在系统浏览器打开目标链接，3：打开地图，4：拨打电话，5：播放视频，6：App 下载，请确保在应用内打开 APP Store 或者 Google Play |
 | price             | float  | 否   | 广告价格，若没有该数据则为 0，单位为分                                                                                                                                                              |
+| currency     | string | 否 | 货币类型，若price为空时此字段为空；若price有值，此字段为价格币种，遵循 [ISO-4217货币标准](https://zh.wikipedia.org/wiki/ISO_4217)                                                                                        |
 | native            | 对象   | 否   | 原生广告对象，如果广告位类型是原生时，返回此对象                                                                                                                                                    |
 
 ##### Native 对象信息

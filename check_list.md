@@ -24,7 +24,7 @@ a. 允许 WebView 执行 Javascript 代码
 mWebView.getSettings().setJavaScriptEnabled(true);
 ```
 
-b. 设置 WebView 不需要用户交互就可以播媒体。
+b. 设置 WebView 不需要用户交互就可以播放媒体。
 ```java
 mWebView.getSettings().setMediaPlaybackRequiresUserGesture(false);
 ```

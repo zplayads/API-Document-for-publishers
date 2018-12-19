@@ -24,7 +24,12 @@ a. allow WebView to execute Javascript
 mWebView.getSettings().setJavaScriptEnabled(true);
 ```
 
-b. adding Javascript interface
+b. sets the WebView need not requires a user gesture to play media.
+```java
+mWebView.setMediaPlaybackRequiresUserGesture(false);
+```
+
+c. adding Javascript interface
 
 ```java
 mWebView.addJavascriptInterface(new ZPLAYAdsJavascriptInterface(), "ZPLAYAds");
@@ -47,11 +52,11 @@ private class ZPLAYAdsJavascriptInterface {
     }
 ```
 
-c. respond install event of WebView
+d. respond install event of WebView
 
 - `ZPLAYAdsJavascriptInterface.onInstallSelected()` method will be invoked when ad is clicked, please jump to App Store in this method.
 
-d. respond close event of WebView
+e. respond close event of WebView
 
 - `ZPLAYAdsJavascriptInterface.onCloseSelected()` method will be invoked when ad is closed，please close the WebView in this method.
 

@@ -24,7 +24,12 @@ a. 允许 WebView 执行 Javascript 代码
 mWebView.getSettings().setJavaScriptEnabled(true);
 ```
 
-b. 添加 Javascript 接口
+b. 设置 WebView 不需要用户交互就可以播放媒体。
+```java
+mWebView.getSettings().setMediaPlaybackRequiresUserGesture(false);
+```
+
+c. 添加 Javascript 接口
 
 ```java
 mWebView.addJavascriptInterface(new ZPLAYAdsJavascriptInterface(), "ZPLAYAds");
@@ -47,11 +52,11 @@ private class ZPLAYAdsJavascriptInterface {
     }
 ```
 
-c. Android 响应 WebView 的 install 事件示例
+d. Android 响应 WebView 的 install 事件示例
 
 - 点击事件会回调`ZPLAYAdsJavascriptInterface.onInstallSelected()`方法，请在此方法中处理打开应用市场事务。
 
-d. Android 响应 WebView 的 close 事件示例
+e. Android 响应 WebView 的 close 事件示例
 
 - 关闭事件会回调`ZPLAYAdsJavascriptInterface.onCloseSelected()`方法，请在此方法中处理关闭事务。
 

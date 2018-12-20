@@ -198,7 +198,7 @@ Data format: UTF-8
 | result    | int              | Y         | Response result, 0: success, less than 0: fail                              |
 | msg       | string           | N         | The reason for failure if response result is fail, such as "Internet error" |
 | ads       | array of objects | N         | No data if response result is fail                                          |
-| cur       | string           | N         | Ad currency, such as "CNY" or "USD", If the price is null, currency is null; If the price is not null, currency is not null, refer to [ISO-4217 alpha codes](https://en.wikipedia.org/wiki/ISO_4217)                         |
+| cur       | string           | N         | Ad currency, such as "CNY" or "USD". If the price in Ad Information is null, currency is null; If the price in Ad Information is not null, currency is not null, refer to [ISO-4217 alpha codes](https://en.wikipedia.org/wiki/ISO_4217)                         |
 
 #### Ad Information
 

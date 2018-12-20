@@ -194,7 +194,7 @@ ZPLAY Ads 和 开发者 之间的基础通信协议采用 HTTP 协议、POST 方
 | result   | int         | 是   | 返回结果，0：成功，小于 0 表示失败                             |
 | msg      | string      | 否   | 失败的话，会填写失败原因，例："网络错误"，在这里列出具体的原因 |
 | ads      | ad 对象数组 | 否   | 如果失败，或者无对应广告则无此数据                             |
-| cur      | string      | 否   | 广告价格货币类型，如“CNY”或“USD”，若Ad对象中price为空时此字段为空；若price有值，此字段为货币类型，遵循 [ISO-4217货币标准](https://zh.wikipedia.org/wiki/ISO_4217)                                  |
+| cur      | string      | 否   | 广告价格货币类型，如“CNY”或“USD”。若Ad对象中price为空时此字段为空；若price有值，此字段为货币类型，遵循 [ISO-4217货币标准](https://zh.wikipedia.org/wiki/ISO_4217)                                  |
 
 #### Ad 对象信息
 

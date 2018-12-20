@@ -108,7 +108,7 @@ ZPLAY Ads 和 开发者 之间的基础通信协议采用 HTTP 协议、POST 方
 | openudid        | string  | 否   | openudid                                                                                                                               |
 | language        | string  | 是   | 系统语言                                                                                                                               |
 | os_type         | string  | 是   | 操作系统类型，值为"iOS"， "Android"                                                                                                    |
-| os_version      | string  | 是   | 操作系统版本，值为 11.4.1，12.0，7.1.0 等，请注意：iOS 的主系统版本为 9.x，10.x，11.x，12.x；Android 的主系统版本为 5.x，6.x，7.x，8.x,9.x |
+| os_version      | string  | 是   | 操作系统版本，如 11.4.1，12.0，7.1.0 等，请注意：iOS 的主系统版本为 9.x，10.x，11.x，12.x；Android 的主系统版本为 5.x，6.x，7.x，8.x, 9.x; |
 | screen          | 对象    | 是   | 设备的屏幕信息                                                                                                                         |
 | geo             | 对象    | 否   | 设备的位置信息                                                                                                                         |
 

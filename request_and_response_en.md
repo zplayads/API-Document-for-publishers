@@ -72,7 +72,7 @@ Data format: UTF-8
 
 | Parameter       | Type               | mandatory | Description                                                                                                                            |
 | --------------- | ------------------ | --------- | -------------------------------------------------------------------------------------------------------------------------------------- |
-| ver             | string             | Y         | Protocol version, current version is 1.0                                                                                               |
+| version             | string             | Y         | Protocol version, current version is 1.0                                                                                               |
 | developer_token | string             | Y         | Developer token, offered by ZPLAY Ads account manager                                                                                  |
 | need_https      | int                | N         | For material's link or tracking url link, whether the prefix is https. 0 as default. 0: don’t need https, 1: need https for all links. |
 | app             | object             | Y         | APP information                                                                                                                        |
@@ -112,7 +112,7 @@ Data format: UTF-8
 | openudid        | string  | N         | openudid                                                                                                                                                                                                                                                                                                                                                                                 |
 | language        | string  | Y         | Device language                                                                                                                                                                                                                                                                                                                                                                          |
 | os_type         | string  | Y         | Operation system, "iOS", " Android"                                                                                                                                                                                                                                                                                                                                                      |
-| os_version      | string  | Y         | Operation system version, such as 11.4.1，12.0，7.1.0. Please note: the main version of iOS are limited in 9.x，10.x，11.x，12.x；the main version of Android are limited in 5.x，6.x，7.x，8.x                                                                                                                                                                                          |
+| os_version      | string  | Y         | Operation system version, such as 11.4.1，12.0，7.1.0. Please note: the main version of iOS are limited in 9.x， 10.x， 11.x， 12.x； the main version of Android are limited in 5.x， 6.x， 7.x， 8.x， 9.x;                                                                                                                                                                                       |
 | screen          | object  | Y         | Device screen info                                                                                                                                                                                                                                                                                                                                                                       |
 | geo             | object  | N         | Device geo info                                                                                                                                                                                                                                                                                                                                                                          |
 
@@ -198,7 +198,7 @@ Data format: UTF-8
 | result    | int              | Y         | Response result, 0: success, less than 0: fail                              |
 | msg       | string           | N         | The reason for failure if response result is fail, such as "Internet error" |
 | ads       | array of objects | N         | No data if response result is fail                                          |
-| cur       | string           | N         | Ad currency, such as "CNY" or "USD", default is "CNY"                       |
+| cur       | string           | N         | Ad currency, such as "CNY" or "USD". If the price in Ad Information is null, currency is null; If the price in Ad Information is not null, currency is not null, refer to [ISO-4217 alpha codes](https://en.wikipedia.org/wiki/ISO_4217)                         |
 
 #### Ad Information
 
@@ -210,8 +210,7 @@ Data format: UTF-8
 | playable_ads_html | string | Y         | Playable ad HTML snippet, make sure to load it with in-app webview                                                                                                                                                                 |
 | target_url        | string | Y         | Target url to download APP, which will jump to when user click ad                                                                                                                                                                  |
 | target_url_type   | int    | Y         | Type of actions when user click ad, 1: open the url within webview in-app, 2: open the url within system browser, 3: open map, 4: open dial, 5: play video, 6: download App, make sure to open App Store or Google Play in the app |
-| price             | float  | N         | Ad price, empty means 0, unit: cent                                                                                                                                                                                                |
-| currency     | string | N | Currency; If the price is null, currency is null; If the price is not null, currency is not null, refer to [ISO-4217 alpha codes](https://en.wikipedia.org/wiki/ISO_4217)                                                                                     |
+| price             | float  | N         | Ad price, empty means 0, unit: cent                                                                                   |
 | native            | object | N         | Native object, it will return native object if unit_type is native                                                                                                                                                                 |
 
 ##### Native Information

@@ -68,7 +68,7 @@ ZPLAY Ads 和 开发者 之间的基础通信协议采用 HTTP 协议、POST 方
 
 | 字段名称        | 类型     | 必须 | 描述                                                                                                                                 |
 | --------------- | -------- | ---- | ------------------------------------------------------------------------------------------------------------------------------------ |
-| ver             | string   | 是   | 协议版本，当前版本号 1.0                                                                                                             |
+| version          | string   | 是   | 协议版本，当前版本号 1.0                                                                                           |
 | developer_token | string   | 是   | 开发者 token，由 ZPLAY Ads 平台商务人员提供                                                                                          |
 | need_https      | int      | 否   | 是否需要 https 链接的标识，默认为 0。0 标识不需要，1 标识需要。当为 1 时，指的是开发者 要求返回的所有素材及追踪链接必须是 https 链接 |
 | app             | 对象     | 是   | APP 对象信息                                                                                                                         |
@@ -108,7 +108,7 @@ ZPLAY Ads 和 开发者 之间的基础通信协议采用 HTTP 协议、POST 方
 | openudid        | string  | 否   | openudid                                                                                                                               |
 | language        | string  | 是   | 系统语言                                                                                                                               |
 | os_type         | string  | 是   | 操作系统类型，值为"iOS"， "Android"                                                                                                    |
-| os_version      | string  | 是   | 操作系统版本，值为 11.4.1，12.0，7.1.0 等，请注意：iOS 的主系统版本为 9.x，10.x，11.x，12.x；Android 的主系统版本为 5.x，6.x，7.x，8.x |
+| os_version      | string  | 是   | 操作系统版本，如 11.4.1，12.0，7.1.0 等，请注意：iOS 的主系统版本为 9.x，10.x，11.x，12.x；Android 的主系统版本为 5.x，6.x，7.x，8.x, 9.x; |
 | screen          | 对象    | 是   | 设备的屏幕信息                                                                                                                         |
 | geo             | 对象    | 否   | 设备的位置信息                                                                                                                         |
 
@@ -194,7 +194,7 @@ ZPLAY Ads 和 开发者 之间的基础通信协议采用 HTTP 协议、POST 方
 | result   | int         | 是   | 返回结果，0：成功，小于 0 表示失败                             |
 | msg      | string      | 否   | 失败的话，会填写失败原因，例："网络错误"，在这里列出具体的原因 |
 | ads      | ad 对象数组 | 否   | 如果失败，或者无对应广告则无此数据                             |
-| cur      | string      | 否   | 广告价格货币类型，默认为"CNY"                                  |
+| cur      | string      | 否   | 广告价格货币类型，如“CNY”或“USD”。若Ad对象中price为空时此字段为空；若price有值，此字段为货币类型，遵循 [ISO-4217货币标准](https://zh.wikipedia.org/wiki/ISO_4217)                                  |
 
 #### Ad 对象信息
 
@@ -206,8 +206,7 @@ ZPLAY Ads 和 开发者 之间的基础通信协议采用 HTTP 协议、POST 方
 | playable_ads_html | string | 是   | 可玩广告的 html 代码，请确保使用应用内的 webview 中打开                                                                                                                                             |
 | target_url        | string | 是   | 可玩广告的跳转地址                                                                                                                                                                                  |
 | target_url_type   | int    | 是   | 打开可玩广告跳转地址时的打开方式，1：在 app 内 webview 打开目标链接，2：在系统浏览器打开目标链接，3：打开地图，4：拨打电话，5：播放视频，6：App 下载，请确保在应用内打开 APP Store 或者 Google Play |
-| price             | float  | 否   | 广告价格，若没有该数据则为 0，单位为分                                                                                                                                                              |
-| currency     | string | 否 | 货币类型; 若price为空时此字段为空；若price有值，此字段为价格币种，遵循 [ISO-4217货币标准](https://zh.wikipedia.org/wiki/ISO_4217)                                                                                        |
+| price             | float  | 否   | 广告价格，若没有该数据则为 0，单位为分                                                                         |
 | native            | 对象   | 否   | 原生广告对象，如果广告位类型是原生时，返回此对象                                                                                                                                                    |
 
 ##### Native 对象信息

@@ -93,7 +93,7 @@ ZPLAY Ads 和 开发者 之间的基础通信协议采用 HTTP 协议、POST 方
 | model           | string  | 是   | 设备型号                                                                                                                               |
 | manufacturer    | string  | 否   | 生产厂商，例如：“Samsung”                                                                                                              |
 | brand           | string  | 否   | 手机品牌，例如：“MI4”                                                                                                                  |
-| plmn            | string  | 是   | 国家运营商编号                                                                                                                         |
+| plmn            | string  | 否   | 国家运营商编号                                                                                                                         |
 | device_type     | string  | 是   | 设备类型，“phone”，“tablet”                                                                                                            |
 | adt             | boolean | 否   | 是否允许通过追踪用户行为进行定向投放，0：不允许，1：允许，默认为 1                                                                     |
 | connection_type | string  | 是   | 网络类型，空串表示未知，值为 wifi，2g，3g，4g，ethernet，cell_unknown                                                                  |

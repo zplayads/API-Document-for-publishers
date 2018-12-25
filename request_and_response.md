@@ -83,6 +83,8 @@ ZPLAY Ads 和 开发者 之间的基础通信协议采用 HTTP 协议、POST 方
 | app_id    | string | 是   | 应用 ID，请提前将您的应用注册到 [ZPLAY Ads 平台](https://www.zplayads.com)，该 ID 为注册后平台生成的应用 ID                               |
 | app_name  | string | 否   | 应用名称，如果填写，请确保与注册到[ZPLAY Ads 平台](https://www.zplayads.com)的应用名称保持一致                                            |
 | bundle_id | string | 是   | 对于 Android，是应用的 packageName；对于 iOS，是 Bundle ID                                                                                |
+| store | string | 否 |                                                       |
+| download_url | string | 否 |                                            |
 | version   | string | 是   | 应用版本号                                                                                                                                |
 | cat       | string | 否   | 应用类别，如“Action”，内容详见[应用类别](#应用类别)，如果填写，请确保与注册到[ZPLAY Ads 平台](https://www.zplayads.com)的应用分类保持一致 |
 
@@ -144,6 +146,7 @@ ZPLAY Ads 和 开发者 之间的基础通信协议采用 HTTP 协议、POST 方
 | 字段名称   | 类别   | 必须 | 描述                                                                                                                          |
 | ---------- | ------ | ---- | ----------------------------------------------------------------------------------------------------------------------------- |
 | unit_type  | int    | 是   | 广告位类型，0：横幅，1：插屏，2：开屏，3：原生，4：视频，当前仅支持插屏，原生和视频三种类型，类型需与您广告位 ID 类型保持一致 |
+| unit_name  | string | 否   |                                                |
 | ad_unit_id | string | 是   | 广告位 id，请提前将您的广告位注册到 [ZPLAY Ads 平台](https://www.zplayads.com) ，该 ID 为注册后生成的 ID                      |
 | native     | 对象   | 否   | 原生广告位信息，当广告位是原生广告位时，必须填写；当广告位为激励视频和插屏时，必须不填写                                      |
 

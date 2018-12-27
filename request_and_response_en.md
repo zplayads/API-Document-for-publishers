@@ -76,6 +76,7 @@ Data format: UTF-8
 | version             | string             | Y         | Protocol version, current version is 1.0                                                                                               |
 | developer_token | string             | Y         | Developer token, offered by ZPLAY Ads account manager                                                                                  |
 | need_https      | int                | N         | For material's link or tracking url link, whether the prefix is https. 0 as default. 0: don’t need https, 1: need https for all links. |
+| support_function | string            | Y         | Whether support close event and install event in third and forth part of [Check_list](/check_list_en.md); Y: support, N: not support; Publisher should handle both close event and install event if does not support these two events we provide |
 | app             | object             | Y         | APP information                                                                                                                        |
 | device          | object             | Y         | Device information                                                                                                                     |
 | user            | object             | N         | User information                                                                                                                       |

@@ -71,7 +71,7 @@ ZPLAY Ads 和 开发者 之间的基础通信协议采用 HTTP 协议、POST 方
 | version          | string   | 是   | 协议版本，当前版本号 1.0                                                                                           |
 | developer_token | string   | 是   | 开发者 token，由 ZPLAY Ads 平台商务人员提供                                                                                          |
 | need_https      | int      | 否   | 是否需要 https 链接的标识，默认为 0。0 标识不需要，1 标识需要。当为 1 时，指的是开发者 要求返回的所有素材及追踪链接必须是 https 链接 |
-| support_function | string  | 是   | 是否支持[接入文档](/check_list.md)第三、第四部分中关闭事件和点击事件；Y：支持，N：不支持；若不支持需要接入时自行处理关闭事件和点击事件                               |
+| support_function | string  | 是   | 是否支持[接入文档](/check_list.md)第三、第四部分中关闭事件和点击事件；0：不支持，1：支持；若不支持需要接入时自行处理关闭事件和点击事件                               |
 | app             | 对象     | 是   | APP 对象信息                                                                                                                         |
 | device          | 对象     | 是   | 设备信息                                                                                                                             |
 | user            | 对象     | 否   | 用户信息                                                                                                                             |

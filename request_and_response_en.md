@@ -176,7 +176,7 @@ Data format: UTF-8
 
 | Parameter | Type | Mandatory | Description                                                                                                                                                                              |
 | --------- | ---- | --------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| type      | int  | Y         | Image element type, 1: icon, 2: Logo, 3: main picture, 4: "play game without downloading" button, when user click the button, please load playable_ads_html in response.ads into webview |
+| type      | int  | Y         | Image element type, 1: icon, 2: Logo, 3: main picture, 4: "play game without downloading" button, when user click the button, please load playable_ads_html in response.ads into webview; Among the four types of image, the forth is required  |
 | width     | int  | Y         | Image width，unit: pixel.                                                                                                                                                                |
 | height    | int  | Y         | Image height，unit: pixel.                                                                                                                                                               |
 

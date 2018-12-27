@@ -27,6 +27,7 @@
           - [Data Information](#data-information)
         - [Link Information](#link-information)
       - [ATTACHMENT](#attachment)
+        - [STORE](#store)
         - [CATEGORY](#category)
 
 ## Introduction of document
@@ -75,6 +76,7 @@ Data format: UTF-8
 | version             | string             | Y         | Protocol version, current version is 1.0                                                                                               |
 | developer_token | string             | Y         | Developer token, offered by ZPLAY Ads account manager                                                                                  |
 | need_https      | int                | N         | For material's link or tracking url link, whether the prefix is https. 0 as default. 0: don’t need https, 1: need https for all links. |
+| support_function | boolean            | Y         | Whether support close event and install event in third and forth part of [Check_list](/check_list_en.md); 0: not support, 1: support; Publisher should handle both close event and install event if does not support these two events we provide |
 | app             | object             | Y         | APP information                                                                                                                        |
 | device          | object             | Y         | Device information                                                                                                                     |
 | user            | object             | N         | User information                                                                                                                       |
@@ -174,7 +176,7 @@ Data format: UTF-8
 
 | Parameter | Type | Mandatory | Description                                                                                                                                                                              |
 | --------- | ---- | --------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| type      | int  | Y         | Image element type, 1: icon, 2: Logo, 3: main picture, 4: "play game without downloading" button, when user click the button, please load playable_ads_html in response.ads into webview |
+| type      | int  | Y         | Image element type, 1: icon, 2: Logo, 3: main picture, 4: "play game without downloading" button, when user click the button, please load playable_ads_html in response.ads into webview; Among the four types of image, the forth is required  |
 | width     | int  | Y         | Image width，unit: pixel.                                                                                                                                                                |
 | height    | int  | Y         | Image height，unit: pixel.                                                                                                                                                               |
 
@@ -264,26 +266,55 @@ Data format: UTF-8
 
 #### ATTACHMENT
 
+##### STORE
+
 ##### CATEGORY
 
-| 应用类别     | Category      |
-| ------------ | ------------- |
-| 动作游戏     | Action        |
-| 益智解谜     | Puzzle        |
-| 卡牌游戏     | Card          |
-| 休闲         | Casual        |
-| 冒险游戏     | Adventure     |
-| 角色扮演游戏 | Role-playing  |
-| 策略游戏     | Strategy game |
-| 街机游戏     | Arcade        |
-| 儿童         | Kids          |
-| 竞速游戏     | Racing        |
-| 聚会游戏     | Family        |
-| 模拟游戏     | Simulation    |
-| 体育         | Sports        |
-| 文字游戏     | Word          |
-| 问答游戏     | Trivia        |
-| 音乐         | Music         |
-| 桌面游戏     | Board         |
-| 赌场         | Casino        |
-| 教育         | Education     |
+|  ID  |  中文  |  英文  |
+|  -  |  -  |  -  |
+|  B7405162-B110-E039-0796-7D9A766E8B27  |  新闻  |  News  |
+|  F682D42C-A3F1-F854-A4F1-9B95EAF82ED9  |  图书  |  Library  |
+|  79CBC4E4-1C81-3D00-C90B-741E89AC294C  |  社交  |  Social  |
+|  880E064C-CCB1-013B-BFD1-37AD5DEEE528  |  生活  |  Life  |
+|  B37E28A3-F0D5-ECA9-419F-A87F73E899A8  |  财务  |  Finance  |
+|  F2EFEBD9-290B-362B-E799-69DC3990A60C  |  娱乐  |  Entertain  |
+|  1F97B2D3-9FF6-3108-027B-679B6D387E22  |  教育  |  Education  |
+|  200E54DC-CFF5-EDC4-A4CD-89CE5C747C88  |  旅行  |  Travel  |
+|  397242EE-2865-9420-1EF2-C71C9BD9703B  |  导航  |  Navigation  |
+|  664C6DA9-D35B-A37E-37B0-CA64128C5041  |  商业  |  Business  |
+|  5FBC0108-47D5-3014-1315-8416379D6AF4  |  工具  |  Tool  |
+|  BEA4FCCE-2037-1596-EF75-C034DF44F69C  |  效率  |  Efficiency  |
+|  7741B885-EC32-9F76-C200-B01E0AB6C9F7  |  健康健美  |  Fitness  |
+|  D6641394-E658-9857-0E82-C30BA86798B5  |  摄影与录像  |  Camera  |
+|  E777608D-BB45-8A2D-F64A-ECD433553BE4  |  商品指南  |  Product Guide  |
+|  C15D7FA6-1AF5-76C2-19F0-71C33EEE533F  |  美食佳饮  |  Food and Drink  |
+|  A295D31D-47D9-FCB9-BF38-F5C958DFDD5C  |  参考  |  Reference  |
+|  993667EF-0B50-33AF-627A-B2BDFC18F149  |  报刊杂志  |  Magazine  |
+|  A42AAEF7-8992-E19D-4C53-00FE406CE607  |  体育  |  Sports  |
+|  C5431997-0943-5B5B-5693-F75D66481766  |  天气  |  Weather  |
+|  4609676E-BA15-B635-CE6C-022CCB7E34EB  |  医疗  |  Medical Treatment  |
+|  C271F038-85D6-2DD0-0AC9-8D35CA8DE316  |  音乐  |  Music  |
+|  E4C887C3-8F3F-B896-70A3-AAB325FA6768  |  视频  |  Video  |
+|  26039567-EDE2-2D97-BE16-477FAF639041  |  购物  |  Shopping  |
+|  F015DDC1-8475-3138-37FB-D824608C16AF  |  交通  |  Traffic  |
+|  AD9C1D4C-272D-7E6B-BB64-B770A8A5B9B0  |  动作游戏  |  Action Game  |
+|  AED099F1-2B7E-9A52-9F2E-D4F7CFE500AA  |  益智解谜  |  Puzzle Game  |
+|  7AD7776C-20D1-7A2A-9388-0D67A44FF399  |  卡牌游戏  |  Card Game  |
+|  36FBA1A1-C5E7-D9F6-9170-9BA0DA13CBF9  |  休闲游戏  |  Casual Game  |
+|  1CF3914A-E099-92A5-0ECF-D3C05A177253  |  冒险游戏  |  Adventure Game  |
+|  40E3C001-ADF6-A950-6E73-5DB66B0648E3  |  角色扮演游戏  |  Role-playing Game  |
+|  7DA00174-66E2-5119-6355-331049316283  |  策略游戏  |  Strategy Game  |
+|  F3C58318-6A2E-223E-C3D5-5936C48196B1  |  街机游戏  |  Arcade Game  |
+|  AEDADC6C-562B-751F-E137-907A605BAA6C  |  儿童游戏  |  Kids Game  |
+|  34879F45-896A-FFA9-582E-D576345F1D9A  |  竞速游戏  |  Racing Game  |
+|  C91C130E-3166-FB45-8951-25DC86850C12  |  聚会游戏  |  Family Game  |
+|  E13A497E-BCFA-1E66-05E4-31B716765B5B  |  模拟游戏  |  Simulation Game  |
+|  CEDC63B5-9A57-DFD0-75CB-1289DEB7578A  |  体育游戏  |  Sports Game  |
+|  48EF79CA-B384-F7A8-736A-423E8D62A023  |  文字游戏  |  Word Game  |
+|  7F43E937-69EA-5C4A-954B-E52B10094225  |  问答游戏  |  Trivia Game  |
+|  59B07A55-A40B-0D29-BF2D-CF29AFED540E  |  音乐游戏  |  Music Game  |
+|  EC5336A4-A434-BDDA-4246-6F50DA2EF63E  |  桌面游戏  |  Board Game  |
+|  57728DCB-9EC5-DC08-B999-3F9DDDF66083  |  赌场游戏  |  Casino Game  |
+|  CB45DD59-EF28-EC0D-423B-2ED10F54C8D7  |  教育游戏  |  Education Game  |
+
+

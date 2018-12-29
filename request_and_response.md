@@ -71,7 +71,7 @@ ZPLAY Ads 和 开发者 之间的基础通信协议采用 HTTP 协议、POST 方
 | version          | string   | 是   | 协议版本，当前版本号 1.0                                                                                           |
 | developer_token | string   | 是   | 开发者 token，由 ZPLAY Ads 平台商务人员提供                                                                                          |
 | need_https      | int      | 否   | 是否需要 https 链接的标识，默认为 0。0 标识不需要，1 标识需要。当为 1 时，指的是开发者 要求返回的所有素材及追踪链接必须是 https 链接 |
-| support_function | boolean  | 是   | 是否支持 [接入时的检查清单](/check_list.md) 第三、第四部分中关闭事件和点击事件；0：不支持，1：支持；若不支持需要接入时自行处理关闭事件和点击事件                               |
+| support_function | int  | 是   | 是否支持 [接入时的检查清单](/check_list.md) 第三、第四部分中关闭事件和点击事件；1：不支持，2：支持；若不支持需要接入时自行处理关闭事件和点击事件                               |
 | app             | 对象     | 是   | APP 对象信息                                                                                                                         |
 | device          | 对象     | 是   | 设备信息                                                                                                                             |
 | user            | 对象     | 否   | 用户信息                                                                                                                             |
@@ -96,9 +96,9 @@ ZPLAY Ads 和 开发者 之间的基础通信协议采用 HTTP 协议、POST 方
 | brand           | string  | 否   | 手机品牌，例如：“MI4”                                                                                                                  |
 | plmn            | string  | 否   | 国家运营商编号                                                                                                                         |
 | device_type     | string  | 是   | 设备类型，“phone”，“tablet”                                                                                                            |
-| adt             | boolean | 否   | 是否允许通过追踪用户行为进行定向投放，0：不允许，1：允许，默认为 1                                                                     |
+| dnt             | int | 否   | 是否允许通过追踪用户行为进行定向投放，0：允许，1：不允许，默认为 0                                                                     |
 | connection_type | string  | 是   | 网络类型，空串表示未知，值为 wifi，2g，3g，4g，ethernet，cell_unknown                                                                  |
-| carrier         | int     | 是   | 运营商，0：移动，1：电信，3：联通，4：unknown                                                                                          |
+| carrier         | string     | 否   | 运营商，0：移动，1：电信，3：联通，4：unknown                                                                                          |
 | orientation     | int     | 否   | 设备方向，“0”为横屏，“1”为竖屏                                                                                                         |
 | mac             | string  | 否   | MAC 地址, md5 散列                                                                                                                     |
 | imei            | string  | 否   | IMEI 码，md5 散列。iOS 没有                                                                                                            |
@@ -136,7 +136,7 @@ ZPLAY Ads 和 开发者 之间的基础通信协议采用 HTTP 协议、POST 方
 | 字段名称 | 类别   | 必须 | 描述                                 |
 | -------- | ------ | ---- | ------------------------------------ |
 | id       | string | 否   | 用户 id                              |
-| gender   | int    | 否   | 性别，0：女，1：男，2：其他，3：未知 |
+| gender   | string    | 否   | 性别，“M”：男, “F”：女, “O”：其他 |
 | age      | int    | 否   | 年龄                                 |
 | keywords | array  | 否   | 用户感兴趣的关键词                   |
 
@@ -144,7 +144,7 @@ ZPLAY Ads 和 开发者 之间的基础通信协议采用 HTTP 协议、POST 方
 
 | 字段名称   | 类别   | 必须 | 描述                                                                                                                          |
 | ---------- | ------ | ---- | ----------------------------------------------------------------------------------------------------------------------------- |
-| unit_type  | int    | 是   | 广告位类型，0：横幅，1：插屏，2：开屏，3：原生，4：视频，当前仅支持插屏，原生和视频三种类型，类型需与您广告位 ID 类型保持一致 |
+| unit_type  | int    | 否   | 广告位类型，0：横幅，1：插屏，2：开屏，3：原生，4：视频，当前仅支持插屏，原生和视频三种类型，类型需与您广告位 ID 类型保持一致 |
 | ad_unit_id | string | 是   | 广告位 id，请提前将您的广告位注册到 [ZPLAY Ads 平台](https://www.zplayads.com) ，该 ID 为注册后生成的 ID                      |
 | native     | 对象   | 否   | 原生广告位信息，当广告位是原生广告位时，必须填写；当广告位为激励视频和插屏时，必须不填写                                      |
 
@@ -206,7 +206,10 @@ ZPLAY Ads 和 开发者 之间的基础通信协议采用 HTTP 协议、POST 方
 | app_bundle        | string | 是   | 对于 Android，是应用的 packageName；对于 iOS，是 iTunes ID ，请监听可玩广告的下载事件，在监听到时在 APP 内部打开 APP Store 或者 Google Play，并打开跳转链接                                         |
 | playable_ads_html | string | 是   | 可玩广告的 html 代码，请确保使用应用内的 webview 中打开                                                                                                                                             |
 | target_url        | string | 是   | 可玩广告的跳转地址                                                                                                                                                                                  |
-| target_url_type   | int    | 是   | 打开可玩广告跳转地址时的打开方式，1：在 app 内 webview 打开目标链接，2：在系统浏览器打开目标链接，3：打开地图，4：拨打电话，5：播放视频，6：App 下载，请确保在应用内打开 APP Store 或者 Google Play |
+| target_url_type   | int    | 否   | 打开可玩广告跳转地址时的打开方式，1：在 app 内 webview 打开目标链接，2：在系统浏览器打开目标链接，3：打开地图，4：拨打电话，5：播放视频，6：App 下载，请确保在应用内打开 APP Store 或者 Google Play。若请求中support_function字段为1，此字段为空 |
+| imp_tracker       | 数组    | 否   | 若 |
+| click_tracker     | 数组    | 否   | |
+| close_tracker     | 数组    | 否   | |
 | price             | float  | 否   | 广告价格，若没有该数据则为 0，单位为分                                                                         |
 | native            | 对象   | 否   | 原生广告对象，如果广告位类型是原生时，返回此对象                                                                                                                                                    |
 

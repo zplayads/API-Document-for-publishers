@@ -76,7 +76,7 @@ Data format: UTF-8
 | version             | string             | Y         | Protocol version, current version is 1.0                                                                                               |
 | developer_token | string             | Y         | Developer token, offered by ZPLAY Ads account manager                                                                                  |
 | need_https      | int                | N         | For material's link or tracking url link, whether the prefix is https. 0 as default. 0: don’t need https, 1: need https for all links. |
-| support_function | int            | Y         | Whether support close event and install event in third and forth part of [Check_list](/check_list_en.md); 1: not support, 2: support, defau; Publisher should handle both close event and install event if does not support these two events we provide |
+| support_function | int            | Y         | Whether support close event and install event in third and forth part of [Check_list](/check_list_en.md); 1: not support, 2: support; Publisher should handle both close event and install event if does not support these two events we provide |
 | app             | object             | Y         | APP information                                                                                                                        |
 | device          | object             | Y         | Device information                                                                                                                     |
 | user            | object             | N         | User information                                                                                                                       |
@@ -212,9 +212,9 @@ Data format: UTF-8
 | playable_ads_html | string | Y         | Playable ad HTML snippet, make sure to load it with in-app webview                                                                                                                                                                 |
 | target_url        | string | Y         | Target url to download APP, which will jump to when user click ad                                                                                                                                                                  |
 | target_url_type   | int    | N         | Type of actions when user click ad, 1: open the url within webview in-app, 2: open the url within system browser, 3: open map, 4: open dial, 5: play video, 6: download App, make sure to open App Store or Google Play in the app. If the value of support_function is 1, this parameter is null |
-| imp_tracker       | array    | N   | |
-| click_tracker     | array    | N   | |
-| close_tracker     | array    | N   | |
+| imp_tracker       | array    | N   | If this parameter is not null, please be sure to report this link when the playable ad start showing |
+| click_tracker     | array    | N   | If this parameter is not null, please be sure to report this link when the playable ad is clicked |
+| close_tracker     | array    | N   | If this parameter is not null, please be sure to report this link when the playable ad is closed |
 | price             | float  | N         | Ad price, empty means 0, unit: cent                                                                                   |
 | native            | object | N         | Native object, it will return native object if unit_type is native                                                                                                                                                                 |
 

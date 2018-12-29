@@ -208,7 +208,7 @@ ZPLAY Ads 和 开发者 之间的基础通信协议采用 HTTP 协议、POST 方
 | target_url        | string | 是   | 可玩广告的跳转地址                                                                                                                                                                                  |
 | target_url_type   | int    | 否   | 打开可玩广告跳转地址时的打开方式，1：在 app 内 webview 打开目标链接，2：在系统浏览器打开目标链接，3：打开地图，4：拨打电话，5：播放视频，6：App 下载，请确保在应用内打开 APP Store 或者 Google Play。若请求中support_function字段为1，此字段为空 |
 | imp_tracker       | 数组    | 否   | 若此字段有值，请务必在可玩广告开始展示时上报此链接 |
-| click_tracker     | 数组    | 否   | 若此字段有值，请务必在可玩广告点击时上报此里链接 |
+| click_tracker     | 数组    | 否   | 若此字段有值，请务必在可玩广告被点击时上报此里链接 |
 | close_tracker     | 数组    | 否   | 若此字段有值，请务必在可玩广告被关闭时上报此链接 |
 | price             | float  | 否   | 广告价格，若没有该数据则为 0，单位为分                                                                         |
 | native            | 对象   | 否   | 原生广告对象，如果广告位类型是原生时，返回此对象                                                                                                                                                    |

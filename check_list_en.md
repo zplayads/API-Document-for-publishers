@@ -1,5 +1,13 @@
 # Check List
 
+- [Check List](#check-list)
+  - [1. Client UA and IP Address Reporting](#1-client-ua-and-ip-address-reporting)
+  - [2. Parameter Verify](#2-parameter-verify)
+  - [3. Support both click event and install event which we provide](#3-support-both-click-event-and-install-event-which-we-provide)
+    - [3.1 Android](#31-android)
+    - [3.2 iOS](#32-ios)
+  - [4. request when the unit_type is native](#4-request-when-the-unittype-is-native)
+
 > Please read all the items listed here and check if they have met the requirements. Otherwise, the traffic will be blocked, and fill rate is not high, and revenue would be low. Please check carefully.
 
 ## 1. Client UA and IP Address Reporting
@@ -16,7 +24,11 @@
 
 - Please make sure the app_id, app_name, app_cat, ad_unit_id, unit_type in request are same with the corresponding values that you have registered on [ZPLAY Ads Platform](https://wwww.zplayads.com) in advance.
 
-## 3. Using WebView to Load ZPLAY Ads HTML on Android device
+## 3. Support both click event and install event which we provide
+
+### 3.1 Android
+
+>Using WebView to Load ZPLAY Ads HTML on Android device
 
 a. allow WebView to execute Javascript
 
@@ -24,7 +36,8 @@ a. allow WebView to execute Javascript
 mWebView.getSettings().setJavaScriptEnabled(true);
 ```
 
-b. sets the WebView need not requires a user gesture to play media.
+b. sets the WebView need not requires a user gesture to play media
+
 ```java
 mWebView.setMediaPlaybackRequiresUserGesture(false);
 ```
@@ -60,7 +73,9 @@ e. respond close event of WebView
 
 - `ZPLAYAdsJavascriptInterface.onCloseSelected()` method will be invoked when ad is closed，please close the WebView in this method.
 
-## 4. Using WKWebView to Load ZPLAY Ads HTML on iOS device
+### 3.2 iOS
+
+> Using WKWebView to Load ZPLAY Ads HTML on iOS device
 
 a. Add `zplayads` script message handle in WKWebView
 
@@ -115,5 +130,13 @@ d. listen to Close Event and execute
 
 - `close_playable_ads` method will be invoked when ad is closed, please close the WKWebView in `handlePlayablePageMessage:`
 
+> **Please confirm that whether you support install event and click event. If you support these two events, please set `support_function` to 2 when you request, otherwise set 1.**
 
-> **Please confirm that whether you support install event and click event in part 3,4. If you support these two events, please set `support_function` to 2 when you request, otherwise set 1.**
+**What's the difference for your work when you support these 2 events or not?**
+
+- If you support these 2 events, you need not to add close button on HTML of ZPLAY Ads, besides you will get higher eCPM because you support our install event so that we can open the store within your app.
+- If you not support these 2 events, you need add close button on HTML of ZPLAY Ads and you may get lower eCPM than you support our events. This is because opening the store in outside of your app is a bad user experience.
+
+## 4. request when the unit_type is native
+
+Please make sure that "play game without downloading" which is a image object that its type is 4 button is included in request.

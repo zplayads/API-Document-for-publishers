@@ -50,37 +50,37 @@
   "version": "1.0",
   "developer_token": "D0C85086-DC66-433E-9304-49EAB171D008",
   "need_https": 1,
+  "support_function": 2,
   "app": {
     "app_id": "A650AB0D-7BFC-2A81-3066-D3170947C3DA",
-    "app_name": "app_name",
+    "app_name": "iOS-demo",
     "bundle_id": "com.playableads.demo",
     "version": "1.0",
-    "cat": "cat"
+    "cat": "Casual Game"
   },
   "device": {
-    "model": "iphone",
-    "manufacturer": "iphone",
+    "model": "iPhone8,1",
+    "manufacturer": "Apple",
     "brand": "apple",
     "plmn": "46001",
     "device_type": "phone",
-    "adt": 1,
+    "dnt": 1,
     "connection_type": "wifi",
-    "carrier": 3,
+    "carrier": "China Mobile",
     "orientation": 0,
     "mac": "",
     "imei": "",
     "android_id": "",
     "android_ad_id": "",
-    "idfa": "123456789",
+    "idfa": "ADC65FAE-2FF8-423F-B3C8-244C4F2099E7",
     "idfv": "",
-    "openudid": "openudid",
     "language": "zh",
-    "os_type": "ios",
+    "os_type": "iOS",
     "os_version": "11.4.1",
     "screen": {
-      "width": 123,
-      "height": 234,
-      "dpi": 324,
+      "width": 667,
+      "height": 375,
+      "dpi": 219,
       "pxratio": 2
     },
     "geo": {
@@ -94,7 +94,7 @@
     "id": "34ddd",
     "gender": 0,
     "age": 34,
-    "keywords": ["45", "56", "abd"]
+    "keywords": ["auto", "cosmetics", "perfume"]
   },
   "ads": [
     {
@@ -136,37 +136,37 @@
   "version": "1.0",
   "developer_token": "D0C85086-DC66-433E-9304-49EAB171D008",
   "need_https": 1,
+  "support_function": 2,
   "app": {
     "app_id": "A650AB0D-7BFC-2A81-3066-D3170947C3DA",
-    "app_name": "app_name",
+    "app_name": "iOS-demo",
     "bundle_id": "com.playableads.demo",
     "version": "1.0",
-    "cat": "cat"
+    "cat": "Casual Game"
   },
   "device": {
-    "model": "iphone",
-    "manufacturer": "iphone",
+    "model": "iPhone8,1",
+    "manufacturer": "Apple",
     "brand": "apple",
     "plmn": "46001",
     "device_type": "phone",
-    "adt": 1,
+    "dnt": 1,
     "connection_type": "wifi",
-    "carrier": 3,
+    "carrier": "China Mobile",
     "orientation": 0,
     "mac": "",
     "imei": "",
     "android_id": "",
     "android_ad_id": "",
-    "idfa": "123456789",
+    "idfa": "ADC65FAE-2FF8-423F-B3C8-244C4F2099E7",
     "idfv": "",
-    "openudid": "openudid",
     "language": "zh",
-    "os_type": "ios",
+    "os_type": "iOS",
     "os_version": "11.4.1",
     "screen": {
-      "width": 123,
-      "height": 234,
-      "dpi": 324,
+      "width": 667,
+      "height": 375,
+      "dpi": 219,
       "pxratio": 2
     },
     "geo": {
@@ -180,7 +180,7 @@
     "id": "34ddd",
     "gender": 0,
     "age": 34,
-    "keywords": ["45", "56", "abd"]
+    "keywords": ["auto", "cosmetics", "perfume"]
   },
   "ads": [
     {
@@ -199,9 +199,9 @@
             "id": 2,
             "required": 1,
             "image": {
-              "type": 3,
-              "width": 345,
-              "height": 234
+              "type": 4,
+              "width": 300,
+              "height": 50
             }
           },
           {
@@ -295,37 +295,37 @@
   "version": "1.0",
   "developer_token": "D0C85086-DC66-433E-9304-49EAB171D008",
   "need_https": 1,
+  "support_function": 2,
   "app": {
     "app_id": "A650AB0D-7BFC-2A81-3066-D3170947C3DA",
-    "app_name": "app_name",
+    "app_name": "iOS-demo",
     "bundle_id": "com.playableads.demo",
     "version": "1.0",
-    "cat": "cat"
+    "cat": "Casual Game"
   },
   "device": {
-    "model": "iphone",
-    "manufacturer": "iphone",
+    "model": "iPhone8,1",
+    "manufacturer": "Apple",
     "brand": "apple",
     "plmn": "46001",
     "device_type": "phone",
-    "adt": 1,
+    "dnt": 1,
     "connection_type": "wifi",
-    "carrier": 3,
+    "carrier": "China Mobile",
     "orientation": 0,
     "mac": "",
     "imei": "",
     "android_id": "",
     "android_ad_id": "",
-    "idfa": "123456789",
+    "idfa": "ADC65FAE-2FF8-423F-B3C8-244C4F2099E7",
     "idfv": "",
-    "openudid": "openudid",
     "language": "zh",
-    "os_type": "ios",
+    "os_type": "iOS",
     "os_version": "11.4.1",
     "screen": {
-      "width": 123,
-      "height": 234,
-      "dpi": 324,
+      "width": 667,
+      "height": 375,
+      "dpi": 219,
       "pxratio": 2
     },
     "geo": {
@@ -339,7 +339,7 @@
     "id": "34ddd",
     "gender": 0,
     "age": 34,
-    "keywords": ["45", "56", "abd"]
+    "keywords": ["auto", "cosmetics", "perfume"]
   },
   "ads": [
     {
@@ -383,12 +383,13 @@
   "version": "1.0",
   "developer_token": "D0C85086-DC66-433E-9304-49EAB171D008",
   "need_https": 1,
+  "support_function": 2,
   "app": {
     "app_id": "5C5419C7-A2DE-88BC-A311-C3E7A646F6AF",
-    "app_name": "app_name",
+    "app_name": "Android-demo",
     "bundle_id": "com.playableads.demo",
     "version": "1.0",
-    "cat": "cat"
+    "cat": "Casual Game"
   },
   "device": {
     "model": "COL-AL10",
@@ -396,9 +397,9 @@
     "brand": "HONOR",
     "plmn": "46001",
     "device_type": "phone",
-    "adt": 1,
+    "dnt": 1,
     "connection_type": "wifi",
-    "carrier": 3,
+    "carrier": "China Mobile",
     "orientation": 0,
     "mac": "28b92b0dde49cff7190841686960c6bc",
     "imei": "6cd5c276d3f6ce4205dde5b1bf913361",
@@ -406,13 +407,12 @@
     "android_ad_id": "600c8c48-afca-42b8-89e5-4612c086c3cc",
     "idfa": "",
     "idfv": "",
-    "openudid": "openudid",
     "language": "zh",
     "os_type": "android",
     "os_version": "7.4.1",
     "screen": {
-      "width": 123,
-      "height": 234,
+      "width": 667,
+      "height": 375,
       "dpi": 432,
       "pxratio": 3
     },
@@ -427,7 +427,7 @@
     "id": "34ddd",
     "gender": 0,
     "age": 34,
-    "keywords": ["45", "56", "abd"]
+    "keywords": ["auto", "cosmetics", "perfume"]
   },
   "ads": [
     {
@@ -469,12 +469,13 @@
   "version": "1.0",
   "developer_token": "D0C85086-DC66-433E-9304-49EAB171D008",
   "need_https": 1,
+  "support_function": 2,
   "app": {
     "app_id": "5C5419C7-A2DE-88BC-A311-C3E7A646F6AF",
-    "app_name": "app_name",
+    "app_name": "Android-demo",
     "bundle_id": "com.playableads.demo",
     "version": "1.0",
-    "cat": "cat"
+    "cat": "Casual Game"
   },
   "device": {
     "model": "COL-AL10",
@@ -482,9 +483,9 @@
     "brand": "HONOR",
     "plmn": "46001",
     "device_type": "phone",
-    "adt": 1,
+    "dnt": 1,
     "connection_type": "wifi",
-    "carrier": 3,
+    "carrier": "China Mobile",
     "orientation": 0,
     "mac": "28b92b0dde49cff7190841686960c6bc",
     "imei": "6cd5c276d3f6ce4205dde5b1bf913361",
@@ -492,13 +493,12 @@
     "android_ad_id": "600c8c48-afca-42b8-89e5-4612c086c3cc",
     "idfa": "",
     "idfv": "",
-    "openudid": "openudid",
     "language": "zh",
     "os_type": "android",
     "os_version": "7.4.1",
     "screen": {
-      "width": 123,
-      "height": 234,
+      "width": 667,
+      "height": 375,
       "dpi": 432,
       "pxratio": 3
     },
@@ -513,7 +513,7 @@
     "id": "34ddd",
     "gender": 0,
     "age": 34,
-    "keywords": ["45", "56", "abd"]
+    "keywords": ["auto", "cosmetics", "perfume"]
   },
   "ads": [
     {
@@ -532,9 +532,9 @@
             "id": 2,
             "required": 1,
             "image": {
-              "type": 3,
-              "width": 345,
-              "height": 234
+              "type": 4,
+              "width": 300,
+              "height": 50
             }
           },
           {
@@ -628,12 +628,13 @@
   "version": "1.0",
   "developer_token": "D0C85086-DC66-433E-9304-49EAB171D008",
   "need_https": 1,
+  "support_function": 2,
   "app": {
     "app_id": "5C5419C7-A2DE-88BC-A311-C3E7A646F6AF",
-    "app_name": "app_name",
+    "app_name": "Android-demo",
     "bundle_id": "com.playableads.demo",
     "version": "1.0",
-    "cat": "cat"
+    "cat": "Casual Game"
   },
   "device": {
     "model": "COL-AL10",
@@ -641,9 +642,9 @@
     "brand": "HONOR",
     "plmn": "46001",
     "device_type": "phone",
-    "adt": 1,
+    "dnt": 1,
     "connection_type": "wifi",
-    "carrier": 3,
+    "carrier": "China Mobile",
     "orientation": 0,
     "mac": "28b92b0dde49cff7190841686960c6bc",
     "imei": "6cd5c276d3f6ce4205dde5b1bf913361",
@@ -651,13 +652,12 @@
     "android_ad_id": "600c8c48-afca-42b8-89e5-4612c086c3cc",
     "idfa": "",
     "idfv": "",
-    "openudid": "openudid",
     "language": "zh",
     "os_type": "android",
     "os_version": "7.4.1",
     "screen": {
-      "width": 123,
-      "height": 234,
+      "width": 667,
+      "height": 375,
       "dpi": 432,
       "pxratio": 3
     },
@@ -672,7 +672,7 @@
     "id": "34ddd",
     "gender": 0,
     "age": 34,
-    "keywords": ["45", "56", "abd"]
+    "keywords": ["auto", "cosmetics", "perfume"]
   },
   "ads": [
     {

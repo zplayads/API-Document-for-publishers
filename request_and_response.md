@@ -94,11 +94,11 @@ ZPLAY Ads 和 开发者 之间的基础通信协议采用 HTTP 协议、POST 方
 | model           | string  | 是   | 设备型号                                                                                                                               |
 | manufacturer    | string  | 否   | 生产厂商，例如：“Samsung”                                                                                                              |
 | brand           | string  | 否   | 手机品牌，例如：“MI4”                                                                                                                  |
-| plmn            | string  | 否   | 国家运营商编号                                                                                                                         |
+| plmn            | string  | 否   | 国家运营商编号，例如：“46000”                                                                                                                         |
 | device_type     | string  | 是   | 设备类型，“phone”，“tablet”                                                                                                            |
 | dnt             | int | 否   | 是否允许通过追踪用户行为进行定向投放，0：允许，1：不允许，默认为 0                                                                     |
 | connection_type | string  | 是   | 网络类型，空串表示未知，值为 wifi，2g，3g，4g，ethernet，cell_unknown                                                                  |
-| carrier         | string     | 否   | 运营商，0：移动，1：电信，3：联通，4：unknown                                                                                          |
+| carrier         | string     | 否   | 运营商，如：“中国移动”，“中国联通”，“中国电信”，“未知”等                                                                                          |
 | orientation     | int     | 否   | 设备方向，“0”为横屏，“1”为竖屏                                                                                                         |
 | mac             | string  | 否   | MAC 地址, md5 散列                                                                                                                     |
 | imei            | string  | 否   | IMEI 码，md5 散列。iOS 没有                                                                                                            |
@@ -207,9 +207,9 @@ ZPLAY Ads 和 开发者 之间的基础通信协议采用 HTTP 协议、POST 方
 | playable_ads_html | string | 是   | 可玩广告的 html 代码，请确保使用应用内的 webview 中打开                                                                                                                                             |
 | target_url        | string | 是   | 可玩广告的跳转地址                                                                                                                                                                                  |
 | target_url_type   | int    | 否   | 打开可玩广告跳转地址时的打开方式，1：在 app 内 webview 打开目标链接，2：在系统浏览器打开目标链接，3：打开地图，4：拨打电话，5：播放视频，6：App 下载，请确保在应用内打开 APP Store 或者 Google Play。若请求中support_function字段为1，此字段为空 |
-| imp_tracker       | 数组    | 否   | 若 |
-| click_tracker     | 数组    | 否   | |
-| close_tracker     | 数组    | 否   | |
+| imp_tracker       | 数组    | 否   | 若此字段有值，请务必在可玩广告开始展示时上报此链接 |
+| click_tracker     | 数组    | 否   | 若此字段有值，请务必在可玩广告被点击时上报此里链接 |
+| close_tracker     | 数组    | 否   | 若此字段有值，请务必在可玩广告被关闭时上报此链接 |
 | price             | float  | 否   | 广告价格，若没有该数据则为 0，单位为分                                                                         |
 | native            | 对象   | 否   | 原生广告对象，如果广告位类型是原生时，返回此对象                                                                                                                                                    |
 

@@ -98,7 +98,7 @@ ZPLAY Ads 和 开发者 之间的基础通信协议采用 HTTP 协议、POST 方
 | device_type     | string  | 是   | 设备类型，“phone”，“tablet”                                                                                                            |
 | dnt             | int | 否   | 是否允许通过追踪用户行为进行定向投放，0：允许，1：不允许，默认为 0                                                                     |
 | connection_type | string  | 是   | 网络类型，空串表示未知，值为 wifi，2g，3g，4g，ethernet，cell_unknown                                                                  |
-| carrier         | string     | 否   | 运营商，如：“中国移动”，“中国联通”，“中国电信”，“未知”                                                                                          |
+| carrier         | string     | 否   | 运营商，如：“中国移动”，“中国联通”，“中国电信”，“未知”等                                                                                          |
 | orientation     | int     | 否   | 设备方向，“0”为横屏，“1”为竖屏                                                                                                         |
 | mac             | string  | 否   | MAC 地址, md5 散列                                                                                                                     |
 | imei            | string  | 否   | IMEI 码，md5 散列。iOS 没有                                                                                                            |

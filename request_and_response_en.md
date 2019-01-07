@@ -264,7 +264,7 @@ Data format: UTF-8
 | target_url      | string | Y         | Target link to download APP                                                                                                                                                                                                        |
 | app_bundle      | string | Y         | APP packageName for Android, Bundle ID for iOS, please listen to install event, open build-in APP Store or Google Play, for install event, refer to [Check_list](check_list_en.md)                                                 |
 | click_tracker   | array  | N         | click tracker,  please be sure to report all tracking URLs when the native ad is clicked                                                                                                                                           |
-| target_url_type | int    | Y         | Type of actions when user click ad, 1: open the url within webview in-app, 2: open the url within system browser, 3: open map, 4: open dial, 5: play video, 6: download App, make sure to open App Store or Google Play in the app |
+| target_url_type | int    | Y         | Type of actions when user click ad, 1: open the url within webview in-app, 2: open the url within system browser, 3: open map, 4: open dial, 5: play video, 6：open application market, make sure to open App Store or Google Play in the app, 7: download installadtion package |
 
 #### ATTACHMENT
 

@@ -260,7 +260,7 @@ ZPLAY Ads 和 开发者 之间的基础通信协议采用 HTTP 协议、POST 方
 | target_url      | string | 是   | 目标链接                                                                                                                                                                                                   |
 | app_bundle      | string | 是   | 对于 Android，是应用的 packageName；对于 iOS，是 iTunes ID ，请监听可玩广告安装事件，在监听到时在 APP 内部打开 APP Store 或者 Google Play，并打开跳转链接，监听事件可参考[接入时的检查清单](check_list.md) |
 | click_tracker   | 数组   | 否   | 点击追踪链接，请务必在原生广告被点击时上报此数组中的所有链接                                                                                                                                               |
-| target_url_type | int    | 是   | 打开可玩广告跳转地址时的打开方式，1：在 app 内 webview 打开目标链接，2：在系统浏览器打开目标链接，3：打开地图，4：拨打电话，5：播放视频，6：App 下载，请确保在应用内打开 APP Store 或者 Google Play        |
+| target_url_type | int    | 是   | 打开可玩广告跳转地址时的打开方式，1：在 app 内 webview 打开目标链接，2：在系统浏览器打开目标链接，3：打开地图，4：拨打电话，5：播放视频，6：打开应用市场，请确保在应用内打开 APP Store 或者 Google Play，7：下载安装包        |
 
 #### 附件
 

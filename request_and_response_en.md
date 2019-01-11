@@ -208,9 +208,10 @@ Data format: UTF-8
 | id                | string | Y         | Ad id                                                                                                                                                                                                                                                                                                             |
 | ad_unit_id        | string | Y         | Ad unit id, it's the same with ad_unit_id in request                                                                                                                                                                                                                                                              |
 | app_bundle        | string | Y         | APP packageName for Android, Bundle ID for iOS, please listen to install event, open build-in APP Store or Google Play                                                                                                                                                                                            |
+| store_bundle     | string  | N         | Bundle ID for distrbution platform. For iOS, this parameter has no value; for Android, this value is bundie ID for distrbution platform                                                        |
 | playable_ads_html | string | Y         | Playable ad HTML snippet, make sure to load it with in-app webview                                                                                                                                                                                                                                                |
 | target_url        | string | Y         | Target url to download APP, which will jump to when user click ad                                                                                                                                                                                                                                                 |
-| target_url_type   | int    | N         | Type of actions when user click ad, 1: open the url within webview in-app, 2: open the url within system browser, 3: open map, 4: open dial, 5: play video, 6: download App, make sure to open App Store or Google Play in the app. If the value of support_function in your request is 1, this parameter is null |
+| target_url_type   | int    | N         | Type of actions when user click ad, 1: open the url within webview in-app, 2: open the url within system browser, 3: open map, 4: open dial, 5: play video, 6：open application market, make sure to open App Store or Google Play in the app, 7: download installadtion package. If the value of support_function in your request is 1, this parameter is null |
 | imp_tracker       | array  | N         | If this parameter is not null, please be sure to report all tracking URLs when the playable ad start showing                                                                                                                                                                                                      |
 | click_tracker     | array  | N         | If this parameter is not null, please be sure to report all tracking URLs when the playable ad is clicked                                                                                                                                                                                                         |
 | close_tracker     | array  | N         | If this parameter is not null, please be sure to report all tracking URLs when the playable ad is closed                                                                                                                                                                                                          |
@@ -264,55 +265,55 @@ Data format: UTF-8
 | target_url      | string | Y         | Target link to download APP                                                                                                                                                                                                        |
 | app_bundle      | string | Y         | APP packageName for Android, Bundle ID for iOS, please listen to install event, open build-in APP Store or Google Play, for install event, refer to [Check_list](check_list_en.md)                                                 |
 | click_tracker   | array  | N         | click tracker,  please be sure to report all tracking URLs when the native ad is clicked                                                                                                                                           |
-| target_url_type | int    | Y         | Type of actions when user click ad, 1: open the url within webview in-app, 2: open the url within system browser, 3: open map, 4: open dial, 5: play video, 6: download App, make sure to open App Store or Google Play in the app |
+| target_url_type | int    | Y         | Type of actions when user click ad, 1: open the url within webview in-app, 2: open the url within system browser, 3: open map, 4: open dial, 5: play video, 6：open application market, make sure to open App Store or Google Play in the app, 7: download installadtion package |
 
 #### ATTACHMENT
 
 ##### CATEGORY
 
-|  ID  |  中文  |  英文  |
-|  -  |  -  |  -  |
-|  B7405162-B110-E039-0796-7D9A766E8B27  |  新闻  |  News  |
-|  F682D42C-A3F1-F854-A4F1-9B95EAF82ED9  |  图书  |  Library  |
-|  79CBC4E4-1C81-3D00-C90B-741E89AC294C  |  社交  |  Social  |
-|  880E064C-CCB1-013B-BFD1-37AD5DEEE528  |  生活  |  Life  |
-|  B37E28A3-F0D5-ECA9-419F-A87F73E899A8  |  财务  |  Finance  |
-|  F2EFEBD9-290B-362B-E799-69DC3990A60C  |  娱乐  |  Entertain  |
-|  1F97B2D3-9FF6-3108-027B-679B6D387E22  |  教育  |  Education  |
-|  200E54DC-CFF5-EDC4-A4CD-89CE5C747C88  |  旅行  |  Travel  |
-|  397242EE-2865-9420-1EF2-C71C9BD9703B  |  导航  |  Navigation  |
-|  664C6DA9-D35B-A37E-37B0-CA64128C5041  |  商业  |  Business  |
-|  5FBC0108-47D5-3014-1315-8416379D6AF4  |  工具  |  Tool  |
-|  BEA4FCCE-2037-1596-EF75-C034DF44F69C  |  效率  |  Efficiency  |
-|  7741B885-EC32-9F76-C200-B01E0AB6C9F7  |  健康健美  |  Fitness  |
-|  D6641394-E658-9857-0E82-C30BA86798B5  |  摄影与录像  |  Camera  |
-|  E777608D-BB45-8A2D-F64A-ECD433553BE4  |  商品指南  |  Product Guide  |
-|  C15D7FA6-1AF5-76C2-19F0-71C33EEE533F  |  美食佳饮  |  Food and Drink  |
-|  A295D31D-47D9-FCB9-BF38-F5C958DFDD5C  |  参考  |  Reference  |
-|  993667EF-0B50-33AF-627A-B2BDFC18F149  |  报刊杂志  |  Magazine  |
-|  A42AAEF7-8992-E19D-4C53-00FE406CE607  |  体育  |  Sports  |
-|  C5431997-0943-5B5B-5693-F75D66481766  |  天气  |  Weather  |
-|  4609676E-BA15-B635-CE6C-022CCB7E34EB  |  医疗  |  Medical Treatment  |
-|  C271F038-85D6-2DD0-0AC9-8D35CA8DE316  |  音乐  |  Music  |
-|  E4C887C3-8F3F-B896-70A3-AAB325FA6768  |  视频  |  Video  |
-|  26039567-EDE2-2D97-BE16-477FAF639041  |  购物  |  Shopping  |
-|  F015DDC1-8475-3138-37FB-D824608C16AF  |  交通  |  Traffic  |
-|  AD9C1D4C-272D-7E6B-BB64-B770A8A5B9B0  |  动作游戏  |  Action Game  |
-|  AED099F1-2B7E-9A52-9F2E-D4F7CFE500AA  |  益智解谜  |  Puzzle Game  |
-|  7AD7776C-20D1-7A2A-9388-0D67A44FF399  |  卡牌游戏  |  Card Game  |
-|  36FBA1A1-C5E7-D9F6-9170-9BA0DA13CBF9  |  休闲游戏  |  Casual Game  |
-|  1CF3914A-E099-92A5-0ECF-D3C05A177253  |  冒险游戏  |  Adventure Game  |
-|  40E3C001-ADF6-A950-6E73-5DB66B0648E3  |  角色扮演游戏  |  Role-playing Game  |
-|  7DA00174-66E2-5119-6355-331049316283  |  策略游戏  |  Strategy Game  |
-|  F3C58318-6A2E-223E-C3D5-5936C48196B1  |  街机游戏  |  Arcade Game  |
-|  AEDADC6C-562B-751F-E137-907A605BAA6C  |  儿童游戏  |  Kids Game  |
-|  34879F45-896A-FFA9-582E-D576345F1D9A  |  竞速游戏  |  Racing Game  |
-|  C91C130E-3166-FB45-8951-25DC86850C12  |  聚会游戏  |  Family Game  |
-|  E13A497E-BCFA-1E66-05E4-31B716765B5B  |  模拟游戏  |  Simulation Game  |
-|  CEDC63B5-9A57-DFD0-75CB-1289DEB7578A  |  体育游戏  |  Sports Game  |
-|  48EF79CA-B384-F7A8-736A-423E8D62A023  |  文字游戏  |  Word Game  |
-|  7F43E937-69EA-5C4A-954B-E52B10094225  |  问答游戏  |  Trivia Game  |
-|  59B07A55-A40B-0D29-BF2D-CF29AFED540E  |  音乐游戏  |  Music Game  |
-|  EC5336A4-A434-BDDA-4246-6F50DA2EF63E  |  桌面游戏  |  Board Game  |
-|  57728DCB-9EC5-DC08-B999-3F9DDDF66083  |  赌场游戏  |  Casino Game  |
-|  CB45DD59-EF28-EC0D-423B-2ED10F54C8D7  |  教育游戏  |  Education Game  |
+|  中文  |  英文  |
+|  -  |  -  |
+|  新闻  |  News  |
+|  图书  |  Library  |
+|  社交  |  Social  |
+|  生活  |  Life  |
+|  财务  |  Finance  |
+|  娱乐  |  Entertain  |
+|  教育  |  Education  |
+|  旅行  |  Travel  |
+|  导航  |  Navigation  |
+|  商业  |  Business  |
+|  工具  |  Tool  |
+|  效率  |  Efficiency  |
+|  健康健美  |  Fitness  |
+|  摄影与录像  |  Camera  |
+|  商品指南  |  Product Guide  |
+|  美食佳饮  |  Food and Drink  |
+|  参考  |  Reference  |
+|  报刊杂志  |  Magazine  |
+|  体育  |  Sports  |
+|  天气  |  Weather  |
+|  医疗  |  Medical Treatment  |
+|  音乐  |  Music  |
+|  视频  |  Video  |
+|  购物  |  Shopping  |
+|  交通  |  Traffic  |
+|  动作游戏  |  Action Game  |
+|  益智解谜  |  Puzzle Game  |
+|  卡牌游戏  |  Card Game  |
+|  休闲游戏  |  Casual Game  |
+|  冒险游戏  |  Adventure Game  |
+|  角色扮演游戏  |  Role-playing Game  |
+|  策略游戏  |  Strategy Game  |
+|  街机游戏  |  Arcade Game  |
+|  儿童游戏  |  Kids Game  |
+|  竞速游戏  |  Racing Game  |
+|  聚会游戏  |  Family Game  |
+|  模拟游戏  |  Simulation Game  |
+|  体育游戏  |  Sports Game  |
+|  文字游戏  |  Word Game  |
+|  问答游戏  |  Trivia Game  |
+|  音乐游戏  |  Music Game  |
+|  桌面游戏  |  Board Game  |
+|  赌场游戏  |  Casino Game  |
+|  教育游戏  |  Education Game  |

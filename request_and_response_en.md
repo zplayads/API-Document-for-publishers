@@ -271,7 +271,7 @@ Data format: UTF-8
 
 ##### CATEGORY
 
-|  中文  |  英文  |
+|  Chinese  |  English  |
 |  -  |  -  |
 |  新闻  |  News  |
 |  图书  |  Library  |

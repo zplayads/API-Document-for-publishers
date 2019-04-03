@@ -211,7 +211,7 @@ Data format: UTF-8
 | minbitrate  | int  | N   | minimum bit rate in Kbps                                                     |
 | maxbitrate  | int  | N   | maximum bit rate in Kbps                                                     |
 | pos         | int  | Y   | the positioning of the ad unit, 1: unknown; 4: header; 5: footer; 6: side bar; 7: full screen       |
-| ext         | object |    |                                                                              |
+| ext         | object | N   |                                                                              |
 
 ### Response Information
 

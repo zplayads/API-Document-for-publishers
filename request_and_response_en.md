@@ -21,6 +21,7 @@
         - [Video Information](#video-information)
     - [Response Information](#response-information)
       - [Ad Information](#ad-information-1)
+        - [Video Information](#video-information-1)
         - [Native Information](#native-information-1)
         - [Asset Information](#asset-information-1)
           - [Image Information](#image-information)
@@ -200,8 +201,8 @@ Data format: UTF-8
 | Parameter    | Type | Mandatory | Description                                                                         |
 | ----------- | ---- | ---- | ---------------------------------------------------------------------------- |
 | mimes       | array | Y   | video format you support, such as "mimes":["video、mp4"], ZPLAY Ads only support MP4 for now |
-| minduration | int | N   | minimum video duration in millisecond                                                                             |
-| maxduration | int | N   | maximum video duration in millisecond                                                                             |
+| minduration | int | N   | minimum video duration in second                                                                             |
+| maxduration | int | N   | maximum video duration in second                                                                             |
 | protocols   | array | N   | Array of supported video bid response protocol, such as [3,6]; it should not included in request if don't support VAST protocols     |
 | w           | int  | N   | Width of the video player in pixels, such as 1280                                                             |
 | h           | int  | N   | Height of the video player in pixels, such as 720                                                              |
@@ -238,6 +239,26 @@ Data format: UTF-8
 | close_tracker     | array  | N         | If this parameter is not null, please be sure to report all tracking URLs when the playable ad is closed                                                                                                                                                                                                          |
 | price             | float  | N         | Ad price, empty means 0, unit: cent                                                                                                                                                                                                                                                                               |
 | native            | object | N         | Native object, it will return native object if unit_type is native                                                                                                                                                                                                                                                |
+
+##### Video Information
+
+| 字段名称                   |  Type           | Mandatory | Description                                                         |
+| -------------------------- | ------ | ---- | ------------------------------------------------------------ |
+| video_url                  | string | Y   | video url                                             |
+| duration                   | int    | Y  | video duration in second                                           |
+| mimes                      | string | Y   | video format, such as mp4                                              |
+| bitrate                    | int    | Y   | video biterate                                                   |
+| end_card                   | string | Y   | end card, show this picture after video is finished |
+| download_start_tracker     | array   | Y   | report when start to download video                                               |
+| download_ended_tracker     | array   | Y   | report when video download ended                                               |
+| start_playing_tracker      | array   | Y   | report when video is started                                               |
+| pause_tracker              | array   | Y   | report when video is paused                                               |
+| resume_tracker             | array   | Y   | report when video is resumed                                           |
+| end_playing_tracker        | array   | Y   | report when video is finished                                               |
+| end_card_displayed_tracker | array   | Y   | report when end card is displayed                                             |
+| video_click_tracker        | array   | Y   | report when download button is clicked during video is playing                           |
+| end_card_click_tracker     | array  | Y   | report when end card is clicked                                             |
+| close_tracker              | array   | Y   | report when end card is closed                                             |
 
 ##### Native Information
 

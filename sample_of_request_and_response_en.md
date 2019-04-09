@@ -1,7 +1,7 @@
 # Sample of Request and Response
 
 - [Sample of Request and Response](#sample-of-request-and-response)
-  - [Test token, app_id and ad_unit_id](#test-token-appid-and-adunitid)
+  - [Test token, app_id and ad_unit_id](#test-token-app_id-and-ad_unit_id)
   - [Sample of Request](#sample-of-request)
     - [iOS](#ios)
       - [Interstitial](#interstitial)

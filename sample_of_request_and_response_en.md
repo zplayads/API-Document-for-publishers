@@ -4,25 +4,35 @@
   - [Test token, app_id and ad_unit_id](#test-token-appid-and-adunitid)
   - [Sample of Request](#sample-of-request)
     - [iOS](#ios)
-      - [interstitial](#interstitial)
-        - [sample of request](#sample-of-request)
-        - [sample of response](#sample-of-response)
-      - [native](#native)
-        - [sample of request](#sample-of-request-1)
-        - [sample of response](#sample-of-response-1)
-      - [rewarded video](#rewarded-video)
-        - [sample of request](#sample-of-request-2)
-        - [sample of response](#sample-of-response-2)
+      - [Interstitial](#interstitial)
+        - [Sample of Request](#sample-of-request-1)
+        - [Sample of Response](#sample-of-response)
+      - [Native](#native)
+        - [Sample of Request](#sample-of-request-2)
+        - [Sample of Response](#sample-of-response-1)
+      - [Rewarded Video](#rewarded-video)
+        - [Sample of Request](#sample-of-request-3)
+        - [Sample of Response](#sample-of-response-2)
+      - [Request Video Object](#request-video-object)
+        - [Sample of Request - Support VAST](#sample-of-request---support-vast)
+        - [Sample of Response - Support VAST](#sample-of-response---support-vast)
+        - [Sample of Request - Do Not Support VAST](#sample-of-request---do-not-support-vast)
+        - [Sample of Response - Do Not Support VAST](#sample-of-response---do-not-support-vast)
     - [Android](#android)
-      - [interstitial](#interstitial-1)
-        - [sample of request](#sample-of-request-3)
-        - [sample of response](#sample-of-response-3)
-      - [native](#native-1)
-        - [sample of request](#sample-of-request-4)
-        - [sample of response](#sample-of-response-4)
-      - [rewarded video](#rewarded-video-1)
-        - [sample of request](#sample-of-request-5)
-        - [sample of response](#sample-of-response-5)
+      - [Interstitial](#interstitial-1)
+        - [Sample of Request](#sample-of-request-4)
+        - [Sample of Response](#sample-of-response-3)
+      - [Native](#native-1)
+        - [Sample of Request](#sample-of-request-5)
+        - [Sample of Response](#sample-of-response-4)
+      - [Rrewarded Video](#rrewarded-video)
+        - [Sample of Request](#sample-of-request-6)
+        - [Sample of Response](#sample-of-response-5)
+      - [Request Video Object](#request-video-object-1)
+        - [Sample of Request - Support VAST](#sample-of-request---support-vast-1)
+        - [Sample of Response - Support VAST](#sample-of-response---support-vast-1)
+        - [Sample of Request - Do Not Support VAST](#sample-of-request---do-not-support-vast-1)
+        - [Sample of Response - Do Not Support VAST](#sample-of-response---do-not-support-vast-1)
 
 ## Test token, app_id and ad_unit_id
 
@@ -41,13 +51,13 @@
 
 ### iOS
 
-#### interstitial
+#### Interstitial
 
-##### sample of request
+##### Sample of Request
 
 ```json
 {
-  "version": "1.0",
+  "version": "1.1",
   "developer_token": "D0C85086-DC66-433E-9304-49EAB171D008",
   "need_https": 1,
   "support_function":2,
@@ -106,7 +116,7 @@
 }
 ```
 
-##### sample of response
+##### Sample of Response
 
 ```json
 {
@@ -125,13 +135,13 @@
 }
 ```
 
-#### native
+#### Native
 
-##### sample of request
+##### Sample of Request
 
 ```json
 {
-  "version": "1.0",
+  "version": "1.1",
   "developer_token": "D0C85086-DC66-433E-9304-49EAB171D008",
   "need_https": 1,
   "support_function":2,
@@ -218,7 +228,7 @@
 }
 ```
 
-##### sample of response
+##### Sample of Response
 
 ```json
 {
@@ -276,13 +286,13 @@
 }
 ```
 
-#### rewarded video
+#### Rewarded Video
 
-##### sample of request
+##### Sample of Request
 
 ```json
 {
-  "version": "1.0",
+  "version": "1.1",
   "developer_token": "D0C85086-DC66-433E-9304-49EAB171D008",
   "need_https": 1,
   "support_function":2,
@@ -341,7 +351,7 @@
 }
 ```
 
-##### sample of response
+##### Sample of Response
 
 ```json
 {
@@ -360,15 +370,241 @@
 }
 ```
 
+#### Request Video Object
+
+You can request video object with each ad unit type. Here take Interstitial as an example.
+
+##### Sample of Request - Support VAST
+```json
+{
+  "version": "1.1",
+  "developer_token": "D0C85086-DC66-433E-9304-49EAB171D008",
+  "need_https": 1,
+  "support_function":2,
+  "app": {
+    "app_id": "A650AB0D-7BFC-2A81-3066-D3170947C3DA",
+    "app_name": "iOS-demo",
+    "bundle_id": "com.playableads.demo",
+    "version": "1.0",
+    "cat": ""
+  },
+  "device": {
+    "model": "iPhone8,1",
+    "manufacturer": "Apple",
+    "brand": "apple",
+    "plmn": "46001",
+    "device_type": "phone",
+    "dnt": 1,
+    "connection_type": "wifi",
+    "carrier": "China Mobile",
+    "orientation": 0,
+    "mac": "",
+    "imei": "",
+    "android_id": "",
+    "android_adid": "",
+    "idfa": "ADC65FAE-2FF8-423F-B3C8-244C4F2099E7",
+    "idfv": "",
+    "openudid": "",
+    "language": "zh-Hans-CN",
+    "os_type": "iOS",
+    "os_version": "11.3",
+    "screen": {
+      "width": 667,
+      "height": 375,
+      "dpi": 219,
+      "pxratio": 2
+    },
+    "geo": {
+      "lat": 34.567,
+      "lon": 107.67,
+      "horizontal_accu": 45,
+      "vertical_accu": 56
+    }
+  },
+"user": {
+    "id": "34ddd",
+    "gender": "M",
+    "age": 34,
+    "keywords": ["auto", "cosmetics", "perfume"]
+  },
+  "ads": [
+    {
+    "video":{
+    "mimes":["mp4"],
+    "minduration":"5",
+    "maxduration":"30",
+    "protocols":[3,6],
+    "startdelay":-1,
+    "linearity":1,
+    "minbitrate":100,
+    "maxbitrate":10000,
+    "pos":7,
+    "w": "900",
+    "h": "1600"
+     },
+      "unit_type": 1,
+      "ad_unit_id": "0868EBC0-7768-40CA-4226-F9924221C8EB"
+    }
+  ]
+}
+```
+
+##### Sample of Response - Support VAST
+```json
+{
+    "result": 0,
+    "msg": "",
+    "ads": [
+        {
+            "id": "6E4ADB48-6674-B91F-AE85-12E8CD21A847",
+            "ad_unit_id": "0868EBC0-7768-40CA-4226-F9924221C8EB",
+            "app_bundle": "834878585",
+            "target_url": "https://itunes.apple.com/app/id834878585?mt=8",
+            "target_url_type": 6,
+            "adm": "<VAST version=\"3\"><Ad id=\"6E4ADB48-6674-B91F-AE85-12E8CD21A847\"><InLine><AdSystem version=\"1.0\"><![CDATA[atmosplay]]></AdSystem><AdTitle><![CDATA[消灭星星经典版-专用于新功能测试-广告1-插屏-勿动]]></AdTitle><Impression><![CDATA[https://pa-engine.zplayads.com/v1/tracking?ab_test_id=A011A3BB-9316-08D6-06DD-3DADFA6B73C1&ab_test_object_group_id=default&ad_id=6E4ADB48-6674-B91F-AE85-12E8CD21A847&ad_unit_id=0868EBC0-7768-40CA-4226-F9924221C8EB&app_id=A650AB0D-7BFC-2A81-3066-D3170947C3DA&brand=apple&bundle_id=com.playableads.demo&channel_id=&channel_share_rate=0&city=%E5%8D%97%E4%BA%AC%E5%B8%82&client_id=73AB1CDF-009E-130C-4A15-94901D3470DE&country=CN&creatives_id=87521473-8078-D25B-1EB6-63C16963AA53&developer_share_rate=70&device_model=iPhone8%2C1&device_type=phone&engine_events=&height=0&idfa=ADC65FAE-2FF8-423F-B3C8-244C4F2099E7&industry_id=&integrated_type=API&last_status=0&network_connection_type=wifi&os=iOS&os_version=11.3&pay_by=cpi&pay_event=install&predictive_cpm_cipher=351d6fbfdfc8bb29&predictive_cpm_usd_cipher=213ee1d6dd84207c&predictive_cpms=2c3e8d08ad73a635&progress=%7Bprogress%7D&promotion_app_id=8B6BC1BB-368A-6C77-735A-929E38E20D9F&region=%E6%B1%9F%E8%8B%8F%E7%9C%81&request_id=bim0puvhefb1jegtirlg&settlement_price_cny=213ee1d6dd84207c&settlement_price_usd=213ee1d6dd84207c&tracking_type=video_start_playing&unit_price_cny=fdf3d2a3b2e6380d77e13edb&unit_price_usd=9c2e72a6e1ed08e69b93e5fa&unit_prices=9ee430e529c158be513616b80a0155613db863678ad3b77dc7b817d5913cd4205f940ff0e477ca83286cc2ef8aa461e5391c72823bb1c0f3e1462f0edc20e8f9d1186704e988f68f&width=0]]></Impression><Creatives><Creative id=\"87521473-8078-D25B-1EB6-63C16963AA53\"><Linear><Duration>00:00:00</Duration><TrackingEvents><Tracking event=\"complete\"><![CDATA[https://pa-engine.zplayads.com/v1/tracking?ab_test_id=A011A3BB-9316-08D6-06DD-3DADFA6B73C1&ab_test_object_group_id=default&ad_id=6E4ADB48-6674-B91F-AE85-12E8CD21A847&ad_unit_id=0868EBC0-7768-40CA-4226-F9924221C8EB&app_id=A650AB0D-7BFC-2A81-3066-D3170947C3DA&brand=apple&bundle_id=com.playableads.demo&channel_id=&channel_share_rate=0&city=%E5%8D%97%E4%BA%AC%E5%B8%82&client_id=73AB1CDF-009E-130C-4A15-94901D3470DE&country=CN&creatives_id=87521473-8078-D25B-1EB6-63C16963AA53&developer_share_rate=70&device_model=iPhone8%2C1&device_type=phone&engine_events=&height=0&idfa=ADC65FAE-2FF8-423F-B3C8-244C4F2099E7&industry_id=&integrated_type=API&last_status=0&network_connection_type=wifi&os=iOS&os_version=11.3&pay_by=cpi&pay_event=install&predictive_cpm_cipher=351d6fbfdfc8bb29&predictive_cpm_usd_cipher=213ee1d6dd84207c&predictive_cpms=2c3e8d08ad73a635&progress=%7Bprogress%7D&promotion_app_id=8B6BC1BB-368A-6C77-735A-929E38E20D9F&region=%E6%B1%9F%E8%8B%8F%E7%9C%81&request_id=bim0puvhefb1jegtirlg&settlement_price_cny=213ee1d6dd84207c&settlement_price_usd=213ee1d6dd84207c&tracking_type=video_ended_playing&unit_price_cny=fdf3d2a3b2e6380d77e13edb&unit_price_usd=9c2e72a6e1ed08e69b93e5fa&unit_prices=9ee430e529c158be513616b80a0155613db863678ad3b77dc7b817d5913cd4205f940ff0e477ca83286cc2ef8aa461e5391c72823bb1c0f3e1462f0edc20e8f9d1186704e988f68f&width=0]]></Tracking><Tracking event=\"pause\"><![CDATA[https://pa-engine.zplayads.com/v1/tracking?ab_test_id=A011A3BB-9316-08D6-06DD-3DADFA6B73C1&ab_test_object_group_id=default&ad_id=6E4ADB48-6674-B91F-AE85-12E8CD21A847&ad_unit_id=0868EBC0-7768-40CA-4226-F9924221C8EB&app_id=A650AB0D-7BFC-2A81-3066-D3170947C3DA&brand=apple&bundle_id=com.playableads.demo&channel_id=&channel_share_rate=0&city=%E5%8D%97%E4%BA%AC%E5%B8%82&client_id=73AB1CDF-009E-130C-4A15-94901D3470DE&country=CN&creatives_id=87521473-8078-D25B-1EB6-63C16963AA53&developer_share_rate=70&device_model=iPhone8%2C1&device_type=phone&engine_events=&height=0&idfa=ADC65FAE-2FF8-423F-B3C8-244C4F2099E7&industry_id=&integrated_type=API&last_status=0&network_connection_type=wifi&os=iOS&os_version=11.3&pay_by=cpi&pay_event=install&predictive_cpm_cipher=351d6fbfdfc8bb29&predictive_cpm_usd_cipher=213ee1d6dd84207c&predictive_cpms=2c3e8d08ad73a635&progress=%7Bprogress%7D&promotion_app_id=8B6BC1BB-368A-6C77-735A-929E38E20D9F&region=%E6%B1%9F%E8%8B%8F%E7%9C%81&request_id=bim0puvhefb1jegtirlg&settlement_price_cny=213ee1d6dd84207c&settlement_price_usd=213ee1d6dd84207c&tracking_type=video_paused&unit_price_cny=fdf3d2a3b2e6380d77e13edb&unit_price_usd=9c2e72a6e1ed08e69b93e5fa&unit_prices=9ee430e529c158be513616b80a0155613db863678ad3b77dc7b817d5913cd4205f940ff0e477ca83286cc2ef8aa461e5391c72823bb1c0f3e1462f0edc20e8f9d1186704e988f68f&width=0]]></Tracking><Tracking event=\"resume\"><![CDATA[https://pa-engine.zplayads.com/v1/tracking?ab_test_id=A011A3BB-9316-08D6-06DD-3DADFA6B73C1&ab_test_object_group_id=default&ad_id=6E4ADB48-6674-B91F-AE85-12E8CD21A847&ad_unit_id=0868EBC0-7768-40CA-4226-F9924221C8EB&app_id=A650AB0D-7BFC-2A81-3066-D3170947C3DA&brand=apple&bundle_id=com.playableads.demo&channel_id=&channel_share_rate=0&city=%E5%8D%97%E4%BA%AC%E5%B8%82&client_id=73AB1CDF-009E-130C-4A15-94901D3470DE&country=CN&creatives_id=87521473-8078-D25B-1EB6-63C16963AA53&developer_share_rate=70&device_model=iPhone8%2C1&device_type=phone&engine_events=&height=0&idfa=ADC65FAE-2FF8-423F-B3C8-244C4F2099E7&industry_id=&integrated_type=API&last_status=0&network_connection_type=wifi&os=iOS&os_version=11.3&pay_by=cpi&pay_event=install&predictive_cpm_cipher=351d6fbfdfc8bb29&predictive_cpm_usd_cipher=213ee1d6dd84207c&predictive_cpms=2c3e8d08ad73a635&progress=%7Bprogress%7D&promotion_app_id=8B6BC1BB-368A-6C77-735A-929E38E20D9F&region=%E6%B1%9F%E8%8B%8F%E7%9C%81&request_id=bim0puvhefb1jegtirlg&settlement_price_cny=213ee1d6dd84207c&settlement_price_usd=213ee1d6dd84207c&tracking_type=video_resumed&unit_price_cny=fdf3d2a3b2e6380d77e13edb&unit_price_usd=9c2e72a6e1ed08e69b93e5fa&unit_prices=9ee430e529c158be513616b80a0155613db863678ad3b77dc7b817d5913cd4205f940ff0e477ca83286cc2ef8aa461e5391c72823bb1c0f3e1462f0edc20e8f9d1186704e988f68f&width=0]]></Tracking><Tracking event=\"closeLinear\"><![CDATA[https://pa-engine.zplayads.com/v1/tracking?ab_test_id=A011A3BB-9316-08D6-06DD-3DADFA6B73C1&ab_test_object_group_id=default&ad_id=6E4ADB48-6674-B91F-AE85-12E8CD21A847&ad_unit_id=0868EBC0-7768-40CA-4226-F9924221C8EB&app_id=A650AB0D-7BFC-2A81-3066-D3170947C3DA&brand=apple&bundle_id=com.playableads.demo&channel_id=&channel_share_rate=0&city=%E5%8D%97%E4%BA%AC%E5%B8%82&client_id=73AB1CDF-009E-130C-4A15-94901D3470DE&country=CN&creatives_id=87521473-8078-D25B-1EB6-63C16963AA53&developer_share_rate=70&device_model=iPhone8%2C1&device_type=phone&engine_events=&height=0&idfa=ADC65FAE-2FF8-423F-B3C8-244C4F2099E7&industry_id=&integrated_type=API&last_status=0&network_connection_type=wifi&os=iOS&os_version=11.3&pay_by=cpi&pay_event=install&predictive_cpm_cipher=351d6fbfdfc8bb29&predictive_cpm_usd_cipher=213ee1d6dd84207c&predictive_cpms=2c3e8d08ad73a635&progress=%7Bprogress%7D&promotion_app_id=8B6BC1BB-368A-6C77-735A-929E38E20D9F&region=%E6%B1%9F%E8%8B%8F%E7%9C%81&request_id=bim0puvhefb1jegtirlg&settlement_price_cny=213ee1d6dd84207c&settlement_price_usd=213ee1d6dd84207c&tracking_type=landing_page_dismissed&unit_price_cny=fdf3d2a3b2e6380d77e13edb&unit_price_usd=9c2e72a6e1ed08e69b93e5fa&unit_prices=9ee430e529c158be513616b80a0155613db863678ad3b77dc7b817d5913cd4205f940ff0e477ca83286cc2ef8aa461e5391c72823bb1c0f3e1462f0edc20e8f9d1186704e988f68f&width=0]]></Tracking><Tracking event=\"skip\"><![CDATA[https://pa-engine.zplayads.com/v1/tracking?ab_test_id=A011A3BB-9316-08D6-06DD-3DADFA6B73C1&ab_test_object_group_id=default&ad_id=6E4ADB48-6674-B91F-AE85-12E8CD21A847&ad_unit_id=0868EBC0-7768-40CA-4226-F9924221C8EB&app_id=A650AB0D-7BFC-2A81-3066-D3170947C3DA&brand=apple&bundle_id=com.playableads.demo&channel_id=&channel_share_rate=0&city=%E5%8D%97%E4%BA%AC%E5%B8%82&client_id=73AB1CDF-009E-130C-4A15-94901D3470DE&country=CN&creatives_id=87521473-8078-D25B-1EB6-63C16963AA53&developer_share_rate=70&device_model=iPhone8%2C1&device_type=phone&engine_events=&height=0&idfa=ADC65FAE-2FF8-423F-B3C8-244C4F2099E7&industry_id=&integrated_type=API&last_status=0&network_connection_type=wifi&os=iOS&os_version=11.3&pay_by=cpi&pay_event=install&predictive_cpm_cipher=351d6fbfdfc8bb29&predictive_cpm_usd_cipher=213ee1d6dd84207c&predictive_cpms=2c3e8d08ad73a635&progress=%7Bprogress%7D&promotion_app_id=8B6BC1BB-368A-6C77-735A-929E38E20D9F&region=%E6%B1%9F%E8%8B%8F%E7%9C%81&request_id=bim0puvhefb1jegtirlg&settlement_price_cny=213ee1d6dd84207c&settlement_price_usd=213ee1d6dd84207c&tracking_type=force_close&unit_price_cny=fdf3d2a3b2e6380d77e13edb&unit_price_usd=9c2e72a6e1ed08e69b93e5fa&unit_prices=9ee430e529c158be513616b80a0155613db863678ad3b77dc7b817d5913cd4205f940ff0e477ca83286cc2ef8aa461e5391c72823bb1c0f3e1462f0edc20e8f9d1186704e988f68f&width=0]]></Tracking></TrackingEvents><VideoClicks><ClickThrough><![CDATA[https://itunes.apple.com/app/id834878585?mt=8]]></ClickThrough><ClickTracking><![CDATA[https://pa-engine.zplayads.com/v1/tracking?ab_test_id=A011A3BB-9316-08D6-06DD-3DADFA6B73C1&ab_test_object_group_id=default&ad_id=6E4ADB48-6674-B91F-AE85-12E8CD21A847&ad_unit_id=0868EBC0-7768-40CA-4226-F9924221C8EB&app_id=A650AB0D-7BFC-2A81-3066-D3170947C3DA&brand=apple&bundle_id=com.playableads.demo&channel_id=&channel_share_rate=0&city=%E5%8D%97%E4%BA%AC%E5%B8%82&client_id=73AB1CDF-009E-130C-4A15-94901D3470DE&country=CN&creatives_id=87521473-8078-D25B-1EB6-63C16963AA53&developer_share_rate=70&device_model=iPhone8%2C1&device_type=phone&engine_events=&height=0&idfa=ADC65FAE-2FF8-423F-B3C8-244C4F2099E7&industry_id=&integrated_type=API&last_status=0&network_connection_type=wifi&os=iOS&os_version=11.3&pay_by=cpi&pay_event=install&predictive_cpm_cipher=351d6fbfdfc8bb29&predictive_cpm_usd_cipher=213ee1d6dd84207c&predictive_cpms=2c3e8d08ad73a635&progress=%7Bprogress%7D&promotion_app_id=8B6BC1BB-368A-6C77-735A-929E38E20D9F&region=%E6%B1%9F%E8%8B%8F%E7%9C%81&request_id=bim0puvhefb1jegtirlg&settlement_price_cny=213ee1d6dd84207c&settlement_price_usd=213ee1d6dd84207c&tracking_type=click_from_video_page&unit_price_cny=fdf3d2a3b2e6380d77e13edb&unit_price_usd=9c2e72a6e1ed08e69b93e5fa&unit_prices=9ee430e529c158be513616b80a0155613db863678ad3b77dc7b817d5913cd4205f940ff0e477ca83286cc2ef8aa461e5391c72823bb1c0f3e1462f0edc20e8f9d1186704e988f68f&width=0]]></ClickTracking><ClickTracking><![CDATA[https://app.appsflyer.com/id834878585?c=6E4ADB48-6674-B91F-AE85-12E8CD21A847&af_siteid=A650AB0D-7BFC-2A81-3066-D3170947C3DA&af_sub_siteid=0868EBC0-7768-40CA-4226-F9924221C8EB&af_cost_model=cpi&af_cost_currency=CNY&af_cost_value=2&pid=zplay_int&af_click_lookback=7d&clickid=bim0puvhefb1jegtirlg&promote_app_id=8B6BC1BB-368A-6C77-735A-929E38E20D9F&android_id=&advertising_id=&imei=&idfa=ADC65FAE-2FF8-423F-B3C8-244C4F2099E7&secret=bim0puvhefb1jegtirlg&click_lookback={af_click_lookback}&viewthrough_lookback={viewthrough_lookback}]]></ClickTracking></VideoClicks><MediaFiles><MediaFile delivery=\"streaming\" type=\"mp4\" bitrate=\"1161\" width=\"360\" height=\"640\"><![CDATA[https://adcdn.zplayads.com/alfred/static/2019/04/03/1FAD95E9-8AB2-8D93-D602-352C3E2132A020190403153510.mp4]]></MediaFile></MediaFiles></Linear></Creative></Creatives><Description></Description><Survey></Survey></InLine></Ad></VAST>"
+        }
+    ]
+}
+```
+##### Sample of Request - Do Not Support VAST
+```json
+{
+  "version": "1.1",
+  "developer_token": "D0C85086-DC66-433E-9304-49EAB171D008",
+  "need_https": 1,
+  "support_function":2,
+  "app": {
+    "app_id": "A650AB0D-7BFC-2A81-3066-D3170947C3DA",
+    "app_name": "iOS-demo",
+    "bundle_id": "com.playableads.demo",
+    "version": "1.0",
+    "cat": ""
+  },
+  "device": {
+    "model": "iPhone8,1",
+    "manufacturer": "Apple",
+    "brand": "apple",
+    "plmn": "46001",
+    "device_type": "phone",
+    "dnt": 1,
+    "connection_type": "wifi",
+    "carrier": "China Mobile",
+    "orientation": 0,
+    "mac": "",
+    "imei": "",
+    "android_id": "",
+    "android_adid": "",
+    "idfa": "ADC65FAE-2FF8-423F-B3C8-244C4F2099E7",
+    "idfv": "",
+    "openudid": "",
+    "language": "zh-Hans-CN",
+    "os_type": "iOS",
+    "os_version": "11.3",
+    "screen": {
+      "width": 667,
+      "height": 375,
+      "dpi": 219,
+      "pxratio": 2
+    },
+    "geo": {
+      "lat": 34.567,
+      "lon": 107.67,
+      "horizontal_accu": 45,
+      "vertical_accu": 56
+    }
+  },
+"user": {
+    "id": "34ddd",
+    "gender": "M",
+    "age": 34,
+    "keywords": ["auto", "cosmetics", "perfume"]
+  },
+  "ads": [
+    {
+    "video":{
+    "mimes":["mp4"],
+    "minduration":"5",
+    "maxduration":"30",
+    "w": "900",
+    "h": "1600",
+    "startdelay":-1,
+    "linearity":1,
+    "minbitrate":100,
+    "maxbitrate":10000,
+    "pos":8
+     },
+      "unit_type": 1,
+      "ad_unit_id": "0868EBC0-7768-40CA-4226-F9924221C8EB"
+    }
+  ]
+}
+```
+
+##### Sample of Response - Do Not Support VAST
+```json
+{
+    "result": 0,
+    "msg": "",
+    "ads": [
+        {
+            "id": "6E4ADB48-6674-B91F-AE85-12E8CD21A847",
+            "ad_unit_id": "0868EBC0-7768-40CA-4226-F9924221C8EB",
+            "app_bundle": "834878585",
+            "target_url": "https://itunes.apple.com/app/id834878585?mt=8",
+            "target_url_type": 6,
+            "video": {
+                "video_url": "https://adcdn.zplayads.com/alfred/static/2019/04/03/1FAD95E9-8AB2-8D93-D602-352C3E2132A020190403153510.mp4",
+                "end_card": "https://pa-cloud.zplayads.com/alfred/static/2019/04/03/1B82AD6C-5369-7312-0B6C-FE8C84365DD3.html",
+                "mimes": "mp4",
+                "bitrate": 1161,
+                "download_start_tracker": [
+                    "https://pa-engine.zplayads.com/v1/tracking?ab_test_id=A011A3BB-9316-08D6-06DD-3DADFA6B73C1&ab_test_object_group_id=default&ad_id=6E4ADB48-6674-B91F-AE85-12E8CD21A847&ad_unit_id=0868EBC0-7768-40CA-4226-F9924221C8EB&app_id=A650AB0D-7BFC-2A81-3066-D3170947C3DA&brand=apple&bundle_id=com.playableads.demo&channel_id=&channel_share_rate=0&city=%E5%8D%97%E4%BA%AC%E5%B8%82&client_id=73AB1CDF-009E-130C-4A15-94901D3470DE&country=CN&creatives_id=87521473-8078-D25B-1EB6-63C16963AA53&developer_share_rate=70&device_model=iPhone8%2C1&device_type=phone&engine_events=&height=0&idfa=ADC65FAE-2FF8-423F-B3C8-244C4F2099E7&industry_id=&integrated_type=API&last_status=0&network_connection_type=wifi&os=iOS&os_version=11.3&pay_by=cpi&pay_event=install&predictive_cpm_cipher=351d6fbfdfc8bb29&predictive_cpm_usd_cipher=213ee1d6dd84207c&predictive_cpms=2c3e8d08ad73a635&progress=%7Bprogress%7D&promotion_app_id=8B6BC1BB-368A-6C77-735A-929E38E20D9F&region=%E6%B1%9F%E8%8B%8F%E7%9C%81&request_id=bilerjf2co85f5mqnd30&settlement_price_cny=213ee1d6dd84207c&settlement_price_usd=213ee1d6dd84207c&tracking_type=download_start&unit_price_cny=fdf3d2a3b2e6380d77e13edb&unit_price_usd=9c2e72a6e1ed08e69b93e5fa&unit_prices=9ee430e529c158be513616b80a0155613db863678ad3b77dc7b817d5913cd4205f940ff0e477ca83286cc2ef8aa461e5391c72823bb1c0f3e1462f0edc20e8f9d1186704e988f68f&width=0"
+                ],
+                "download_ended_tracker": [
+                    "https://pa-engine.zplayads.com/v1/tracking?ab_test_id=A011A3BB-9316-08D6-06DD-3DADFA6B73C1&ab_test_object_group_id=default&ad_id=6E4ADB48-6674-B91F-AE85-12E8CD21A847&ad_unit_id=0868EBC0-7768-40CA-4226-F9924221C8EB&app_id=A650AB0D-7BFC-2A81-3066-D3170947C3DA&brand=apple&bundle_id=com.playableads.demo&channel_id=&channel_share_rate=0&city=%E5%8D%97%E4%BA%AC%E5%B8%82&client_id=73AB1CDF-009E-130C-4A15-94901D3470DE&country=CN&creatives_id=87521473-8078-D25B-1EB6-63C16963AA53&developer_share_rate=70&device_model=iPhone8%2C1&device_type=phone&engine_events=&height=0&idfa=ADC65FAE-2FF8-423F-B3C8-244C4F2099E7&industry_id=&integrated_type=API&last_status=0&network_connection_type=wifi&os=iOS&os_version=11.3&pay_by=cpi&pay_event=install&predictive_cpm_cipher=351d6fbfdfc8bb29&predictive_cpm_usd_cipher=213ee1d6dd84207c&predictive_cpms=2c3e8d08ad73a635&progress=%7Bprogress%7D&promotion_app_id=8B6BC1BB-368A-6C77-735A-929E38E20D9F&region=%E6%B1%9F%E8%8B%8F%E7%9C%81&request_id=bilerjf2co85f5mqnd30&settlement_price_cny=213ee1d6dd84207c&settlement_price_usd=213ee1d6dd84207c&tracking_type=download_end&unit_price_cny=fdf3d2a3b2e6380d77e13edb&unit_price_usd=9c2e72a6e1ed08e69b93e5fa&unit_prices=9ee430e529c158be513616b80a0155613db863678ad3b77dc7b817d5913cd4205f940ff0e477ca83286cc2ef8aa461e5391c72823bb1c0f3e1462f0edc20e8f9d1186704e988f68f&width=0"
+                ],
+                "start_playing_tracker": [
+                    "https://pa-engine.zplayads.com/v1/tracking?ab_test_id=A011A3BB-9316-08D6-06DD-3DADFA6B73C1&ab_test_object_group_id=default&ad_id=6E4ADB48-6674-B91F-AE85-12E8CD21A847&ad_unit_id=0868EBC0-7768-40CA-4226-F9924221C8EB&app_id=A650AB0D-7BFC-2A81-3066-D3170947C3DA&brand=apple&bundle_id=com.playableads.demo&channel_id=&channel_share_rate=0&city=%E5%8D%97%E4%BA%AC%E5%B8%82&client_id=73AB1CDF-009E-130C-4A15-94901D3470DE&country=CN&creatives_id=87521473-8078-D25B-1EB6-63C16963AA53&developer_share_rate=70&device_model=iPhone8%2C1&device_type=phone&engine_events=&height=0&idfa=ADC65FAE-2FF8-423F-B3C8-244C4F2099E7&industry_id=&integrated_type=API&last_status=0&network_connection_type=wifi&os=iOS&os_version=11.3&pay_by=cpi&pay_event=install&predictive_cpm_cipher=351d6fbfdfc8bb29&predictive_cpm_usd_cipher=213ee1d6dd84207c&predictive_cpms=2c3e8d08ad73a635&progress=%7Bprogress%7D&promotion_app_id=8B6BC1BB-368A-6C77-735A-929E38E20D9F&region=%E6%B1%9F%E8%8B%8F%E7%9C%81&request_id=bilerjf2co85f5mqnd30&settlement_price_cny=213ee1d6dd84207c&settlement_price_usd=213ee1d6dd84207c&tracking_type=video_start_playing&unit_price_cny=fdf3d2a3b2e6380d77e13edb&unit_price_usd=9c2e72a6e1ed08e69b93e5fa&unit_prices=9ee430e529c158be513616b80a0155613db863678ad3b77dc7b817d5913cd4205f940ff0e477ca83286cc2ef8aa461e5391c72823bb1c0f3e1462f0edc20e8f9d1186704e988f68f&width=0"
+                ],
+                "pause_tracker": [
+                    "https://pa-engine.zplayads.com/v1/tracking?ab_test_id=A011A3BB-9316-08D6-06DD-3DADFA6B73C1&ab_test_object_group_id=default&ad_id=6E4ADB48-6674-B91F-AE85-12E8CD21A847&ad_unit_id=0868EBC0-7768-40CA-4226-F9924221C8EB&app_id=A650AB0D-7BFC-2A81-3066-D3170947C3DA&brand=apple&bundle_id=com.playableads.demo&channel_id=&channel_share_rate=0&city=%E5%8D%97%E4%BA%AC%E5%B8%82&client_id=73AB1CDF-009E-130C-4A15-94901D3470DE&country=CN&creatives_id=87521473-8078-D25B-1EB6-63C16963AA53&developer_share_rate=70&device_model=iPhone8%2C1&device_type=phone&engine_events=&height=0&idfa=ADC65FAE-2FF8-423F-B3C8-244C4F2099E7&industry_id=&integrated_type=API&last_status=0&network_connection_type=wifi&os=iOS&os_version=11.3&pay_by=cpi&pay_event=install&predictive_cpm_cipher=351d6fbfdfc8bb29&predictive_cpm_usd_cipher=213ee1d6dd84207c&predictive_cpms=2c3e8d08ad73a635&progress=%7Bprogress%7D&promotion_app_id=8B6BC1BB-368A-6C77-735A-929E38E20D9F&region=%E6%B1%9F%E8%8B%8F%E7%9C%81&request_id=bilerjf2co85f5mqnd30&settlement_price_cny=213ee1d6dd84207c&settlement_price_usd=213ee1d6dd84207c&tracking_type=video_paused&unit_price_cny=fdf3d2a3b2e6380d77e13edb&unit_price_usd=9c2e72a6e1ed08e69b93e5fa&unit_prices=9ee430e529c158be513616b80a0155613db863678ad3b77dc7b817d5913cd4205f940ff0e477ca83286cc2ef8aa461e5391c72823bb1c0f3e1462f0edc20e8f9d1186704e988f68f&width=0"
+                ],
+                "resume_tracker": [
+                    "https://pa-engine.zplayads.com/v1/tracking?ab_test_id=A011A3BB-9316-08D6-06DD-3DADFA6B73C1&ab_test_object_group_id=default&ad_id=6E4ADB48-6674-B91F-AE85-12E8CD21A847&ad_unit_id=0868EBC0-7768-40CA-4226-F9924221C8EB&app_id=A650AB0D-7BFC-2A81-3066-D3170947C3DA&brand=apple&bundle_id=com.playableads.demo&channel_id=&channel_share_rate=0&city=%E5%8D%97%E4%BA%AC%E5%B8%82&client_id=73AB1CDF-009E-130C-4A15-94901D3470DE&country=CN&creatives_id=87521473-8078-D25B-1EB6-63C16963AA53&developer_share_rate=70&device_model=iPhone8%2C1&device_type=phone&engine_events=&height=0&idfa=ADC65FAE-2FF8-423F-B3C8-244C4F2099E7&industry_id=&integrated_type=API&last_status=0&network_connection_type=wifi&os=iOS&os_version=11.3&pay_by=cpi&pay_event=install&predictive_cpm_cipher=351d6fbfdfc8bb29&predictive_cpm_usd_cipher=213ee1d6dd84207c&predictive_cpms=2c3e8d08ad73a635&progress=%7Bprogress%7D&promotion_app_id=8B6BC1BB-368A-6C77-735A-929E38E20D9F&region=%E6%B1%9F%E8%8B%8F%E7%9C%81&request_id=bilerjf2co85f5mqnd30&settlement_price_cny=213ee1d6dd84207c&settlement_price_usd=213ee1d6dd84207c&tracking_type=video_resumed&unit_price_cny=fdf3d2a3b2e6380d77e13edb&unit_price_usd=9c2e72a6e1ed08e69b93e5fa&unit_prices=9ee430e529c158be513616b80a0155613db863678ad3b77dc7b817d5913cd4205f940ff0e477ca83286cc2ef8aa461e5391c72823bb1c0f3e1462f0edc20e8f9d1186704e988f68f&width=0"
+                ],
+                "end_playing_tracker": [
+                    "https://pa-engine.zplayads.com/v1/tracking?ab_test_id=A011A3BB-9316-08D6-06DD-3DADFA6B73C1&ab_test_object_group_id=default&ad_id=6E4ADB48-6674-B91F-AE85-12E8CD21A847&ad_unit_id=0868EBC0-7768-40CA-4226-F9924221C8EB&app_id=A650AB0D-7BFC-2A81-3066-D3170947C3DA&brand=apple&bundle_id=com.playableads.demo&channel_id=&channel_share_rate=0&city=%E5%8D%97%E4%BA%AC%E5%B8%82&client_id=73AB1CDF-009E-130C-4A15-94901D3470DE&country=CN&creatives_id=87521473-8078-D25B-1EB6-63C16963AA53&developer_share_rate=70&device_model=iPhone8%2C1&device_type=phone&engine_events=&height=0&idfa=ADC65FAE-2FF8-423F-B3C8-244C4F2099E7&industry_id=&integrated_type=API&last_status=0&network_connection_type=wifi&os=iOS&os_version=11.3&pay_by=cpi&pay_event=install&predictive_cpm_cipher=351d6fbfdfc8bb29&predictive_cpm_usd_cipher=213ee1d6dd84207c&predictive_cpms=2c3e8d08ad73a635&progress=%7Bprogress%7D&promotion_app_id=8B6BC1BB-368A-6C77-735A-929E38E20D9F&region=%E6%B1%9F%E8%8B%8F%E7%9C%81&request_id=bilerjf2co85f5mqnd30&settlement_price_cny=213ee1d6dd84207c&settlement_price_usd=213ee1d6dd84207c&tracking_type=video_ended_playing&unit_price_cny=fdf3d2a3b2e6380d77e13edb&unit_price_usd=9c2e72a6e1ed08e69b93e5fa&unit_prices=9ee430e529c158be513616b80a0155613db863678ad3b77dc7b817d5913cd4205f940ff0e477ca83286cc2ef8aa461e5391c72823bb1c0f3e1462f0edc20e8f9d1186704e988f68f&width=0"
+                ],
+                "end_card_displayed_tracker": [
+                    "https://pa-engine.zplayads.com/v1/tracking?ab_test_id=A011A3BB-9316-08D6-06DD-3DADFA6B73C1&ab_test_object_group_id=default&ad_id=6E4ADB48-6674-B91F-AE85-12E8CD21A847&ad_unit_id=0868EBC0-7768-40CA-4226-F9924221C8EB&app_id=A650AB0D-7BFC-2A81-3066-D3170947C3DA&brand=apple&bundle_id=com.playableads.demo&channel_id=&channel_share_rate=0&city=%E5%8D%97%E4%BA%AC%E5%B8%82&client_id=73AB1CDF-009E-130C-4A15-94901D3470DE&country=CN&creatives_id=87521473-8078-D25B-1EB6-63C16963AA53&developer_share_rate=70&device_model=iPhone8%2C1&device_type=phone&engine_events=&height=0&idfa=ADC65FAE-2FF8-423F-B3C8-244C4F2099E7&industry_id=&integrated_type=API&last_status=0&network_connection_type=wifi&os=iOS&os_version=11.3&pay_by=cpi&pay_event=install&predictive_cpm_cipher=351d6fbfdfc8bb29&predictive_cpm_usd_cipher=213ee1d6dd84207c&predictive_cpms=2c3e8d08ad73a635&progress=%7Bprogress%7D&promotion_app_id=8B6BC1BB-368A-6C77-735A-929E38E20D9F&region=%E6%B1%9F%E8%8B%8F%E7%9C%81&request_id=bilerjf2co85f5mqnd30&settlement_price_cny=213ee1d6dd84207c&settlement_price_usd=213ee1d6dd84207c&tracking_type=landing_page_presented&unit_price_cny=fdf3d2a3b2e6380d77e13edb&unit_price_usd=9c2e72a6e1ed08e69b93e5fa&unit_prices=9ee430e529c158be513616b80a0155613db863678ad3b77dc7b817d5913cd4205f940ff0e477ca83286cc2ef8aa461e5391c72823bb1c0f3e1462f0edc20e8f9d1186704e988f68f&width=0"
+                ],
+                "video_click_tracker": [
+                    "https://pa-engine.zplayads.com/v1/tracking?ab_test_id=A011A3BB-9316-08D6-06DD-3DADFA6B73C1&ab_test_object_group_id=default&ad_id=6E4ADB48-6674-B91F-AE85-12E8CD21A847&ad_unit_id=0868EBC0-7768-40CA-4226-F9924221C8EB&app_id=A650AB0D-7BFC-2A81-3066-D3170947C3DA&brand=apple&bundle_id=com.playableads.demo&channel_id=&channel_share_rate=0&city=%E5%8D%97%E4%BA%AC%E5%B8%82&client_id=73AB1CDF-009E-130C-4A15-94901D3470DE&country=CN&creatives_id=87521473-8078-D25B-1EB6-63C16963AA53&developer_share_rate=70&device_model=iPhone8%2C1&device_type=phone&engine_events=&height=0&idfa=ADC65FAE-2FF8-423F-B3C8-244C4F2099E7&industry_id=&integrated_type=API&last_status=0&network_connection_type=wifi&os=iOS&os_version=11.3&pay_by=cpi&pay_event=install&predictive_cpm_cipher=351d6fbfdfc8bb29&predictive_cpm_usd_cipher=213ee1d6dd84207c&predictive_cpms=2c3e8d08ad73a635&progress=%7Bprogress%7D&promotion_app_id=8B6BC1BB-368A-6C77-735A-929E38E20D9F&region=%E6%B1%9F%E8%8B%8F%E7%9C%81&request_id=bilerjf2co85f5mqnd30&settlement_price_cny=213ee1d6dd84207c&settlement_price_usd=213ee1d6dd84207c&tracking_type=click_from_video_page&unit_price_cny=fdf3d2a3b2e6380d77e13edb&unit_price_usd=9c2e72a6e1ed08e69b93e5fa&unit_prices=9ee430e529c158be513616b80a0155613db863678ad3b77dc7b817d5913cd4205f940ff0e477ca83286cc2ef8aa461e5391c72823bb1c0f3e1462f0edc20e8f9d1186704e988f68f&width=0",
+                    "https://app.appsflyer.com/id834878585?c=6E4ADB48-6674-B91F-AE85-12E8CD21A847&af_siteid=A650AB0D-7BFC-2A81-3066-D3170947C3DA&af_sub_siteid=0868EBC0-7768-40CA-4226-F9924221C8EB&af_cost_model=cpi&af_cost_currency=CNY&af_cost_value=2&pid=zplay_int&af_click_lookback=7d&clickid=bileran2co85f5mqm5g0&promote_app_id=8B6BC1BB-368A-6C77-735A-929E38E20D9F&android_id=&advertising_id=&imei=&idfa=ADC65FAE-2FF8-423F-B3C8-244C4F2099E7&secret=bileran2co85f5mqm5g0&click_lookback={af_click_lookback}&viewthrough_lookback={viewthrough_lookback}"
+                ],
+                "end_card_click_tracker": [
+                    "https://pa-engine.zplayads.com/v1/tracking?ab_test_id=A011A3BB-9316-08D6-06DD-3DADFA6B73C1&ab_test_object_group_id=default&ad_id=6E4ADB48-6674-B91F-AE85-12E8CD21A847&ad_unit_id=0868EBC0-7768-40CA-4226-F9924221C8EB&app_id=A650AB0D-7BFC-2A81-3066-D3170947C3DA&brand=apple&bundle_id=com.playableads.demo&channel_id=&channel_share_rate=0&city=%E5%8D%97%E4%BA%AC%E5%B8%82&client_id=73AB1CDF-009E-130C-4A15-94901D3470DE&country=CN&creatives_id=87521473-8078-D25B-1EB6-63C16963AA53&developer_share_rate=70&device_model=iPhone8%2C1&device_type=phone&engine_events=&height=0&idfa=ADC65FAE-2FF8-423F-B3C8-244C4F2099E7&industry_id=&integrated_type=API&last_status=0&network_connection_type=wifi&os=iOS&os_version=11.3&pay_by=cpi&pay_event=install&predictive_cpm_cipher=351d6fbfdfc8bb29&predictive_cpm_usd_cipher=213ee1d6dd84207c&predictive_cpms=2c3e8d08ad73a635&progress=%7Bprogress%7D&promotion_app_id=8B6BC1BB-368A-6C77-735A-929E38E20D9F&region=%E6%B1%9F%E8%8B%8F%E7%9C%81&request_id=bilerjf2co85f5mqnd30&settlement_price_cny=213ee1d6dd84207c&settlement_price_usd=213ee1d6dd84207c&tracking_type=click_from_landing_page&unit_price_cny=fdf3d2a3b2e6380d77e13edb&unit_price_usd=9c2e72a6e1ed08e69b93e5fa&unit_prices=9ee430e529c158be513616b80a0155613db863678ad3b77dc7b817d5913cd4205f940ff0e477ca83286cc2ef8aa461e5391c72823bb1c0f3e1462f0edc20e8f9d1186704e988f68f&width=0",
+                    "https://app.appsflyer.com/id834878585?c=6E4ADB48-6674-B91F-AE85-12E8CD21A847&af_siteid=A650AB0D-7BFC-2A81-3066-D3170947C3DA&af_sub_siteid=0868EBC0-7768-40CA-4226-F9924221C8EB&af_cost_model=cpi&af_cost_currency=CNY&af_cost_value=2&pid=zplay_int&af_click_lookback=7d&clickid=bileran2co85f5mqm5g0&promote_app_id=8B6BC1BB-368A-6C77-735A-929E38E20D9F&android_id=&advertising_id=&imei=&idfa=ADC65FAE-2FF8-423F-B3C8-244C4F2099E7&secret=bileran2co85f5mqm5g0&click_lookback={af_click_lookback}&viewthrough_lookback={viewthrough_lookback}"
+                ],
+                "close_tracker": [
+                    "https://pa-engine.zplayads.com/v1/tracking?ab_test_id=A011A3BB-9316-08D6-06DD-3DADFA6B73C1&ab_test_object_group_id=default&ad_id=6E4ADB48-6674-B91F-AE85-12E8CD21A847&ad_unit_id=0868EBC0-7768-40CA-4226-F9924221C8EB&app_id=A650AB0D-7BFC-2A81-3066-D3170947C3DA&brand=apple&bundle_id=com.playableads.demo&channel_id=&channel_share_rate=0&city=%E5%8D%97%E4%BA%AC%E5%B8%82&client_id=73AB1CDF-009E-130C-4A15-94901D3470DE&country=CN&creatives_id=87521473-8078-D25B-1EB6-63C16963AA53&developer_share_rate=70&device_model=iPhone8%2C1&device_type=phone&engine_events=&height=0&idfa=ADC65FAE-2FF8-423F-B3C8-244C4F2099E7&industry_id=&integrated_type=API&last_status=0&network_connection_type=wifi&os=iOS&os_version=11.3&pay_by=cpi&pay_event=install&predictive_cpm_cipher=351d6fbfdfc8bb29&predictive_cpm_usd_cipher=213ee1d6dd84207c&predictive_cpms=2c3e8d08ad73a635&progress=%7Bprogress%7D&promotion_app_id=8B6BC1BB-368A-6C77-735A-929E38E20D9F&region=%E6%B1%9F%E8%8B%8F%E7%9C%81&request_id=bilerjf2co85f5mqnd30&settlement_price_cny=213ee1d6dd84207c&settlement_price_usd=213ee1d6dd84207c&tracking_type=landing_page_dismissed&unit_price_cny=fdf3d2a3b2e6380d77e13edb&unit_price_usd=9c2e72a6e1ed08e69b93e5fa&unit_prices=9ee430e529c158be513616b80a0155613db863678ad3b77dc7b817d5913cd4205f940ff0e477ca83286cc2ef8aa461e5391c72823bb1c0f3e1462f0edc20e8f9d1186704e988f68f&width=0"
+                ]
+            }
+        }
+    ]
+}
+```
+
+
 ### Android
 
-#### interstitial
+#### Interstitial
 
-##### sample of request
+##### Sample of Request
 
 ```json
 {
-  "version": "1.0",
+  "version": "1.1",
   "developer_token": "D0C85086-DC66-433E-9304-49EAB171D008",
   "need_https": 1,
   "support_function":2,
@@ -427,7 +663,7 @@
 }
 ```
 
-##### sample of response
+##### Sample of Response
 
 ```json
 {
@@ -447,13 +683,13 @@
 }
 ```
 
-#### native
+#### Native
 
-##### sample of request
+##### Sample of Request
 
 ```json
 {
-  "version": "1.0",
+  "version": "1.1",
   "developer_token": "D0C85086-DC66-433E-9304-49EAB171D008",
   "need_https": 1,
   "support_function":2,
@@ -540,7 +776,7 @@
 }
 ```
 
-##### sample of response
+##### Sample of Response
 
 ```json
 {
@@ -599,13 +835,13 @@
 }
 ```
 
-#### rewarded video
+#### Rrewarded Video
 
-##### sample of request
+##### Sample of Request
 
 ```json
 {
-  "version": "1.0",
+  "version": "1.1",
   "developer_token": "D0C85086-DC66-433E-9304-49EAB171D008",
   "need_https": 1,
   "support_function":2,
@@ -664,7 +900,7 @@
 }
 ```
 
-##### sample of response
+##### Sample of Response
 
 ```json
 {
@@ -679,6 +915,233 @@
             "target_url": "https://play.google.com/store/apps/details?id=com.zplay.beatracer",
             "target_url_type": 6,
             "playable_ads_html": "<!DOCTYPE html><html>  <head>    <meta name=\"viewport\" content=\"user-scalable=no, width=device-width, initial-scale=1, maximum-scale=1\">    <title>Atmosplayer</title>    <meta charset=\"utf-8\"/>    <script>      window.gestures = [  [    {      \"id\": 0,      \"type\": \"swipe\",      \"attack\": 1,      \"loopStart\": 551,      \"target\": 6651,      \"fullscreen\": true,      \"shapes\": [        {          \"type\": \"circle\",          \"x\": 0.42329443223039115,          \"y\": 0.23809523809523808,          \"radius\": 0.08465888644607823        }      ],      \"mandatory\": true,      \"swipeDirection\": \"LEFT\",      \"loop\": true    }  ],  [    {      \"id\": 1,      \"type\": \"swipe\",      \"attack\": 9049,      \"loopStart\": 9499,      \"target\": 14449,      \"fullscreen\": true,      \"shapes\": [        {          \"type\": \"circle\",          \"x\": 0.42329443223039115,          \"y\": 0.23809523809523808,          \"radius\": 0.08465888644607823        }      ],      \"mandatory\": true,      \"swipeDirection\": \"RIGHT\",      \"loop\": true    }  ],  [    {      \"id\": 2,      \"type\": \"swipe\",      \"attack\": 18060,      \"loopStart\": 18710,      \"target\": 23860,      \"fullscreen\": true,      \"shapes\": [        {          \"type\": \"circle\",          \"x\": 0.42329443223039115,          \"y\": 0.23809523809523808,          \"radius\": 0.08465888644607823        }      ],      \"mandatory\": true,      \"swipeDirection\": \"UP\",      \"loop\": true    }  ],  [    {      \"id\": 3,      \"type\": \"swipe\",      \"attack\": 28738,      \"loopStart\": 30288,      \"target\": 35036,      \"fullscreen\": true,      \"shapes\": [        {          \"type\": \"circle\",          \"x\": 0.42329443223039115,          \"y\": 0.23809523809523808,          \"radius\": 0.08465888644607823        }      ],      \"mandatory\": true,      \"swipeDirection\": \"DOWN\",      \"loop\": true    }  ],  [    {      \"id\": 4,      \"type\": \"tap\",      \"attack\": 38506,      \"target\": 40100,      \"fullscreen\": true,      \"shapes\": [        {          \"type\": \"circle\",          \"x\": 0.42329443223039115,          \"y\": 0.23809523809523808,          \"radius\": 0.08465888644607823        }      ],      \"mandatory\": false,      \"tapDirection\": 1,      \"tapCount\": 1    }  ]];      window.showUserGuide = false;      window.userGuideUrl = 'undefined';      window.userGuidePosition = {};      window.installAttributes = {\"x\":0.27799269119054626,\"y\":-0.007142857142857143,\"width\":0.4948864759257863,\"percentage\":true};      window.showFloatingMenu = false;      window.videoOrientation = 0;      window.disableUserFeedback = false;      window.sdk = '{\"is_landscape\":false,\"video\":{\"url\":\"https://adcdn.zplayads.com/prod/63479990-3d68-11e8-a313-55140a049e95/1546829730034.html\",\"video_start_playing_trackers\":[\"https://pa-engine.zplayads.com/v1/tracking?ab_test_id=A011A3BB-9316-08D6-06DD-3DADFA6B73C1&ab_test_object_group_id=default&ad_id=476FC7D0-C133-42F5-ED04-20F8C2BF5882&ad_unit_id=3FBEFA05-3A8B-2122-24C7-A87D0BC9FEEC&app_id=5C5419C7-A2DE-88BC-A311-C3E7A646F6AF&brand=&bundle_id=com.playableads.demo&channel_id=&channel_share_rate=0&city=%E5%8D%97%E4%BA%AC%E5%B8%82&client_id=73AB1CDF-009E-130C-4A15-94901D3470DE&country=%E4%B8%AD%E5%9B%BD%E5%A4%A7%E9%99%86&creatives_id=9D7833A2-B939-16F0-A36C-C4F06518B8A0&developer_share_rate=70&device_model=Android&device_type=phone&engine_events=&height=0&industry_id=&last_status=0&network_connection_type=wifi&order_id=94799B85-ED77-B6B5-37B2-2EBCC327131E&os=Android&os_version=8.0.0&pay_by=cpi&pay_event=install&predictive_cpm_cipher=a1ab3e958035bb00b4f5beb2&predictive_cpm_usd_cipher=&predictive_cpms=&promotion_app_id=DF8DD39A-F5B2-A311-BCFE-C6E3CFB75E76&region=%E6%B1%9F%E8%8B%8F%E7%9C%81&request_id=bgphfm4rs360klh9ruh0&settlement_price_cny=0&settlement_price_usd=0&tracking_type=video_start_playing&unit_price_cny=2000000&unit_price_usd=291409&unit_prices=&width=0\"],\"video_ended_playing_trackers\":[\"https://pa-engine.zplayads.com/v1/tracking?ab_test_id=A011A3BB-9316-08D6-06DD-3DADFA6B73C1&ab_test_object_group_id=default&ad_id=476FC7D0-C133-42F5-ED04-20F8C2BF5882&ad_unit_id=3FBEFA05-3A8B-2122-24C7-A87D0BC9FEEC&app_id=5C5419C7-A2DE-88BC-A311-C3E7A646F6AF&brand=&bundle_id=com.playableads.demo&channel_id=&channel_share_rate=0&city=%E5%8D%97%E4%BA%AC%E5%B8%82&client_id=73AB1CDF-009E-130C-4A15-94901D3470DE&country=%E4%B8%AD%E5%9B%BD%E5%A4%A7%E9%99%86&creatives_id=9D7833A2-B939-16F0-A36C-C4F06518B8A0&developer_share_rate=70&device_model=Android&device_type=phone&engine_events=&height=0&industry_id=&last_status=0&network_connection_type=wifi&order_id=94799B85-ED77-B6B5-37B2-2EBCC327131E&os=Android&os_version=8.0.0&pay_by=cpi&pay_event=install&predictive_cpm_cipher=a1ab3e958035bb00b4f5beb2&predictive_cpm_usd_cipher=&predictive_cpms=&promotion_app_id=DF8DD39A-F5B2-A311-BCFE-C6E3CFB75E76&region=%E6%B1%9F%E8%8B%8F%E7%9C%81&request_id=bgphfm4rs360klh9ruh0&settlement_price_cny=0&settlement_price_usd=0&tracking_type=video_ended_playing&unit_price_cny=2000000&unit_price_usd=291409&unit_prices=&width=0\"],\"video_did_fail_loading_trackers\":[\"https://pa-engine.zplayads.com/v1/tracking?ab_test_id=A011A3BB-9316-08D6-06DD-3DADFA6B73C1&ab_test_object_group_id=default&ad_id=476FC7D0-C133-42F5-ED04-20F8C2BF5882&ad_unit_id=3FBEFA05-3A8B-2122-24C7-A87D0BC9FEEC&app_id=5C5419C7-A2DE-88BC-A311-C3E7A646F6AF&brand=&bundle_id=com.playableads.demo&channel_id=&channel_share_rate=0&city=%E5%8D%97%E4%BA%AC%E5%B8%82&client_id=73AB1CDF-009E-130C-4A15-94901D3470DE&country=%E4%B8%AD%E5%9B%BD%E5%A4%A7%E9%99%86&creatives_id=9D7833A2-B939-16F0-A36C-C4F06518B8A0&developer_share_rate=70&device_model=Android&device_type=phone&engine_events=&height=0&industry_id=&last_status=0&network_connection_type=wifi&order_id=94799B85-ED77-B6B5-37B2-2EBCC327131E&os=Android&os_version=8.0.0&pay_by=cpi&pay_event=install&predictive_cpm_cipher=a1ab3e958035bb00b4f5beb2&predictive_cpm_usd_cipher=&predictive_cpms=&promotion_app_id=DF8DD39A-F5B2-A311-BCFE-C6E3CFB75E76&region=%E6%B1%9F%E8%8B%8F%E7%9C%81&request_id=bgphfm4rs360klh9ruh0&settlement_price_cny=0&settlement_price_usd=0&tracking_type=video_did_fail_loading&unit_price_cny=2000000&unit_price_usd=291409&unit_prices=&width=0\"],\"present_sdk_trackers\":[\"https://pa-engine.zplayads.com/v1/tracking?ab_test_id=A011A3BB-9316-08D6-06DD-3DADFA6B73C1&ab_test_object_group_id=default&ad_id=476FC7D0-C133-42F5-ED04-20F8C2BF5882&ad_unit_id=3FBEFA05-3A8B-2122-24C7-A87D0BC9FEEC&app_id=5C5419C7-A2DE-88BC-A311-C3E7A646F6AF&brand=&bundle_id=com.playableads.demo&channel_id=&channel_share_rate=0&city=%E5%8D%97%E4%BA%AC%E5%B8%82&client_id=73AB1CDF-009E-130C-4A15-94901D3470DE&country=%E4%B8%AD%E5%9B%BD%E5%A4%A7%E9%99%86&creatives_id=9D7833A2-B939-16F0-A36C-C4F06518B8A0&developer_share_rate=70&device_model=Android&device_type=phone&engine_events=&height=0&industry_id=&last_status=0&network_connection_type=wifi&order_id=94799B85-ED77-B6B5-37B2-2EBCC327131E&os=Android&os_version=8.0.0&pay_by=cpi&pay_event=install&predictive_cpm_cipher=a1ab3e958035bb00b4f5beb2&predictive_cpm_usd_cipher=&predictive_cpms=&promotion_app_id=DF8DD39A-F5B2-A311-BCFE-C6E3CFB75E76&region=%E6%B1%9F%E8%8B%8F%E7%9C%81&request_id=bgphfm4rs360klh9ruh0&settlement_price_cny=0&settlement_price_usd=0&tracking_type=present&unit_price_cny=2000000&unit_price_usd=291409&unit_prices=&width=0\"],\"click_trackers\":[\"https://pa-engine.zplayads.com/v1/tracking?ab_test_id=A011A3BB-9316-08D6-06DD-3DADFA6B73C1&ab_test_object_group_id=default&ad_id=476FC7D0-C133-42F5-ED04-20F8C2BF5882&ad_unit_id=3FBEFA05-3A8B-2122-24C7-A87D0BC9FEEC&app_id=5C5419C7-A2DE-88BC-A311-C3E7A646F6AF&brand=&bundle_id=com.playableads.demo&channel_id=&channel_share_rate=0&city=%E5%8D%97%E4%BA%AC%E5%B8%82&client_id=73AB1CDF-009E-130C-4A15-94901D3470DE&country=%E4%B8%AD%E5%9B%BD%E5%A4%A7%E9%99%86&creatives_id=9D7833A2-B939-16F0-A36C-C4F06518B8A0&developer_share_rate=70&device_model=Android&device_type=phone&engine_events=&height=0&industry_id=&last_status=0&network_connection_type=wifi&order_id=94799B85-ED77-B6B5-37B2-2EBCC327131E&os=Android&os_version=8.0.0&pay_by=cpi&pay_event=install&predictive_cpm_cipher=a1ab3e958035bb00b4f5beb2&predictive_cpm_usd_cipher=&predictive_cpms=&promotion_app_id=DF8DD39A-F5B2-A311-BCFE-C6E3CFB75E76&redirect_to=https%3A%2F%2Fapp.appsflyer.com%2Fcom.zplay.beatracer%3Fpid%3Dzplayads%26c%3Dplayable1&region=%E6%B1%9F%E8%8B%8F%E7%9C%81&request_id=bgphfm4rs360klh9ruh0&settlement_price_cny=0&settlement_price_usd=0&tracking_type=click_from_video_page&unit_price_cny=2000000&unit_price_usd=291409&unit_prices=&width=0\"],\"show_install_button_countdown\":1,\"show_close_button_countdown\":15,\"force_close_button\":-1},\"landing_page\":{\"url\":\"https://pa-cloud.zplayads.com/alfred/static/2018/11/29/BA37D276-1A04-665C-C759-D6A65576DD6C.html\",\"show_replay_button\":0,\"landing_page_presented_trackers\":[\"https://pa-engine.zplayads.com/v1/tracking?ab_test_id=A011A3BB-9316-08D6-06DD-3DADFA6B73C1&ab_test_object_group_id=default&ad_id=476FC7D0-C133-42F5-ED04-20F8C2BF5882&ad_unit_id=3FBEFA05-3A8B-2122-24C7-A87D0BC9FEEC&app_id=5C5419C7-A2DE-88BC-A311-C3E7A646F6AF&brand=&bundle_id=com.playableads.demo&channel_id=&channel_share_rate=0&city=%E5%8D%97%E4%BA%AC%E5%B8%82&client_id=73AB1CDF-009E-130C-4A15-94901D3470DE&country=%E4%B8%AD%E5%9B%BD%E5%A4%A7%E9%99%86&creatives_id=9D7833A2-B939-16F0-A36C-C4F06518B8A0&developer_share_rate=70&device_model=Android&device_type=phone&engine_events=&height=0&industry_id=&last_status=0&network_connection_type=wifi&order_id=94799B85-ED77-B6B5-37B2-2EBCC327131E&os=Android&os_version=8.0.0&pay_by=cpi&pay_event=install&predictive_cpm_cipher=a1ab3e958035bb00b4f5beb2&predictive_cpm_usd_cipher=&predictive_cpms=&promotion_app_id=DF8DD39A-F5B2-A311-BCFE-C6E3CFB75E76&region=%E6%B1%9F%E8%8B%8F%E7%9C%81&request_id=bgphfm4rs360klh9ruh0&settlement_price_cny=0&settlement_price_usd=0&tracking_type=landing_page_presented&unit_price_cny=2000000&unit_price_usd=291409&unit_prices=&width=0\"],\"landing_page_dismissed_trackers\":[\"https://pa-engine.zplayads.com/v1/tracking?ab_test_id=A011A3BB-9316-08D6-06DD-3DADFA6B73C1&ab_test_object_group_id=default&ad_id=476FC7D0-C133-42F5-ED04-20F8C2BF5882&ad_unit_id=3FBEFA05-3A8B-2122-24C7-A87D0BC9FEEC&app_id=5C5419C7-A2DE-88BC-A311-C3E7A646F6AF&brand=&bundle_id=com.playableads.demo&channel_id=&channel_share_rate=0&city=%E5%8D%97%E4%BA%AC%E5%B8%82&client_id=73AB1CDF-009E-130C-4A15-94901D3470DE&country=%E4%B8%AD%E5%9B%BD%E5%A4%A7%E9%99%86&creatives_id=9D7833A2-B939-16F0-A36C-C4F06518B8A0&developer_share_rate=70&device_model=Android&device_type=phone&engine_events=&height=0&industry_id=&last_status=0&network_connection_type=wifi&order_id=94799B85-ED77-B6B5-37B2-2EBCC327131E&os=Android&os_version=8.0.0&pay_by=cpi&pay_event=install&predictive_cpm_cipher=a1ab3e958035bb00b4f5beb2&predictive_cpm_usd_cipher=&predictive_cpms=&promotion_app_id=DF8DD39A-F5B2-A311-BCFE-C6E3CFB75E76&region=%E6%B1%9F%E8%8B%8F%E7%9C%81&request_id=bgphfm4rs360klh9ruh0&settlement_price_cny=0&settlement_price_usd=0&tracking_type=landing_page_dismissed&unit_price_cny=2000000&unit_price_usd=291409&unit_prices=&width=0\"],\"click_to_action\":{\"action\":\"\",\"url\":\"https://pa-engine.zplayads.com/v1/tracking?ab_test_id=A011A3BB-9316-08D6-06DD-3DADFA6B73C1&ab_test_object_group_id=default&ad_id=476FC7D0-C133-42F5-ED04-20F8C2BF5882&ad_unit_id=3FBEFA05-3A8B-2122-24C7-A87D0BC9FEEC&app_id=5C5419C7-A2DE-88BC-A311-C3E7A646F6AF&brand=&bundle_id=com.playableads.demo&channel_id=&channel_share_rate=0&city=%E5%8D%97%E4%BA%AC%E5%B8%82&client_id=73AB1CDF-009E-130C-4A15-94901D3470DE&country=%E4%B8%AD%E5%9B%BD%E5%A4%A7%E9%99%86&creatives_id=9D7833A2-B939-16F0-A36C-C4F06518B8A0&developer_share_rate=70&device_model=Android&device_type=phone&engine_events=&height=0&industry_id=&last_status=0&network_connection_type=wifi&order_id=94799B85-ED77-B6B5-37B2-2EBCC327131E&os=Android&os_version=8.0.0&pay_by=cpi&pay_event=install&predictive_cpm_cipher=a1ab3e958035bb00b4f5beb2&predictive_cpm_usd_cipher=&predictive_cpms=&promotion_app_id=DF8DD39A-F5B2-A311-BCFE-C6E3CFB75E76&redirect_to=https%3A%2F%2Fapp.appsflyer.com%2Fcom.zplay.beatracer%3Fpid%3Dzplayads%26c%3Dplayable1&region=%E6%B1%9F%E8%8B%8F%E7%9C%81&request_id=bgphfm4rs360klh9ruh0&settlement_price_cny=0&settlement_price_usd=0&tracking_type=click_from_landing_page&unit_price_cny=2000000&unit_price_usd=291409&unit_prices=&width=0\",\"itunes_id\":0,\"target_url\":\"https://play.google.com/store/apps/details?id=com.zplay.beatracer\",\"click_trackers\":[\"https://pa-engine.zplayads.com/v1/tracking?ab_test_id=A011A3BB-9316-08D6-06DD-3DADFA6B73C1&ab_test_object_group_id=default&ad_id=476FC7D0-C133-42F5-ED04-20F8C2BF5882&ad_unit_id=3FBEFA05-3A8B-2122-24C7-A87D0BC9FEEC&app_id=5C5419C7-A2DE-88BC-A311-C3E7A646F6AF&brand=&bundle_id=com.playableads.demo&channel_id=&channel_share_rate=0&city=%E5%8D%97%E4%BA%AC%E5%B8%82&client_id=73AB1CDF-009E-130C-4A15-94901D3470DE&country=%E4%B8%AD%E5%9B%BD%E5%A4%A7%E9%99%86&creatives_id=9D7833A2-B939-16F0-A36C-C4F06518B8A0&developer_share_rate=70&device_model=Android&device_type=phone&engine_events=&height=0&industry_id=&last_status=0&network_connection_type=wifi&order_id=94799B85-ED77-B6B5-37B2-2EBCC327131E&os=Android&os_version=8.0.0&pay_by=cpi&pay_event=install&predictive_cpm_cipher=a1ab3e958035bb00b4f5beb2&predictive_cpm_usd_cipher=&predictive_cpms=&promotion_app_id=DF8DD39A-F5B2-A311-BCFE-C6E3CFB75E76&redirect_to=https%3A%2F%2Fapp.appsflyer.com%2Fcom.zplay.beatracer%3Fpid%3Dzplayads%26c%3Dplayable1&region=%E6%B1%9F%E8%8B%8F%E7%9C%81&request_id=bgphfm4rs360klh9ruh0&settlement_price_cny=0&settlement_price_usd=0&tracking_type=click_from_landing_page&unit_price_cny=2000000&unit_price_usd=291409&unit_prices=&width=0\"]}},\"interval\":{\"default\":30,\"no_content\":60},\"tracker\":{\"download_start\":\"https://pa-engine.zplayads.com/v1/tracking?ab_test_id=A011A3BB-9316-08D6-06DD-3DADFA6B73C1&ab_test_object_group_id=default&ad_id=476FC7D0-C133-42F5-ED04-20F8C2BF5882&ad_unit_id=3FBEFA05-3A8B-2122-24C7-A87D0BC9FEEC&app_id=5C5419C7-A2DE-88BC-A311-C3E7A646F6AF&brand=&bundle_id=com.playableads.demo&channel_id=&channel_share_rate=0&city=%E5%8D%97%E4%BA%AC%E5%B8%82&client_id=73AB1CDF-009E-130C-4A15-94901D3470DE&country=%E4%B8%AD%E5%9B%BD%E5%A4%A7%E9%99%86&creatives_id=9D7833A2-B939-16F0-A36C-C4F06518B8A0&developer_share_rate=70&device_model=Android&device_type=phone&engine_events=&height=0&industry_id=&last_status=0&network_connection_type=wifi&order_id=94799B85-ED77-B6B5-37B2-2EBCC327131E&os=Android&os_version=8.0.0&pay_by=cpi&pay_event=install&predictive_cpm_cipher=a1ab3e958035bb00b4f5beb2&predictive_cpm_usd_cipher=&predictive_cpms=&promotion_app_id=DF8DD39A-F5B2-A311-BCFE-C6E3CFB75E76&region=%E6%B1%9F%E8%8B%8F%E7%9C%81&request_id=bgphfm4rs360klh9ruh0&settlement_price_cny=0&settlement_price_usd=0&tracking_type=download_start&unit_price_cny=2000000&unit_price_usd=291409&unit_prices=&width=0\",\"download_end\":\"https://pa-engine.zplayads.com/v1/tracking?ab_test_id=A011A3BB-9316-08D6-06DD-3DADFA6B73C1&ab_test_object_group_id=default&ad_id=476FC7D0-C133-42F5-ED04-20F8C2BF5882&ad_unit_id=3FBEFA05-3A8B-2122-24C7-A87D0BC9FEEC&app_id=5C5419C7-A2DE-88BC-A311-C3E7A646F6AF&brand=&bundle_id=com.playableads.demo&channel_id=&channel_share_rate=0&city=%E5%8D%97%E4%BA%AC%E5%B8%82&client_id=73AB1CDF-009E-130C-4A15-94901D3470DE&country=%E4%B8%AD%E5%9B%BD%E5%A4%A7%E9%99%86&creatives_id=9D7833A2-B939-16F0-A36C-C4F06518B8A0&developer_share_rate=70&device_model=Android&device_type=phone&engine_events=&height=0&industry_id=&last_status=0&network_connection_type=wifi&order_id=94799B85-ED77-B6B5-37B2-2EBCC327131E&os=Android&os_version=8.0.0&pay_by=cpi&pay_event=install&predictive_cpm_cipher=a1ab3e958035bb00b4f5beb2&predictive_cpm_usd_cipher=&predictive_cpms=&promotion_app_id=DF8DD39A-F5B2-A311-BCFE-C6E3CFB75E76&region=%E6%B1%9F%E8%8B%8F%E7%9C%81&request_id=bgphfm4rs360klh9ruh0&settlement_price_cny=0&settlement_price_usd=0&tracking_type=download_end&unit_price_cny=2000000&unit_price_usd=291409&unit_prices=&width=0\",\"force_close\":\"\",\"behavior_trajectory\":\"https://pa-engine.zplayads.com/v1/tracking?ab_test_id=A011A3BB-9316-08D6-06DD-3DADFA6B73C1&ab_test_object_group_id=default&ad_id=476FC7D0-C133-42F5-ED04-20F8C2BF5882&ad_unit_id=3FBEFA05-3A8B-2122-24C7-A87D0BC9FEEC&app_id=5C5419C7-A2DE-88BC-A311-C3E7A646F6AF&brand=&bundle_id=com.playableads.demo&channel_id=&channel_share_rate=0&city=%E5%8D%97%E4%BA%AC%E5%B8%82&client_id=73AB1CDF-009E-130C-4A15-94901D3470DE&country=%E4%B8%AD%E5%9B%BD%E5%A4%A7%E9%99%86&creatives_id=9D7833A2-B939-16F0-A36C-C4F06518B8A0&developer_share_rate=70&device_model=Android&device_type=phone&engine_events=&height=0&industry_id=&last_status=0&network_connection_type=wifi&order_id=94799B85-ED77-B6B5-37B2-2EBCC327131E&os=Android&os_version=8.0.0&pay_by=cpi&pay_event=install&predictive_cpm_cipher=a1ab3e958035bb00b4f5beb2&predictive_cpm_usd_cipher=&predictive_cpms=&promotion_app_id=DF8DD39A-F5B2-A311-BCFE-C6E3CFB75E76&region=%E6%B1%9F%E8%8B%8F%E7%9C%81&request_id=bgphfm4rs360klh9ruh0&settlement_price_cny=0&settlement_price_usd=0&tracking_type=behavior_trajectory&unit_price_cny=2000000&unit_price_usd=291409&unit_prices=&width=0\"}}';      window.detached_install_url = '';      window.hasEndCard = false;      window.endCardSettings = undefined;                </script>    <style>      body {        background: black;      }      #rotatedContainer, #loadingImage {        display: none;      }      #loadingImage {        width: 100%;        height: 100%;        position: absolute;        top: 0;        left: 0;        right: 0;        bottom: 0;        filter: blur(4px);        z-index: 1;        pointer-events: none;      }      #loader-blur {        filter: blur(1.5rem);      }      #loader {        width: 50px;        height: 50px;        border-radius: 100%;        position: fixed;        top: 50%;        left: 50%;        z-index: 99;      }      #loader:before, #loader:after {        content: \"\";        position: absolute;        top: -35px;        left: -35px;        width: 100%;        height: 100%;        border-radius: 100%;        border: 10px solid transparent;        border-top-color: #6f9dec;      }      #loader:before {        z-index: 100;        animation: spin 1s infinite;      }      #loader:after {        border: 10px solid #ccc;      }      @keyframes spin {        0% {          -webkit-transform: rotate(0deg);          -ms-transform: rotate(0deg);          -o-transform: rotate(0deg);          transform: rotate(0deg);        }        100% {          -webkit-transform: rotate(360deg);          -ms-transform: rotate(360deg);          -o-transform: rotate(360deg);          transform: rotate(360deg);        }      }    </style>  </head>  <body>    <div id=\"mainContainer\">      <div id=\"loader\"></div>      <img id=\"loadingImage\" src=\"https://adcdn.zplayads.com/assets/prod/63479990-3d68-11e8-a313-55140a049e95/load.jpg\" />      <div id=\"rotatedContainer\">        <img id=\"closeButton\" src=\"https://adcdn.zplayads.com/assets/images/x_button.png\"/>        <img id=\"restartButton\" src=\"https://adcdn.zplayads.com/assets/images/restart.png\"/>        <img id=\"muteButton\" src=\"\" />        <img id=\"installButton\" src=\"https://adcdn.zplayads.com/assets/prod/63479990-3d68-11e8-a313-55140a049e95/downloadImage.png?key=203\" />        <video id=\"atmosPlayer\" webkit-playsinline playsinline muted preload=\"auto\" src=\"https://adcdn.zplayads.com/assets/prod/63479990-3d68-11e8-a313-55140a049e95/transcoded_video_1500kbps.mp4\" poster=\"https://adcdn.zplayads.com/assets/prod/63479990-3d68-11e8-a313-55140a049e95/load.jpg\" autoplay></video>        <audio id=\"bgMusicPlayer\" src=\"https://adcdn.zplayads.com/assets/prod/63479990-3d68-11e8-a313-55140a049e95/bgMusic.mp3?key=284\" type=\"audio/mpeg\" loop></audio>        <video id=\"atmosPlayerEndCard\" webkit-playsinline playsinline muted preload=\"auto\"   style=\"z-index: -10;\"></video>        <canvas id=\"gestureDetector\"></canvas>        <canvas id=\"userFeedback\"></canvas>        <div id=\"floatingMenu\" class=\"simple\">          <span class=\"title\">可玩的迷你游戏</span><img alt=\"gamebox\" class=\"logo\" src=\"https://adcdn.zplayads.com/assets/images/zplayads_logo.png\"/>        </div>      </div>    </div>        <script src=\"https://adcdn.zplayads.com/engine/prod/3.1.0/atmos.min.js\"></script>      </body></html>"
+        }
+    ]
+}
+```
+
+#### Request Video Object
+You can request video object with each ad unit type. Here take Interstitial as an example.
+
+##### Sample of Request - Support VAST
+```json
+{
+  "version": "1.1",
+  "developer_token": "D0C85086-DC66-433E-9304-49EAB171D008",
+  "need_https": 1,
+  "support_function":2,
+  "app": {
+    "app_id": "5C5419C7-A2DE-88BC-A311-C3E7A646F6AF",
+    "app_name": "Android-demo",
+    "bundle_id": "com.playableads.demo",
+    "version": "1.0",
+    "cat": ""
+  },
+  "device": {
+    "model": "Android",
+    "manufacturer": "Samsung",
+    "brand": "Samsung",
+    "plmn": "46001",
+    "device_type": "phone",
+    "dnt": 1,
+    "connection_type": "wifi",
+    "carrier": "China Mobile",
+    "orientation": 0,
+    "mac": "28b92b0dde49cff7190841686960c6bc",
+    "imei": "6cd5c276d3f6ce4205dde5b1bf913361",
+    "android_id": "adf3b4675742e11a73db503d1273d860",
+    "android_adid": "600c8c48-afca-42b8-89e5-4612c086c3cc",
+    "idfa": "",
+    "idfv": "",
+    "openudid": "",
+    "language": "zh-Hans-CN",
+    "os_type": "Android",
+    "os_version": "8.0.0",
+    "screen": {
+      "width": 667,
+      "height": 375,
+      "dpi": 219,
+      "pxratio": 2
+    },
+    "geo": {
+      "lat": 34.567,
+      "lon": 107.67,
+      "horizontal_accu": 45,
+      "vertical_accu": 56
+    }
+  },
+"user": {
+    "id": "34ddd",
+    "gender": "M",
+    "age": 34,
+    "keywords": ["auto", "cosmetics", "perfume"]
+  },
+  "ads": [
+    {
+    "video":{
+    "mimes":["mp4"],
+    "minduration":"5",
+    "maxduration":"30",
+    "protocols":[3,6],
+    "w": "900",
+    "h": "1600",
+    "startdelay":-1,
+    "linearity":1,
+    "minbitrate":100,
+    "maxbitrate":10000,
+    "pos":8
+     },
+      "unit_type": 1,
+      "ad_unit_id": "19393189-C4EB-3886-60B9-13B39407064E"
+    }
+  ]
+}
+```
+
+##### Sample of Response - Support VAST
+```json
+{
+    "result": 0,
+    "msg": "",
+    "ads": [
+        {
+            "id": "476FC7D0-C133-42F5-ED04-20F8C2BF5882",
+            "ad_unit_id": "19393189-C4EB-3886-60B9-13B39407064E",
+            "app_bundle": "com.zplay.beatracer",
+            "store_bundle": "com.android.vending",
+            "target_url": "https://play.google.com/store/apps/details?id=com.zplay.beatracer",
+            "target_url_type": 6,
+            "adm": "<VAST version=\"3\"><Ad id=\"476FC7D0-C133-42F5-ED04-20F8C2BF5882\"><InLine><AdSystem version=\"1.0\"><![CDATA[atmosplay]]></AdSystem><AdTitle><![CDATA[Android-节奏超跑-测试专用-广告1-插屏]]></AdTitle><Impression><![CDATA[https://pa-engine.zplayads.com/v1/tracking?ab_test_id=A011A3BB-9316-08D6-06DD-3DADFA6B73C1&ab_test_object_group_id=default&ad_id=476FC7D0-C133-42F5-ED04-20F8C2BF5882&ad_unit_id=19393189-C4EB-3886-60B9-13B39407064E&android_adid=600c8c48-afca-42b8-89e5-4612c086c3cc&android_id=adf3b4675742e11a73db503d1273d860&app_id=5C5419C7-A2DE-88BC-A311-C3E7A646F6AF&brand=Samsung&bundle_id=com.playableads.demo&channel_id=&channel_share_rate=0&city=%E5%8D%97%E4%BA%AC%E5%B8%82&client_id=73AB1CDF-009E-130C-4A15-94901D3470DE&country=CN&creatives_id=E7FF9202-AAE6-77D0-B46F-056A1E1ACB5C&developer_share_rate=70&device_model=Android&device_type=phone&engine_events=&height=0&imei=6cd5c276d3f6ce4205dde5b1bf913361&industry_id=&integrated_type=API&last_status=0&network_connection_type=wifi&os=Android&os_version=8.0.0&pay_by=cpi&pay_event=install&predictive_cpm_cipher=351d6fbfdfc8bb29&predictive_cpm_usd_cipher=213ee1d6dd84207c&predictive_cpms=2c3e8d08ad73a635&progress=%7Bprogress%7D&promotion_app_id=DF8DD39A-F5B2-A311-BCFE-C6E3CFB75E76&region=%E6%B1%9F%E8%8B%8F%E7%9C%81&request_id=bililb4rs363vsogp9l0&settlement_price_cny=213ee1d6dd84207c&settlement_price_usd=213ee1d6dd84207c&tracking_type=video_start_playing&unit_price_cny=fdf3d2a3b2e6380d77e13edb&unit_price_usd=9c2e72a6e1ed08e69b93e5fa&unit_prices=9ee430e529c158be513616b80a0155613db863678ad3b77dc7b817d5913cd4205f940ff0e477ca83286cc2ef8aa461e5391c72823bb1c0f3e1462f0edc20e8f9d1186704e988f68f&width=0]]></Impression><Creatives><Creative id=\"E7FF9202-AAE6-77D0-B46F-056A1E1ACB5C\"><Linear><Duration>00:00:00</Duration><TrackingEvents><Tracking event=\"complete\"><![CDATA[https://pa-engine.zplayads.com/v1/tracking?ab_test_id=A011A3BB-9316-08D6-06DD-3DADFA6B73C1&ab_test_object_group_id=default&ad_id=476FC7D0-C133-42F5-ED04-20F8C2BF5882&ad_unit_id=19393189-C4EB-3886-60B9-13B39407064E&android_adid=600c8c48-afca-42b8-89e5-4612c086c3cc&android_id=adf3b4675742e11a73db503d1273d860&app_id=5C5419C7-A2DE-88BC-A311-C3E7A646F6AF&brand=Samsung&bundle_id=com.playableads.demo&channel_id=&channel_share_rate=0&city=%E5%8D%97%E4%BA%AC%E5%B8%82&client_id=73AB1CDF-009E-130C-4A15-94901D3470DE&country=CN&creatives_id=E7FF9202-AAE6-77D0-B46F-056A1E1ACB5C&developer_share_rate=70&device_model=Android&device_type=phone&engine_events=&height=0&imei=6cd5c276d3f6ce4205dde5b1bf913361&industry_id=&integrated_type=API&last_status=0&network_connection_type=wifi&os=Android&os_version=8.0.0&pay_by=cpi&pay_event=install&predictive_cpm_cipher=351d6fbfdfc8bb29&predictive_cpm_usd_cipher=213ee1d6dd84207c&predictive_cpms=2c3e8d08ad73a635&progress=%7Bprogress%7D&promotion_app_id=DF8DD39A-F5B2-A311-BCFE-C6E3CFB75E76&region=%E6%B1%9F%E8%8B%8F%E7%9C%81&request_id=bililb4rs363vsogp9l0&settlement_price_cny=213ee1d6dd84207c&settlement_price_usd=213ee1d6dd84207c&tracking_type=video_ended_playing&unit_price_cny=fdf3d2a3b2e6380d77e13edb&unit_price_usd=9c2e72a6e1ed08e69b93e5fa&unit_prices=9ee430e529c158be513616b80a0155613db863678ad3b77dc7b817d5913cd4205f940ff0e477ca83286cc2ef8aa461e5391c72823bb1c0f3e1462f0edc20e8f9d1186704e988f68f&width=0]]></Tracking><Tracking event=\"pause\"><![CDATA[https://pa-engine.zplayads.com/v1/tracking?ab_test_id=A011A3BB-9316-08D6-06DD-3DADFA6B73C1&ab_test_object_group_id=default&ad_id=476FC7D0-C133-42F5-ED04-20F8C2BF5882&ad_unit_id=19393189-C4EB-3886-60B9-13B39407064E&android_adid=600c8c48-afca-42b8-89e5-4612c086c3cc&android_id=adf3b4675742e11a73db503d1273d860&app_id=5C5419C7-A2DE-88BC-A311-C3E7A646F6AF&brand=Samsung&bundle_id=com.playableads.demo&channel_id=&channel_share_rate=0&city=%E5%8D%97%E4%BA%AC%E5%B8%82&client_id=73AB1CDF-009E-130C-4A15-94901D3470DE&country=CN&creatives_id=E7FF9202-AAE6-77D0-B46F-056A1E1ACB5C&developer_share_rate=70&device_model=Android&device_type=phone&engine_events=&height=0&imei=6cd5c276d3f6ce4205dde5b1bf913361&industry_id=&integrated_type=API&last_status=0&network_connection_type=wifi&os=Android&os_version=8.0.0&pay_by=cpi&pay_event=install&predictive_cpm_cipher=351d6fbfdfc8bb29&predictive_cpm_usd_cipher=213ee1d6dd84207c&predictive_cpms=2c3e8d08ad73a635&progress=%7Bprogress%7D&promotion_app_id=DF8DD39A-F5B2-A311-BCFE-C6E3CFB75E76&region=%E6%B1%9F%E8%8B%8F%E7%9C%81&request_id=bililb4rs363vsogp9l0&settlement_price_cny=213ee1d6dd84207c&settlement_price_usd=213ee1d6dd84207c&tracking_type=video_paused&unit_price_cny=fdf3d2a3b2e6380d77e13edb&unit_price_usd=9c2e72a6e1ed08e69b93e5fa&unit_prices=9ee430e529c158be513616b80a0155613db863678ad3b77dc7b817d5913cd4205f940ff0e477ca83286cc2ef8aa461e5391c72823bb1c0f3e1462f0edc20e8f9d1186704e988f68f&width=0]]></Tracking><Tracking event=\"resume\"><![CDATA[https://pa-engine.zplayads.com/v1/tracking?ab_test_id=A011A3BB-9316-08D6-06DD-3DADFA6B73C1&ab_test_object_group_id=default&ad_id=476FC7D0-C133-42F5-ED04-20F8C2BF5882&ad_unit_id=19393189-C4EB-3886-60B9-13B39407064E&android_adid=600c8c48-afca-42b8-89e5-4612c086c3cc&android_id=adf3b4675742e11a73db503d1273d860&app_id=5C5419C7-A2DE-88BC-A311-C3E7A646F6AF&brand=Samsung&bundle_id=com.playableads.demo&channel_id=&channel_share_rate=0&city=%E5%8D%97%E4%BA%AC%E5%B8%82&client_id=73AB1CDF-009E-130C-4A15-94901D3470DE&country=CN&creatives_id=E7FF9202-AAE6-77D0-B46F-056A1E1ACB5C&developer_share_rate=70&device_model=Android&device_type=phone&engine_events=&height=0&imei=6cd5c276d3f6ce4205dde5b1bf913361&industry_id=&integrated_type=API&last_status=0&network_connection_type=wifi&os=Android&os_version=8.0.0&pay_by=cpi&pay_event=install&predictive_cpm_cipher=351d6fbfdfc8bb29&predictive_cpm_usd_cipher=213ee1d6dd84207c&predictive_cpms=2c3e8d08ad73a635&progress=%7Bprogress%7D&promotion_app_id=DF8DD39A-F5B2-A311-BCFE-C6E3CFB75E76&region=%E6%B1%9F%E8%8B%8F%E7%9C%81&request_id=bililb4rs363vsogp9l0&settlement_price_cny=213ee1d6dd84207c&settlement_price_usd=213ee1d6dd84207c&tracking_type=video_resumed&unit_price_cny=fdf3d2a3b2e6380d77e13edb&unit_price_usd=9c2e72a6e1ed08e69b93e5fa&unit_prices=9ee430e529c158be513616b80a0155613db863678ad3b77dc7b817d5913cd4205f940ff0e477ca83286cc2ef8aa461e5391c72823bb1c0f3e1462f0edc20e8f9d1186704e988f68f&width=0]]></Tracking><Tracking event=\"closeLinear\"><![CDATA[https://pa-engine.zplayads.com/v1/tracking?ab_test_id=A011A3BB-9316-08D6-06DD-3DADFA6B73C1&ab_test_object_group_id=default&ad_id=476FC7D0-C133-42F5-ED04-20F8C2BF5882&ad_unit_id=19393189-C4EB-3886-60B9-13B39407064E&android_adid=600c8c48-afca-42b8-89e5-4612c086c3cc&android_id=adf3b4675742e11a73db503d1273d860&app_id=5C5419C7-A2DE-88BC-A311-C3E7A646F6AF&brand=Samsung&bundle_id=com.playableads.demo&channel_id=&channel_share_rate=0&city=%E5%8D%97%E4%BA%AC%E5%B8%82&client_id=73AB1CDF-009E-130C-4A15-94901D3470DE&country=CN&creatives_id=E7FF9202-AAE6-77D0-B46F-056A1E1ACB5C&developer_share_rate=70&device_model=Android&device_type=phone&engine_events=&height=0&imei=6cd5c276d3f6ce4205dde5b1bf913361&industry_id=&integrated_type=API&last_status=0&network_connection_type=wifi&os=Android&os_version=8.0.0&pay_by=cpi&pay_event=install&predictive_cpm_cipher=351d6fbfdfc8bb29&predictive_cpm_usd_cipher=213ee1d6dd84207c&predictive_cpms=2c3e8d08ad73a635&progress=%7Bprogress%7D&promotion_app_id=DF8DD39A-F5B2-A311-BCFE-C6E3CFB75E76&region=%E6%B1%9F%E8%8B%8F%E7%9C%81&request_id=bililb4rs363vsogp9l0&settlement_price_cny=213ee1d6dd84207c&settlement_price_usd=213ee1d6dd84207c&tracking_type=landing_page_dismissed&unit_price_cny=fdf3d2a3b2e6380d77e13edb&unit_price_usd=9c2e72a6e1ed08e69b93e5fa&unit_prices=9ee430e529c158be513616b80a0155613db863678ad3b77dc7b817d5913cd4205f940ff0e477ca83286cc2ef8aa461e5391c72823bb1c0f3e1462f0edc20e8f9d1186704e988f68f&width=0]]></Tracking><Tracking event=\"skip\"><![CDATA[https://pa-engine.zplayads.com/v1/tracking?ab_test_id=A011A3BB-9316-08D6-06DD-3DADFA6B73C1&ab_test_object_group_id=default&ad_id=476FC7D0-C133-42F5-ED04-20F8C2BF5882&ad_unit_id=19393189-C4EB-3886-60B9-13B39407064E&android_adid=600c8c48-afca-42b8-89e5-4612c086c3cc&android_id=adf3b4675742e11a73db503d1273d860&app_id=5C5419C7-A2DE-88BC-A311-C3E7A646F6AF&brand=Samsung&bundle_id=com.playableads.demo&channel_id=&channel_share_rate=0&city=%E5%8D%97%E4%BA%AC%E5%B8%82&client_id=73AB1CDF-009E-130C-4A15-94901D3470DE&country=CN&creatives_id=E7FF9202-AAE6-77D0-B46F-056A1E1ACB5C&developer_share_rate=70&device_model=Android&device_type=phone&engine_events=&height=0&imei=6cd5c276d3f6ce4205dde5b1bf913361&industry_id=&integrated_type=API&last_status=0&network_connection_type=wifi&os=Android&os_version=8.0.0&pay_by=cpi&pay_event=install&predictive_cpm_cipher=351d6fbfdfc8bb29&predictive_cpm_usd_cipher=213ee1d6dd84207c&predictive_cpms=2c3e8d08ad73a635&progress=%7Bprogress%7D&promotion_app_id=DF8DD39A-F5B2-A311-BCFE-C6E3CFB75E76&region=%E6%B1%9F%E8%8B%8F%E7%9C%81&request_id=bililb4rs363vsogp9l0&settlement_price_cny=213ee1d6dd84207c&settlement_price_usd=213ee1d6dd84207c&tracking_type=force_close&unit_price_cny=fdf3d2a3b2e6380d77e13edb&unit_price_usd=9c2e72a6e1ed08e69b93e5fa&unit_prices=9ee430e529c158be513616b80a0155613db863678ad3b77dc7b817d5913cd4205f940ff0e477ca83286cc2ef8aa461e5391c72823bb1c0f3e1462f0edc20e8f9d1186704e988f68f&width=0]]></Tracking></TrackingEvents><VideoClicks><ClickThrough><![CDATA[https://play.google.com/store/apps/details?id=com.zplay.beatracer]]></ClickThrough><ClickTracking><![CDATA[https://pa-engine.zplayads.com/v1/tracking?ab_test_id=A011A3BB-9316-08D6-06DD-3DADFA6B73C1&ab_test_object_group_id=default&ad_id=476FC7D0-C133-42F5-ED04-20F8C2BF5882&ad_unit_id=19393189-C4EB-3886-60B9-13B39407064E&android_adid=600c8c48-afca-42b8-89e5-4612c086c3cc&android_id=adf3b4675742e11a73db503d1273d860&app_id=5C5419C7-A2DE-88BC-A311-C3E7A646F6AF&brand=Samsung&bundle_id=com.playableads.demo&channel_id=&channel_share_rate=0&city=%E5%8D%97%E4%BA%AC%E5%B8%82&client_id=73AB1CDF-009E-130C-4A15-94901D3470DE&country=CN&creatives_id=E7FF9202-AAE6-77D0-B46F-056A1E1ACB5C&developer_share_rate=70&device_model=Android&device_type=phone&engine_events=&height=0&imei=6cd5c276d3f6ce4205dde5b1bf913361&industry_id=&integrated_type=API&last_status=0&network_connection_type=wifi&os=Android&os_version=8.0.0&pay_by=cpi&pay_event=install&predictive_cpm_cipher=351d6fbfdfc8bb29&predictive_cpm_usd_cipher=213ee1d6dd84207c&predictive_cpms=2c3e8d08ad73a635&progress=%7Bprogress%7D&promotion_app_id=DF8DD39A-F5B2-A311-BCFE-C6E3CFB75E76&region=%E6%B1%9F%E8%8B%8F%E7%9C%81&request_id=bililb4rs363vsogp9l0&settlement_price_cny=213ee1d6dd84207c&settlement_price_usd=213ee1d6dd84207c&tracking_type=click_from_video_page&unit_price_cny=fdf3d2a3b2e6380d77e13edb&unit_price_usd=9c2e72a6e1ed08e69b93e5fa&unit_prices=9ee430e529c158be513616b80a0155613db863678ad3b77dc7b817d5913cd4205f940ff0e477ca83286cc2ef8aa461e5391c72823bb1c0f3e1462f0edc20e8f9d1186704e988f68f&width=0]]></ClickTracking><ClickTracking><![CDATA[https://app.appsflyer.com/com.zplay.beatracer?pid=zplayads&c=playable1]]></ClickTracking></VideoClicks><MediaFiles><MediaFile delivery=\"streaming\" type=\"mp4\" bitrate=\"954\" width=\"720\" height=\"1280\"><![CDATA[https://adcdn.zplayads.com/alfred/static/2019/04/08/E7FF9202-AAE6-77D0-B46F-056A1E1ACB5C20190408183827.mp4]]></MediaFile></MediaFiles></Linear></Creative></Creatives><Description></Description><Survey></Survey></InLine></Ad></VAST>"
+        }
+    ]
+}
+```
+
+##### Sample of Request - Do Not Support VAST
+```json
+{
+  "version": "1.1",
+  "developer_token": "D0C85086-DC66-433E-9304-49EAB171D008",
+  "need_https": 1,
+  "support_function":2,
+  "app": {
+    "app_id": "5C5419C7-A2DE-88BC-A311-C3E7A646F6AF",
+    "app_name": "Android-demo",
+    "bundle_id": "com.playableads.demo",
+    "version": "1.0",
+    "cat": ""
+  },
+  "device": {
+    "model": "Android",
+    "manufacturer": "Samsung",
+    "brand": "Samsung",
+    "plmn": "46001",
+    "device_type": "phone",
+    "dnt": 1,
+    "connection_type": "wifi",
+    "carrier": "China Mobile",
+    "orientation": 0,
+    "mac": "28b92b0dde49cff7190841686960c6bc",
+    "imei": "6cd5c276d3f6ce4205dde5b1bf913361",
+    "android_id": "adf3b4675742e11a73db503d1273d860",
+    "android_adid": "600c8c48-afca-42b8-89e5-4612c086c3cc",
+    "idfa": "",
+    "idfv": "",
+    "openudid": "",
+    "language": "zh-Hans-CN",
+    "os_type": "Android",
+    "os_version": "8.0.0",
+    "screen": {
+      "width": 667,
+      "height": 375,
+      "dpi": 219,
+      "pxratio": 2
+    },
+    "geo": {
+      "lat": 34.567,
+      "lon": 107.67,
+      "horizontal_accu": 45,
+      "vertical_accu": 56
+    }
+  },
+"user": {
+    "id": "34ddd",
+    "gender": "M",
+    "age": 34,
+    "keywords": ["auto", "cosmetics", "perfume"]
+  },
+  "ads": [
+    {
+    "video":{
+    "mimes":["mp4"],
+    "minduration":"5",
+    "maxduration":"30",
+    "w": "900",
+    "h": "1600",
+    "startdelay":-1,
+    "linearity":1,
+    "minbitrate":100,
+    "maxbitrate":10000,
+    "pos":8
+     },
+      "unit_type": 1,
+      "ad_unit_id": "19393189-C4EB-3886-60B9-13B39407064E"
+    }
+  ]
+}
+```
+
+##### Sample of Response - Do Not Support VAST
+```json
+{
+    "result": 0,
+    "msg": "",
+    "ads": [
+        {
+            "id": "476FC7D0-C133-42F5-ED04-20F8C2BF5882",
+            "ad_unit_id": "19393189-C4EB-3886-60B9-13B39407064E",
+            "app_bundle": "com.zplay.beatracer",
+            "store_bundle": "com.android.vending",
+            "target_url": "https://play.google.com/store/apps/details?id=com.zplay.beatracer",
+            "target_url_type": 6,
+            "video": {
+                "video_url": "https://adcdn.zplayads.com/alfred/static/2019/04/08/E7FF9202-AAE6-77D0-B46F-056A1E1ACB5C20190408183827.mp4",
+                "end_card": "https://pa-cloud.zplayads.com/alfred/static/2019/04/03/9BCA59A7-9BAF-55FE-879F-0781883F3905.html",
+                "mimes": "mp4",
+                "bitrate": 954,
+                "download_start_tracker": [
+                    "https://pa-engine.zplayads.com/v1/tracking?ab_test_id=A011A3BB-9316-08D6-06DD-3DADFA6B73C1&ab_test_object_group_id=default&ad_id=476FC7D0-C133-42F5-ED04-20F8C2BF5882&ad_unit_id=19393189-C4EB-3886-60B9-13B39407064E&android_adid=600c8c48-afca-42b8-89e5-4612c086c3cc&android_id=adf3b4675742e11a73db503d1273d860&app_id=5C5419C7-A2DE-88BC-A311-C3E7A646F6AF&brand=Samsung&bundle_id=com.playableads.demo&channel_id=&channel_share_rate=0&city=%E5%8D%97%E4%BA%AC%E5%B8%82&client_id=73AB1CDF-009E-130C-4A15-94901D3470DE&country=CN&creatives_id=E7FF9202-AAE6-77D0-B46F-056A1E1ACB5C&developer_share_rate=70&device_model=Android&device_type=phone&engine_events=&height=0&imei=6cd5c276d3f6ce4205dde5b1bf913361&industry_id=&integrated_type=API&last_status=0&network_connection_type=wifi&os=Android&os_version=8.0.0&pay_by=cpi&pay_event=install&predictive_cpm_cipher=351d6fbfdfc8bb29&predictive_cpm_usd_cipher=213ee1d6dd84207c&predictive_cpms=2c3e8d08ad73a635&progress=%7Bprogress%7D&promotion_app_id=DF8DD39A-F5B2-A311-BCFE-C6E3CFB75E76&region=%E6%B1%9F%E8%8B%8F%E7%9C%81&request_id=bim1pnetfilhsq680r50&settlement_price_cny=213ee1d6dd84207c&settlement_price_usd=213ee1d6dd84207c&tracking_type=download_start&unit_price_cny=fdf3d2a3b2e6380d77e13edb&unit_price_usd=9c2e72a6e1ed08e69b93e5fa&unit_prices=9ee430e529c158be513616b80a0155613db863678ad3b77dc7b817d5913cd4205f940ff0e477ca83286cc2ef8aa461e5391c72823bb1c0f3e1462f0edc20e8f9d1186704e988f68f&width=0"
+                ],
+                "download_ended_tracker": [
+                    "https://pa-engine.zplayads.com/v1/tracking?ab_test_id=A011A3BB-9316-08D6-06DD-3DADFA6B73C1&ab_test_object_group_id=default&ad_id=476FC7D0-C133-42F5-ED04-20F8C2BF5882&ad_unit_id=19393189-C4EB-3886-60B9-13B39407064E&android_adid=600c8c48-afca-42b8-89e5-4612c086c3cc&android_id=adf3b4675742e11a73db503d1273d860&app_id=5C5419C7-A2DE-88BC-A311-C3E7A646F6AF&brand=Samsung&bundle_id=com.playableads.demo&channel_id=&channel_share_rate=0&city=%E5%8D%97%E4%BA%AC%E5%B8%82&client_id=73AB1CDF-009E-130C-4A15-94901D3470DE&country=CN&creatives_id=E7FF9202-AAE6-77D0-B46F-056A1E1ACB5C&developer_share_rate=70&device_model=Android&device_type=phone&engine_events=&height=0&imei=6cd5c276d3f6ce4205dde5b1bf913361&industry_id=&integrated_type=API&last_status=0&network_connection_type=wifi&os=Android&os_version=8.0.0&pay_by=cpi&pay_event=install&predictive_cpm_cipher=351d6fbfdfc8bb29&predictive_cpm_usd_cipher=213ee1d6dd84207c&predictive_cpms=2c3e8d08ad73a635&progress=%7Bprogress%7D&promotion_app_id=DF8DD39A-F5B2-A311-BCFE-C6E3CFB75E76&region=%E6%B1%9F%E8%8B%8F%E7%9C%81&request_id=bim1pnetfilhsq680r50&settlement_price_cny=213ee1d6dd84207c&settlement_price_usd=213ee1d6dd84207c&tracking_type=download_end&unit_price_cny=fdf3d2a3b2e6380d77e13edb&unit_price_usd=9c2e72a6e1ed08e69b93e5fa&unit_prices=9ee430e529c158be513616b80a0155613db863678ad3b77dc7b817d5913cd4205f940ff0e477ca83286cc2ef8aa461e5391c72823bb1c0f3e1462f0edc20e8f9d1186704e988f68f&width=0"
+                ],
+                "start_playing_tracker": [
+                    "https://pa-engine.zplayads.com/v1/tracking?ab_test_id=A011A3BB-9316-08D6-06DD-3DADFA6B73C1&ab_test_object_group_id=default&ad_id=476FC7D0-C133-42F5-ED04-20F8C2BF5882&ad_unit_id=19393189-C4EB-3886-60B9-13B39407064E&android_adid=600c8c48-afca-42b8-89e5-4612c086c3cc&android_id=adf3b4675742e11a73db503d1273d860&app_id=5C5419C7-A2DE-88BC-A311-C3E7A646F6AF&brand=Samsung&bundle_id=com.playableads.demo&channel_id=&channel_share_rate=0&city=%E5%8D%97%E4%BA%AC%E5%B8%82&client_id=73AB1CDF-009E-130C-4A15-94901D3470DE&country=CN&creatives_id=E7FF9202-AAE6-77D0-B46F-056A1E1ACB5C&developer_share_rate=70&device_model=Android&device_type=phone&engine_events=&height=0&imei=6cd5c276d3f6ce4205dde5b1bf913361&industry_id=&integrated_type=API&last_status=0&network_connection_type=wifi&os=Android&os_version=8.0.0&pay_by=cpi&pay_event=install&predictive_cpm_cipher=351d6fbfdfc8bb29&predictive_cpm_usd_cipher=213ee1d6dd84207c&predictive_cpms=2c3e8d08ad73a635&progress=%7Bprogress%7D&promotion_app_id=DF8DD39A-F5B2-A311-BCFE-C6E3CFB75E76&region=%E6%B1%9F%E8%8B%8F%E7%9C%81&request_id=bim1pnetfilhsq680r50&settlement_price_cny=213ee1d6dd84207c&settlement_price_usd=213ee1d6dd84207c&tracking_type=video_start_playing&unit_price_cny=fdf3d2a3b2e6380d77e13edb&unit_price_usd=9c2e72a6e1ed08e69b93e5fa&unit_prices=9ee430e529c158be513616b80a0155613db863678ad3b77dc7b817d5913cd4205f940ff0e477ca83286cc2ef8aa461e5391c72823bb1c0f3e1462f0edc20e8f9d1186704e988f68f&width=0"
+                ],
+                "pause_tracker": [
+                    "https://pa-engine.zplayads.com/v1/tracking?ab_test_id=A011A3BB-9316-08D6-06DD-3DADFA6B73C1&ab_test_object_group_id=default&ad_id=476FC7D0-C133-42F5-ED04-20F8C2BF5882&ad_unit_id=19393189-C4EB-3886-60B9-13B39407064E&android_adid=600c8c48-afca-42b8-89e5-4612c086c3cc&android_id=adf3b4675742e11a73db503d1273d860&app_id=5C5419C7-A2DE-88BC-A311-C3E7A646F6AF&brand=Samsung&bundle_id=com.playableads.demo&channel_id=&channel_share_rate=0&city=%E5%8D%97%E4%BA%AC%E5%B8%82&client_id=73AB1CDF-009E-130C-4A15-94901D3470DE&country=CN&creatives_id=E7FF9202-AAE6-77D0-B46F-056A1E1ACB5C&developer_share_rate=70&device_model=Android&device_type=phone&engine_events=&height=0&imei=6cd5c276d3f6ce4205dde5b1bf913361&industry_id=&integrated_type=API&last_status=0&network_connection_type=wifi&os=Android&os_version=8.0.0&pay_by=cpi&pay_event=install&predictive_cpm_cipher=351d6fbfdfc8bb29&predictive_cpm_usd_cipher=213ee1d6dd84207c&predictive_cpms=2c3e8d08ad73a635&progress=%7Bprogress%7D&promotion_app_id=DF8DD39A-F5B2-A311-BCFE-C6E3CFB75E76&region=%E6%B1%9F%E8%8B%8F%E7%9C%81&request_id=bim1pnetfilhsq680r50&settlement_price_cny=213ee1d6dd84207c&settlement_price_usd=213ee1d6dd84207c&tracking_type=video_paused&unit_price_cny=fdf3d2a3b2e6380d77e13edb&unit_price_usd=9c2e72a6e1ed08e69b93e5fa&unit_prices=9ee430e529c158be513616b80a0155613db863678ad3b77dc7b817d5913cd4205f940ff0e477ca83286cc2ef8aa461e5391c72823bb1c0f3e1462f0edc20e8f9d1186704e988f68f&width=0"
+                ],
+                "resume_tracker": [
+                    "https://pa-engine.zplayads.com/v1/tracking?ab_test_id=A011A3BB-9316-08D6-06DD-3DADFA6B73C1&ab_test_object_group_id=default&ad_id=476FC7D0-C133-42F5-ED04-20F8C2BF5882&ad_unit_id=19393189-C4EB-3886-60B9-13B39407064E&android_adid=600c8c48-afca-42b8-89e5-4612c086c3cc&android_id=adf3b4675742e11a73db503d1273d860&app_id=5C5419C7-A2DE-88BC-A311-C3E7A646F6AF&brand=Samsung&bundle_id=com.playableads.demo&channel_id=&channel_share_rate=0&city=%E5%8D%97%E4%BA%AC%E5%B8%82&client_id=73AB1CDF-009E-130C-4A15-94901D3470DE&country=CN&creatives_id=E7FF9202-AAE6-77D0-B46F-056A1E1ACB5C&developer_share_rate=70&device_model=Android&device_type=phone&engine_events=&height=0&imei=6cd5c276d3f6ce4205dde5b1bf913361&industry_id=&integrated_type=API&last_status=0&network_connection_type=wifi&os=Android&os_version=8.0.0&pay_by=cpi&pay_event=install&predictive_cpm_cipher=351d6fbfdfc8bb29&predictive_cpm_usd_cipher=213ee1d6dd84207c&predictive_cpms=2c3e8d08ad73a635&progress=%7Bprogress%7D&promotion_app_id=DF8DD39A-F5B2-A311-BCFE-C6E3CFB75E76&region=%E6%B1%9F%E8%8B%8F%E7%9C%81&request_id=bim1pnetfilhsq680r50&settlement_price_cny=213ee1d6dd84207c&settlement_price_usd=213ee1d6dd84207c&tracking_type=video_resumed&unit_price_cny=fdf3d2a3b2e6380d77e13edb&unit_price_usd=9c2e72a6e1ed08e69b93e5fa&unit_prices=9ee430e529c158be513616b80a0155613db863678ad3b77dc7b817d5913cd4205f940ff0e477ca83286cc2ef8aa461e5391c72823bb1c0f3e1462f0edc20e8f9d1186704e988f68f&width=0"
+                ],
+                "end_playing_tracker": [
+                    "https://pa-engine.zplayads.com/v1/tracking?ab_test_id=A011A3BB-9316-08D6-06DD-3DADFA6B73C1&ab_test_object_group_id=default&ad_id=476FC7D0-C133-42F5-ED04-20F8C2BF5882&ad_unit_id=19393189-C4EB-3886-60B9-13B39407064E&android_adid=600c8c48-afca-42b8-89e5-4612c086c3cc&android_id=adf3b4675742e11a73db503d1273d860&app_id=5C5419C7-A2DE-88BC-A311-C3E7A646F6AF&brand=Samsung&bundle_id=com.playableads.demo&channel_id=&channel_share_rate=0&city=%E5%8D%97%E4%BA%AC%E5%B8%82&client_id=73AB1CDF-009E-130C-4A15-94901D3470DE&country=CN&creatives_id=E7FF9202-AAE6-77D0-B46F-056A1E1ACB5C&developer_share_rate=70&device_model=Android&device_type=phone&engine_events=&height=0&imei=6cd5c276d3f6ce4205dde5b1bf913361&industry_id=&integrated_type=API&last_status=0&network_connection_type=wifi&os=Android&os_version=8.0.0&pay_by=cpi&pay_event=install&predictive_cpm_cipher=351d6fbfdfc8bb29&predictive_cpm_usd_cipher=213ee1d6dd84207c&predictive_cpms=2c3e8d08ad73a635&progress=%7Bprogress%7D&promotion_app_id=DF8DD39A-F5B2-A311-BCFE-C6E3CFB75E76&region=%E6%B1%9F%E8%8B%8F%E7%9C%81&request_id=bim1pnetfilhsq680r50&settlement_price_cny=213ee1d6dd84207c&settlement_price_usd=213ee1d6dd84207c&tracking_type=video_ended_playing&unit_price_cny=fdf3d2a3b2e6380d77e13edb&unit_price_usd=9c2e72a6e1ed08e69b93e5fa&unit_prices=9ee430e529c158be513616b80a0155613db863678ad3b77dc7b817d5913cd4205f940ff0e477ca83286cc2ef8aa461e5391c72823bb1c0f3e1462f0edc20e8f9d1186704e988f68f&width=0"
+                ],
+                "end_card_displayed_tracker": [
+                    "https://pa-engine.zplayads.com/v1/tracking?ab_test_id=A011A3BB-9316-08D6-06DD-3DADFA6B73C1&ab_test_object_group_id=default&ad_id=476FC7D0-C133-42F5-ED04-20F8C2BF5882&ad_unit_id=19393189-C4EB-3886-60B9-13B39407064E&android_adid=600c8c48-afca-42b8-89e5-4612c086c3cc&android_id=adf3b4675742e11a73db503d1273d860&app_id=5C5419C7-A2DE-88BC-A311-C3E7A646F6AF&brand=Samsung&bundle_id=com.playableads.demo&channel_id=&channel_share_rate=0&city=%E5%8D%97%E4%BA%AC%E5%B8%82&client_id=73AB1CDF-009E-130C-4A15-94901D3470DE&country=CN&creatives_id=E7FF9202-AAE6-77D0-B46F-056A1E1ACB5C&developer_share_rate=70&device_model=Android&device_type=phone&engine_events=&height=0&imei=6cd5c276d3f6ce4205dde5b1bf913361&industry_id=&integrated_type=API&last_status=0&network_connection_type=wifi&os=Android&os_version=8.0.0&pay_by=cpi&pay_event=install&predictive_cpm_cipher=351d6fbfdfc8bb29&predictive_cpm_usd_cipher=213ee1d6dd84207c&predictive_cpms=2c3e8d08ad73a635&progress=%7Bprogress%7D&promotion_app_id=DF8DD39A-F5B2-A311-BCFE-C6E3CFB75E76&region=%E6%B1%9F%E8%8B%8F%E7%9C%81&request_id=bim1pnetfilhsq680r50&settlement_price_cny=213ee1d6dd84207c&settlement_price_usd=213ee1d6dd84207c&tracking_type=landing_page_presented&unit_price_cny=fdf3d2a3b2e6380d77e13edb&unit_price_usd=9c2e72a6e1ed08e69b93e5fa&unit_prices=9ee430e529c158be513616b80a0155613db863678ad3b77dc7b817d5913cd4205f940ff0e477ca83286cc2ef8aa461e5391c72823bb1c0f3e1462f0edc20e8f9d1186704e988f68f&width=0"
+                ],
+                "video_click_tracker": [
+                    "https://pa-engine.zplayads.com/v1/tracking?ab_test_id=A011A3BB-9316-08D6-06DD-3DADFA6B73C1&ab_test_object_group_id=default&ad_id=476FC7D0-C133-42F5-ED04-20F8C2BF5882&ad_unit_id=19393189-C4EB-3886-60B9-13B39407064E&android_adid=600c8c48-afca-42b8-89e5-4612c086c3cc&android_id=adf3b4675742e11a73db503d1273d860&app_id=5C5419C7-A2DE-88BC-A311-C3E7A646F6AF&brand=Samsung&bundle_id=com.playableads.demo&channel_id=&channel_share_rate=0&city=%E5%8D%97%E4%BA%AC%E5%B8%82&client_id=73AB1CDF-009E-130C-4A15-94901D3470DE&country=CN&creatives_id=E7FF9202-AAE6-77D0-B46F-056A1E1ACB5C&developer_share_rate=70&device_model=Android&device_type=phone&engine_events=&height=0&imei=6cd5c276d3f6ce4205dde5b1bf913361&industry_id=&integrated_type=API&last_status=0&network_connection_type=wifi&os=Android&os_version=8.0.0&pay_by=cpi&pay_event=install&predictive_cpm_cipher=351d6fbfdfc8bb29&predictive_cpm_usd_cipher=213ee1d6dd84207c&predictive_cpms=2c3e8d08ad73a635&progress=%7Bprogress%7D&promotion_app_id=DF8DD39A-F5B2-A311-BCFE-C6E3CFB75E76&region=%E6%B1%9F%E8%8B%8F%E7%9C%81&request_id=bim1pnetfilhsq680r50&settlement_price_cny=213ee1d6dd84207c&settlement_price_usd=213ee1d6dd84207c&tracking_type=click_from_video_page&unit_price_cny=fdf3d2a3b2e6380d77e13edb&unit_price_usd=9c2e72a6e1ed08e69b93e5fa&unit_prices=9ee430e529c158be513616b80a0155613db863678ad3b77dc7b817d5913cd4205f940ff0e477ca83286cc2ef8aa461e5391c72823bb1c0f3e1462f0edc20e8f9d1186704e988f68f&width=0",
+                    "https://app.appsflyer.com/com.zplay.beatracer?pid=zplayads&c=playable1"
+                ],
+                "end_card_click_tracker": [
+                    "https://pa-engine.zplayads.com/v1/tracking?ab_test_id=A011A3BB-9316-08D6-06DD-3DADFA6B73C1&ab_test_object_group_id=default&ad_id=476FC7D0-C133-42F5-ED04-20F8C2BF5882&ad_unit_id=19393189-C4EB-3886-60B9-13B39407064E&android_adid=600c8c48-afca-42b8-89e5-4612c086c3cc&android_id=adf3b4675742e11a73db503d1273d860&app_id=5C5419C7-A2DE-88BC-A311-C3E7A646F6AF&brand=Samsung&bundle_id=com.playableads.demo&channel_id=&channel_share_rate=0&city=%E5%8D%97%E4%BA%AC%E5%B8%82&client_id=73AB1CDF-009E-130C-4A15-94901D3470DE&country=CN&creatives_id=E7FF9202-AAE6-77D0-B46F-056A1E1ACB5C&developer_share_rate=70&device_model=Android&device_type=phone&engine_events=&height=0&imei=6cd5c276d3f6ce4205dde5b1bf913361&industry_id=&integrated_type=API&last_status=0&network_connection_type=wifi&os=Android&os_version=8.0.0&pay_by=cpi&pay_event=install&predictive_cpm_cipher=351d6fbfdfc8bb29&predictive_cpm_usd_cipher=213ee1d6dd84207c&predictive_cpms=2c3e8d08ad73a635&progress=%7Bprogress%7D&promotion_app_id=DF8DD39A-F5B2-A311-BCFE-C6E3CFB75E76&region=%E6%B1%9F%E8%8B%8F%E7%9C%81&request_id=bim1pnetfilhsq680r50&settlement_price_cny=213ee1d6dd84207c&settlement_price_usd=213ee1d6dd84207c&tracking_type=click_from_landing_page&unit_price_cny=fdf3d2a3b2e6380d77e13edb&unit_price_usd=9c2e72a6e1ed08e69b93e5fa&unit_prices=9ee430e529c158be513616b80a0155613db863678ad3b77dc7b817d5913cd4205f940ff0e477ca83286cc2ef8aa461e5391c72823bb1c0f3e1462f0edc20e8f9d1186704e988f68f&width=0",
+                    "https://app.appsflyer.com/com.zplay.beatracer?pid=zplayads&c=playable1"
+                ],
+                "close_tracker": [
+                    "https://pa-engine.zplayads.com/v1/tracking?ab_test_id=A011A3BB-9316-08D6-06DD-3DADFA6B73C1&ab_test_object_group_id=default&ad_id=476FC7D0-C133-42F5-ED04-20F8C2BF5882&ad_unit_id=19393189-C4EB-3886-60B9-13B39407064E&android_adid=600c8c48-afca-42b8-89e5-4612c086c3cc&android_id=adf3b4675742e11a73db503d1273d860&app_id=5C5419C7-A2DE-88BC-A311-C3E7A646F6AF&brand=Samsung&bundle_id=com.playableads.demo&channel_id=&channel_share_rate=0&city=%E5%8D%97%E4%BA%AC%E5%B8%82&client_id=73AB1CDF-009E-130C-4A15-94901D3470DE&country=CN&creatives_id=E7FF9202-AAE6-77D0-B46F-056A1E1ACB5C&developer_share_rate=70&device_model=Android&device_type=phone&engine_events=&height=0&imei=6cd5c276d3f6ce4205dde5b1bf913361&industry_id=&integrated_type=API&last_status=0&network_connection_type=wifi&os=Android&os_version=8.0.0&pay_by=cpi&pay_event=install&predictive_cpm_cipher=351d6fbfdfc8bb29&predictive_cpm_usd_cipher=213ee1d6dd84207c&predictive_cpms=2c3e8d08ad73a635&progress=%7Bprogress%7D&promotion_app_id=DF8DD39A-F5B2-A311-BCFE-C6E3CFB75E76&region=%E6%B1%9F%E8%8B%8F%E7%9C%81&request_id=bim1pnetfilhsq680r50&settlement_price_cny=213ee1d6dd84207c&settlement_price_usd=213ee1d6dd84207c&tracking_type=landing_page_dismissed&unit_price_cny=fdf3d2a3b2e6380d77e13edb&unit_price_usd=9c2e72a6e1ed08e69b93e5fa&unit_prices=9ee430e529c158be513616b80a0155613db863678ad3b77dc7b817d5913cd4205f940ff0e477ca83286cc2ef8aa461e5391c72823bb1c0f3e1462f0edc20e8f9d1186704e988f68f&width=0"
+                ]
+            }
         }
     ]
 }

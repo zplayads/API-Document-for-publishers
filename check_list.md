@@ -83,7 +83,7 @@ e. Android 响应 WebView 的 close 事件示例
 a. WKWebView 添加`zplayads`脚本消息处理程序
 
 ```objective-c
-- (WKWebView *)previewAdWebView {d
+- (WKWebView *)previewAdWebView {
     if (!_previewAdWebView) {
         WKWebViewConfiguration *config = [[WKWebViewConfiguration alloc] init];
         [config.userContentController addScriptMessageHandler:self name:@"zplayads"];
@@ -177,7 +177,7 @@ b. 监听`UIWebView`的代理方法
 
 c. 安装事件监听及在应用内打开应用市场
 
-- 点击事件会返回`user_did_tap_install`，在`handlePlayablePageMessage:`处理您的跳转逻辑。
+- 点击事件会返回`user_did_tap_install`，在`handleCustomAction:`处理您的跳转逻辑。
 
 - 打开内置 AppStore 代码示例：[点击此处](AppStore)
 

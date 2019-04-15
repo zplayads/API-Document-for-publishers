@@ -185,7 +185,7 @@ c. Listen to Click Event and Open Application Market
 
 d. listen to Close Event and execute
 
-- `close_playable_ads` method will be invoked when ad is closed, please close the WKWebView in `handlePlayablePageMessage:`
+- `close_playable_ads` method will be invoked when ad is closed, please close the WKWebView in `handleCustomAction:`
 
 > **Please confirm that whether you support install click event and close event. If you support these two events, please set `support_function` to 2 when you request, otherwise set 1.**
 

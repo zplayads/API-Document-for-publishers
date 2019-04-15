@@ -130,7 +130,7 @@ c. Listen to Click Event and Open Application Market
 
 - [CLICK HERE](AppStore) to see code sample how to open built-in AppStore.
 
-d. listen to Close Event and execute
+d. Listen to Close Event and execute
 
 - `close_playable_ads` method will be invoked when ad is closed, please close the WKWebView in `handlePlayablePageMessage:`
 
@@ -183,7 +183,7 @@ c. Listen to Click Event and Open Application Market
 
 - [CLICK HERE](AppStore) to see code sample how to open built-in AppStore.
 
-d. listen to Close Event and execute
+d. Listen to Close Event and execute
 
 - `close_playable_ads` method will be invoked when ad is closed, please close the WKWebView in `handleCustomAction:`
 

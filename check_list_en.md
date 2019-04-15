@@ -6,6 +6,8 @@
   - [3. Support both click event and install event which we provide](#3-support-both-click-event-and-install-event-which-we-provide)
     - [3.1 Android](#31-android)
     - [3.2 iOS](#32-ios)
+      - [3.2.1 If you use WKWebview](#321-if-you-use-wkwebview)
+      - [3.2.2 If you use UIWebview](#322-if-you-use-uiwebview)
   - [4. request when the unit_type is native](#4-request-when-the-unittype-is-native)
 
 > Please read all the items listed here and check if they have met the requirements. Otherwise, the traffic will be blocked, and fill rate is not high, and revenue would be low. Please check carefully.
@@ -75,7 +77,9 @@ e. respond close event of WebView
 
 ### 3.2 iOS
 
-> Using WKWebView to Load ZPLAY Ads HTML on iOS device
+> Using WKWebView or UIWebview to Load ZPLAY Ads HTML on iOS device
+
+#### 3.2.1 If you use WKWebview
 
 a. Add `zplayads` script message handle in WKWebView
 
@@ -116,6 +120,58 @@ b. Listening to `WKScriptMessageHandler` delegate method
         NSLog(@"user_did_tap_install");
     }else if ([msg isEqualToString:@"close_playable_ads"]) {
         NSLog(@"close zplayads...");
+    }
+}
+```
+
+c. Listen to Click Event and Open Application Market
+
+- `user_did_tap_install` method will be invoked when ad is clicked, please open built-in App Store in `handlePlayablePageMessage:()`.
+
+- [CLICK HERE](AppStore) to see code sample how to open built-in AppStore.
+
+d. listen to Close Event and execute
+
+- `close_playable_ads` method will be invoked when ad is closed, please close the WKWebView in `handlePlayablePageMessage:`
+
+#### 3.2.2 If you use UIWebview
+a. Add `zplayads` script message handle in UIWebView
+
+```objective-c
+- (UIWebView *)webView{
+    if (!_webView) {
+        _webView = [[UIWebView alloc] init];
+        _webView.mediaPlaybackRequiresUserAction = NO;
+        _webView.allowsInlineMediaPlayback = YES;
+        _webView.delegate = self;
+        _webView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
+        _webView.backgroundColor = [UIColor blackColor];
+    }
+    return _webView;
+}
+```
+
+b. Listening to `` delegate method
+
+```objective-c
+- (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType{
+
+    NSString *rUrl = [[request URL] absoluteString];
+    if ([rUrl hasPrefix:@"zplayads:"]) {
+        NSArray *v = [rUrl componentsSeparatedByString:@":"];
+        if (v.count > 1) {
+            [self handleCustomAction:v[1]];
+        }
+        return NO;
+    }
+    return YES;
+}
+// handle message
+- (void)handleCustomAction:(NSString *)msg{
+    if ([msg isEqualToString:@"user_did_tap_install"]) {
+        NSLog(@"user_did_tap_install");
+    } else if ([msg isEqualToString:@"close_playable_ads"]) {
+        NSLog(@"close_playable_ads");
     }
 }
 ```

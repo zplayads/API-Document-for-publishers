@@ -84,7 +84,7 @@ e. respond close event of WebView
 a. Add `zplayads` script message handle in WKWebView
 
 ```objective-c
-- (WKWebView *)previewAdWebView {d
+- (WKWebView *)previewAdWebView {
     if (!_previewAdWebView) {
         WKWebViewConfiguration *config = [[WKWebViewConfiguration alloc] init];
         [config.userContentController addScriptMessageHandler:self name:@"zplayads"];
@@ -179,7 +179,7 @@ b. Listening to `UIWebView` delegate method
 
 c. Listen to Click Event and Open Application Market
 
-- `user_did_tap_install` method will be invoked when ad is clicked, please open built-in App Store in `handlePlayablePageMessage:`.
+- `user_did_tap_install` method will be invoked when ad is clicked, please open built-in App Store in `handleCustomAction:`.
 
 - [CLICK HERE](AppStore) to see code sample how to open built-in AppStore.
 

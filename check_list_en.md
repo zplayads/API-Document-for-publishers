@@ -126,7 +126,7 @@ b. Listening to `WKScriptMessageHandler` delegate method
 
 c. Listen to Click Event and Open Application Market
 
-- `user_did_tap_install` method will be invoked when ad is clicked, please open built-in App Store in `handlePlayablePageMessage:()`.
+- `user_did_tap_install` method will be invoked when ad is clicked, please open built-in App Store in `handlePlayablePageMessage:`.
 
 - [CLICK HERE](AppStore) to see code sample how to open built-in AppStore.
 
@@ -135,7 +135,8 @@ d. listen to Close Event and execute
 - `close_playable_ads` method will be invoked when ad is closed, please close the WKWebView in `handlePlayablePageMessage:`
 
 #### 3.2.2 If you use UIWebview
-a. Add `zplayads` script message handle in UIWebView
+
+a. Initialize UIWebView
 
 ```objective-c
 - (UIWebView *)webView{
@@ -151,7 +152,7 @@ a. Add `zplayads` script message handle in UIWebView
 }
 ```
 
-b. Listening to `` delegate method
+b. Listening to `UIWebView` delegate method
 
 ```objective-c
 - (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType{
@@ -178,7 +179,7 @@ b. Listening to `` delegate method
 
 c. Listen to Click Event and Open Application Market
 
-- `user_did_tap_install` method will be invoked when ad is clicked, please open built-in App Store in `handlePlayablePageMessage:()`.
+- `user_did_tap_install` method will be invoked when ad is clicked, please open built-in App Store in `handlePlayablePageMessage:`.
 
 - [CLICK HERE](AppStore) to see code sample how to open built-in AppStore.
 
@@ -186,7 +187,7 @@ d. listen to Close Event and execute
 
 - `close_playable_ads` method will be invoked when ad is closed, please close the WKWebView in `handlePlayablePageMessage:`
 
-> **Please confirm that whether you support install event and click event. If you support these two events, please set `support_function` to 2 when you request, otherwise set 1.**
+> **Please confirm that whether you support install click event and close event. If you support these two events, please set `support_function` to 2 when you request, otherwise set 1.**
 
 **What's the difference for your work when you support these 2 events or not?**
 

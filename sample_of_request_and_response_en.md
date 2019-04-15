@@ -1,7 +1,7 @@
 # Sample of Request and Response
 
 - [Sample of Request and Response](#sample-of-request-and-response)
-  - [Test token, app_id and ad_unit_id](#test-token-app_id-and-ad_unit_id)
+  - [Test token, app_id and ad_unit_id](#test-token-appid-and-adunitid)
   - [Sample of Request](#sample-of-request)
     - [iOS](#ios)
       - [Interstitial](#interstitial)
@@ -13,11 +13,11 @@
       - [Rewarded Video](#rewarded-video)
         - [Sample of Request](#sample-of-request-3)
         - [Sample of Response](#sample-of-response-2)
-      - [Request Video Object](#request-video-object)
-        - [Sample of Request - Support VAST](#sample-of-request---support-vast)
-        - [Sample of Response - Support VAST](#sample-of-response---support-vast)
-        - [Sample of Request - Do Not Support VAST](#sample-of-request---do-not-support-vast)
-        - [Sample of Response - Do Not Support VAST](#sample-of-response---do-not-support-vast)
+      - [Video Request](#video-request)
+        - [VAST Sample of Request](#vast-sample-of-request)
+        - [VAST Sample of Response](#vast-sample-of-response)
+        - [Non-VAST Sample of Request](#non-vast-sample-of-request)
+        - [Non-VAST Sample of Response](#non-vast-sample-of-response)
     - [Android](#android)
       - [Interstitial](#interstitial-1)
         - [Sample of Request](#sample-of-request-4)
@@ -28,11 +28,11 @@
       - [Rrewarded Video](#rrewarded-video)
         - [Sample of Request](#sample-of-request-6)
         - [Sample of Response](#sample-of-response-5)
-      - [Request Video Object](#request-video-object-1)
-        - [Sample of Request - Support VAST](#sample-of-request---support-vast-1)
-        - [Sample of Response - Support VAST](#sample-of-response---support-vast-1)
-        - [Sample of Request - Do Not Support VAST](#sample-of-request---do-not-support-vast-1)
-        - [Sample of Response - Do Not Support VAST](#sample-of-response---do-not-support-vast-1)
+      - [Video Request](#video-request-1)
+        - [VAST Sample of Request](#vast-sample-of-request-1)
+        - [VAST Sample of Response](#vast-sample-of-response-1)
+        - [Non-VAST Sample of Request](#non-vast-sample-of-request-1)
+        - [Non-VAST Sample of Response](#non-vast-sample-of-response-1)
 
 ## Test token, app_id and ad_unit_id
 
@@ -370,11 +370,11 @@
 }
 ```
 
-#### Request Video Object
+#### Video Request
 
-You can request video object with each ad unit type. Here take Interstitial as an example.
+You can request video object with every ad unit type. Here take Interstitial as an example.
 
-##### Sample of Request - Support VAST
+##### VAST Sample of Request
 ```json
 {
   "version": "1.1",
@@ -449,7 +449,7 @@ You can request video object with each ad unit type. Here take Interstitial as a
 }
 ```
 
-##### Sample of Response - Support VAST
+##### VAST Sample of Response
 ```json
 {
     "result": 0,
@@ -466,7 +466,7 @@ You can request video object with each ad unit type. Here take Interstitial as a
     ]
 }
 ```
-##### Sample of Request - Do Not Support VAST
+##### Non-VAST Sample of Request
 ```json
 {
   "version": "1.1",
@@ -540,7 +540,7 @@ You can request video object with each ad unit type. Here take Interstitial as a
 }
 ```
 
-##### Sample of Response - Do Not Support VAST
+##### Non-VAST Sample of Response 
 ```json
 {
     "result": 0,
@@ -920,10 +920,10 @@ You can request video object with each ad unit type. Here take Interstitial as a
 }
 ```
 
-#### Request Video Object
+#### Video Request 
 You can request video object with each ad unit type. Here take Interstitial as an example.
 
-##### Sample of Request - Support VAST
+##### VAST Sample of Request 
 ```json
 {
   "version": "1.1",
@@ -998,7 +998,7 @@ You can request video object with each ad unit type. Here take Interstitial as a
 }
 ```
 
-##### Sample of Response - Support VAST
+##### VAST Sample of Response
 ```json
 {
     "result": 0,
@@ -1017,7 +1017,7 @@ You can request video object with each ad unit type. Here take Interstitial as a
 }
 ```
 
-##### Sample of Request - Do Not Support VAST
+##### Non-VAST Sample of Request
 ```json
 {
   "version": "1.1",
@@ -1091,7 +1091,7 @@ You can request video object with each ad unit type. Here take Interstitial as a
 }
 ```
 
-##### Sample of Response - Do Not Support VAST
+##### Non-VAST Sample of Response
 ```json
 {
     "result": 0,

@@ -183,7 +183,7 @@ c. 安装事件监听及在应用内打开应用市场
 
 d. 关闭事件监听及处理
 
-- 关闭事件会返回 `close_playable_ads`，在`handlePlayablePageMessage:`处理您的关闭逻辑。
+- 关闭事件会返回 `close_playable_ads`，在`handleCustomAction:`处理您的关闭逻辑。
 
 > **请确认若您支持ZPLAY Ads安装事件、点击事件的监听，在请求时将`support_function`字段取值为2；若不支持，在请求时将`support_function`字段取值为1**
 

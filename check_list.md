@@ -6,6 +6,8 @@
   - [3. 支持ZPLAY Ads的关闭方法和下载方法](#3-%E6%94%AF%E6%8C%81zplay-ads%E7%9A%84%E5%85%B3%E9%97%AD%E6%96%B9%E6%B3%95%E5%92%8C%E4%B8%8B%E8%BD%BD%E6%96%B9%E6%B3%95)
     - [3.1 Android](#31-android)
     - [3.2 iOS](#32-ios)
+      - [3.2.1 若您使用 WKWebView](#321-%E8%8B%A5%E6%82%A8%E4%BD%BF%E7%94%A8-wkwebview)
+      - [3.2.2 若您使用 UIWebview](#322-%E8%8B%A5%E6%82%A8%E4%BD%BF%E7%94%A8-uiwebview)
   - [4. 原生广告位请求](#4-%E5%8E%9F%E7%94%9F%E5%B9%BF%E5%91%8A%E4%BD%8D%E8%AF%B7%E6%B1%82)
 
 > 此处列出的所有对接项请自行阅读，并检查是否都已经符合要求，否则广告在投放过程中，将会出现流量被屏蔽，填充不高，收益较低等问题，请仔细核查检验
@@ -75,12 +77,13 @@ e. Android 响应 WebView 的 close 事件示例
 
 ### 3.2 iOS
 
-> 请使用 WKWebView 加载 ZPLAY Ads HTML
+> 请使用 WKWebView 或 UIWebview 加载 ZPLAY Ads HTML
 
+#### 3.2.1 若您使用 WKWebView
 a. WKWebView 添加`zplayads`脚本消息处理程序
 
 ```objective-c
-- (WKWebView *)previewAdWebView {d
+- (WKWebView *)previewAdWebView {
     if (!_previewAdWebView) {
         WKWebViewConfiguration *config = [[WKWebViewConfiguration alloc] init];
         [config.userContentController addScriptMessageHandler:self name:@"zplayads"];
@@ -119,7 +122,6 @@ b. 监听`WKScriptMessageHandler`的代理方法
     }
 }
 ```
-
 c. 安装事件监听及在应用内打开应用市场
 
 - 点击事件会返回`user_did_tap_install`，在`handlePlayablePageMessage:`处理您的跳转逻辑。
@@ -129,6 +131,59 @@ c. 安装事件监听及在应用内打开应用市场
 d. 关闭事件监听及处理
 
 - 关闭事件会返回 `close_playable_ads`，在`handlePlayablePageMessage:`处理您的关闭逻辑。
+
+#### 3.2.2 若您使用 UIWebview
+
+a. 初始化UIWebView
+
+```objective-c
+- (UIWebView *)webView{
+    if (!_webView) {
+        _webView = [[UIWebView alloc] init];
+        _webView.mediaPlaybackRequiresUserAction = NO;
+        _webView.allowsInlineMediaPlayback = YES;
+        _webView.delegate = self;
+        _webView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
+        _webView.backgroundColor = [UIColor blackColor];
+    }
+    return _webView;
+}
+```
+
+b. 监听`UIWebView`的代理方法
+
+```objective-c
+- (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType{
+
+    NSString *rUrl = [[request URL] absoluteString];
+    if ([rUrl hasPrefix:@"zplayads:"]) {
+        NSArray *v = [rUrl componentsSeparatedByString:@":"];
+        if (v.count > 1) {
+            [self handleCustomAction:v[1]];
+        }
+        return NO;
+    }
+    return YES;
+}
+// handle message
+- (void)handleCustomAction:(NSString *)msg{
+    if ([msg isEqualToString:@"user_did_tap_install"]) {
+        NSLog(@"user_did_tap_install");
+    } else if ([msg isEqualToString:@"close_playable_ads"]) {
+        NSLog(@"close_playable_ads");
+    }
+}
+```
+
+c. 安装事件监听及在应用内打开应用市场
+
+- 点击事件会返回`user_did_tap_install`，在`handleCustomAction:`处理您的跳转逻辑。
+
+- 打开内置 AppStore 代码示例：[点击此处](AppStore)
+
+d. 关闭事件监听及处理
+
+- 关闭事件会返回 `close_playable_ads`，在`handleCustomAction:`处理您的关闭逻辑。
 
 > **请确认若您支持ZPLAY Ads安装事件、点击事件的监听，在请求时将`support_function`字段取值为2；若不支持，在请求时将`support_function`字段取值为1**
 

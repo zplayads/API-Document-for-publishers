@@ -6,6 +6,8 @@
   - [3. Support both click event and install event which we provide](#3-support-both-click-event-and-install-event-which-we-provide)
     - [3.1 Android](#31-android)
     - [3.2 iOS](#32-ios)
+      - [3.2.1 If you use WKWebview](#321-if-you-use-wkwebview)
+      - [3.2.2 If you use UIWebview](#322-if-you-use-uiwebview)
   - [4. request when the unit_type is native](#4-request-when-the-unittype-is-native)
 
 > Please read all the items listed here and check if they have met the requirements. Otherwise, the traffic will be blocked, and fill rate is not high, and revenue would be low. Please check carefully.
@@ -75,12 +77,14 @@ e. respond close event of WebView
 
 ### 3.2 iOS
 
-> Using WKWebView to Load ZPLAY Ads HTML on iOS device
+> Using WKWebView or UIWebview to Load ZPLAY Ads HTML on iOS device
+
+#### 3.2.1 If you use WKWebview
 
 a. Add `zplayads` script message handle in WKWebView
 
 ```objective-c
-- (WKWebView *)previewAdWebView {d
+- (WKWebView *)previewAdWebView {
     if (!_previewAdWebView) {
         WKWebViewConfiguration *config = [[WKWebViewConfiguration alloc] init];
         [config.userContentController addScriptMessageHandler:self name:@"zplayads"];
@@ -122,15 +126,68 @@ b. Listening to `WKScriptMessageHandler` delegate method
 
 c. Listen to Click Event and Open Application Market
 
-- `user_did_tap_install` method will be invoked when ad is clicked, please open built-in App Store in `handlePlayablePageMessage:()`.
+- `user_did_tap_install` method will be invoked when ad is clicked, please open built-in App Store in `handlePlayablePageMessage:`.
 
 - [CLICK HERE](AppStore) to see code sample how to open built-in AppStore.
 
-d. listen to Close Event and execute
+d. Listen to Close Event and execute
 
 - `close_playable_ads` method will be invoked when ad is closed, please close the WKWebView in `handlePlayablePageMessage:`
 
-> **Please confirm that whether you support install event and click event. If you support these two events, please set `support_function` to 2 when you request, otherwise set 1.**
+#### 3.2.2 If you use UIWebview
+
+a. Initialize UIWebView
+
+```objective-c
+- (UIWebView *)webView{
+    if (!_webView) {
+        _webView = [[UIWebView alloc] init];
+        _webView.mediaPlaybackRequiresUserAction = NO;
+        _webView.allowsInlineMediaPlayback = YES;
+        _webView.delegate = self;
+        _webView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
+        _webView.backgroundColor = [UIColor blackColor];
+    }
+    return _webView;
+}
+```
+
+b. Listening to `UIWebView` delegate method
+
+```objective-c
+- (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType{
+
+    NSString *rUrl = [[request URL] absoluteString];
+    if ([rUrl hasPrefix:@"zplayads:"]) {
+        NSArray *v = [rUrl componentsSeparatedByString:@":"];
+        if (v.count > 1) {
+            [self handleCustomAction:v[1]];
+        }
+        return NO;
+    }
+    return YES;
+}
+// handle message
+- (void)handleCustomAction:(NSString *)msg{
+    if ([msg isEqualToString:@"user_did_tap_install"]) {
+        NSLog(@"user_did_tap_install");
+    } else if ([msg isEqualToString:@"close_playable_ads"]) {
+        NSLog(@"close_playable_ads");
+    }
+}
+```
+
+c. Listen to Click Event and Open Application Market
+
+- `user_did_tap_install` method will be invoked when ad is clicked, please open built-in App Store in `handleCustomAction:`.
+
+- [CLICK HERE](AppStore) to see code sample how to open built-in AppStore.
+
+d. Listen to Close Event and execute
+
+- `close_playable_ads` method will be invoked when ad is closed, please close the WKWebView in `handleCustomAction:`
+
+> **Please confirm that whether you support install click event and close event. If you support these two events, please set `support_function` to 2 when you request, otherwise set 1.**
 
 **What's the difference for your work when you support these 2 events or not?**
 

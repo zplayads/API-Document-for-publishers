@@ -1,36 +1,36 @@
 # API OF INTEGRATION
 
-- [API OF INTEGRATION](#api-of-integration)
-  - [Introduction of document](#introduction-of-document)
-  - [Changelog](#changelog)
-  - [Preparation before integration](#preparation-before-integration)
-  - [Steps of getting ads](#steps-of-getting-ads)
-  - [Instruction](#instruction)
-    - [Request URL](#request-url)
-    - [Communication Mode and Encoding](#communication-mode-and-encoding)
-    - [Request Header](#request-header)
-    - [Request](#request)
-      - [APP Information](#app-information)
-      - [Device Information](#device-information)
-        - [Screen Information](#screen-information)
-        - [Geo Information](#geo-information)
-      - [User Information](#user-information)
-      - [Ad Information](#ad-information)
-        - [Native Information](#native-information)
-          - [Asset Information](#asset-information)
-        - [Video Information](#video-information)
-    - [Response Information](#response-information)
-      - [Ad Information](#ad-information-1)
-        - [Video Information](#video-information-1)
-        - [Native Information](#native-information-1)
-        - [Asset Information](#asset-information-1)
-          - [Image Information](#image-information)
-          - [Title Information](#title-information)
-          - [Data Information](#data-information)
-        - [Link Information](#link-information)
-      - [ATTACHMENT](#attachment)
-        - [Macro](#macro)
-        - [CATEGORY](#category)
+- [API OF INTEGRATION](#API-OF-INTEGRATION)
+  - [Introduction of document](#Introduction-of-document)
+  - [Changelog](#Changelog)
+  - [Preparation before integration](#Preparation-before-integration)
+  - [Steps of getting ads](#Steps-of-getting-ads)
+  - [Instruction](#Instruction)
+    - [Request URL](#Request-URL)
+    - [Communication Mode and Encoding](#Communication-Mode-and-Encoding)
+    - [Request Header](#Request-Header)
+    - [Request](#Request)
+      - [APP Information](#APP-Information)
+      - [Device Information](#Device-Information)
+        - [Screen Information](#Screen-Information)
+        - [Geo Information](#Geo-Information)
+      - [User Information](#User-Information)
+      - [Ad Information](#Ad-Information)
+        - [Native Information](#Native-Information)
+          - [Asset Information](#Asset-Information)
+        - [Video Information](#Video-Information)
+    - [Response Information](#Response-Information)
+      - [Ad Information](#Ad-Information-1)
+        - [Video Information](#Video-Information-1)
+        - [Native Information](#Native-Information-1)
+        - [Asset Information](#Asset-Information-1)
+          - [Image Information](#Image-Information)
+          - [Title Information](#Title-Information)
+          - [Data Information](#Data-Information)
+        - [Link Information](#Link-Information)
+      - [ATTACHMENT](#ATTACHMENT)
+        - [Macro](#Macro)
+        - [CATEGORY](#CATEGORY)
 
 ## Introduction of document
 
@@ -66,23 +66,23 @@ Data format: UTF-8
 
 ### Request Header
 
-| http header information | instruction                                                                                                                                                                                                                                   |
-| ----------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| http header information | instruction                                                                                                                                                                                                                                 |
+| ----------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | X-Forwarded-For         | Include the real request address of the client, e.g. “8.8.8.8”. If integrated via server, please pass client address because server address will be blocked and regarded as fraud traffic.                                                  |
 | User-Agent              | User Agent of mobile device，e.g. “Mozilla/5.0 (iPad; CPU OS 5_0 like Mac OS X) AppleWebKit/534.46 (KHTML, like Gecko) Version/5.1 Mobile/9A334 Safari/7534.48.3”. Non-real User-Agent from server will be regarded as problematic traffic. |
 
 ### Request
 
-| Parameter        | Type               | mandatory | Description                                                                                                                                                                                                                                                      |
-| ---------------- | ------------------ | --------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| version          | string             | Y         | Protocol version, current version is 1.1                                                                                                                                                                                                                         |
-| developer_token  | string             | Y         | Developer token, offered by ZPLAY Ads account manager                                                                                                                                                                                                            |
-| need_https       | int                | N         | For material's link or tracking url link, whether the prefix is https. 0 as default. 0: don’t need https, 1: need https for all links.                                                                                                                          |
+| Parameter        | Type               | mandatory | Description                                                                                                                                                                                                                                            |
+| ---------------- | ------------------ | --------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| version          | string             | Y         | Protocol version, current version is 1.1                                                                                                                                                                                                               |
+| developer_token  | string             | Y         | Developer token, offered by ZPLAY Ads account manager                                                                                                                                                                                                  |
+| need_https       | int                | N         | For material's link or tracking url link, whether the prefix is https. 0 as default. 0: don’t need https, 1: need https for all links.                                                                                                                 |
 | support_function | int                | Y         | Whether support close event and install event which is listed in third part of [Check_list](/check_list_en.md); 1: not support, 2: support; Publisher should handle both close event and install event if does not support these two events we provide |
-| app              | object             | Y         | APP information                                                                                                                                                                                                                                                  |
-| device           | object             | Y         | Device information                                                                                                                                                                                                                                               |
-| user             | object             | N         | User information                                                                                                                                                                                                                                                 |
-| ads              | ad array of object | Y         | Ad information                                                                                                                                                                                                                                                   |
+| app              | object             | Y         | APP information                                                                                                                                                                                                                                        |
+| device           | object             | Y         | Device information                                                                                                                                                                                                                                     |
+| user             | object             | N         | User information                                                                                                                                                                                                                                       |
+| ads              | ad array of object | Y         | Ad information                                                                                                                                                                                                                                         |
 
 #### APP Information
 
@@ -140,28 +140,29 @@ Data format: UTF-8
 
 #### User Information
 
-| Parameter | Type   | Mandatory | Description                                                                                      |
-| --------- | ------ | --------- | ------------------------------------------------------------------------------------------------ |
-| id        | string | N         | User id                                                                                          |
+| Parameter | Type   | Mandatory | Description                                                                                |
+| --------- | ------ | --------- | ------------------------------------------------------------------------------------------ |
+| id        | string | N         | User id                                                                                    |
 | gender    | string | N         | Gender, where “M” = male, “F” = female, “O” = known to be other (i.e., omitted is unknown) |
-| age       | int    | N         | Age                                                                                              |
-| keywords  | array  | N         | Keyword interested by user                                                                       |
+| age       | int    | N         | Age                                                                                        |
+| keywords  | array  | N         | Keyword interested by user                                                                 |
 
 #### Ad Information
 
-| Parameter  | Type   | Mandatory | Description                                                                                                                        |
-| ---------- | ------ | --------- | ---------------------------------------------------------------------------------------------------------------------------------- |
-| unit_type  | int    | N         | ad unit type, 0: banner, 1: interstitial, 2: splash, 3: native, 4: rewarded video, unit_type should be same with your ad unit type |
-| ad_unit_id | string | Y         | Ad unit id, generated by ZPLAYAds after you registered your ad unit on [ZPLAY Ads](https://www.zplayads.com)                       |
-| native     | object | N         | Native information, it's mandatory when unit_type is 3; it should not fill when unit_type isn't 3                                  |
-| video      | object   | N   | Video information, it's mandatory when your support video material                                                                                |
+| Parameter    | Type   | Mandatory | Description                                                                                                                        |
+| ------------ | ------ | --------- | ---------------------------------------------------------------------------------------------------------------------------------- |
+| unit_type    | int    | N         | ad unit type, 0: banner, 1: interstitial, 2: splash, 3: native, 4: rewarded video, unit_type should be same with your ad unit type |
+| ad_unit_name | string | Y         | Ad unit name, unit name you filled when you registered your ad unit on [ZPLAY Ads](https://www.zplayads.com)                       |
+| ad_unit_id   | string | Y         | Ad unit id, generated by ZPLAYAds after you registered your ad unit on [ZPLAY Ads](https://www.zplayads.com)                       |
+| native       | object | N         | Native information, it's mandatory when unit_type is 3; it should not fill when unit_type isn't 3                                  |
+| video        | object | N         | Video information, it's mandatory when your support video material                                                                 |
 
 ##### Native Information
 
 | Parameter | Type           | Mandatory | Description                                                                                                                                               |
 | --------- | -------------- | --------- | --------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | layout    | int            | N         | Native types，1: content wall, 2: app wall, 3: news stream， 4: chat list，5:scroll ads，6:content stream，7:matrix, only content stream is supported now |
-| assets    | array of asset | Y         | Native assets，currently there’re five elements: Title(data), Icon(img), Large image (img), Description (data) and score(data)                           |
+| assets    | array of asset | Y         | Native assets，currently there’re five elements: Title(data), Icon(img), Large image (img), Description (data) and score(data)                            |
 
 ###### Asset Information
 
@@ -198,20 +199,20 @@ Data format: UTF-8
 
 ##### Video Information
 
-| Parameter    | Type | Mandatory | Description                                                                         |
-| ----------- | ---- | ---- | ---------------------------------------------------------------------------- |
-| mimes       | array | Y   | video format you support, such as "mimes":["video、mp4"], ZPLAY Ads only support MP4 for now |
-| minduration | int | N   | minimum video duration in second                                                                             |
-| maxduration | int | N   | maximum video duration in second                                                                             |
-| protocols   | array | N   | Array of supported video bid response protocol, such as [3,6]; it should not included in request if don't support VAST protocols     |
-| w           | int  | N   | Width of the video player in pixels, such as 1280                                                             |
-| h           | int  | N   | Height of the video player in pixels, such as 720                                                              |
-| startdelay  | int  | N   | 0: Pre-Roll; -1:Generic Mid-Roll ; -2: Generic Post-Roll; >0:Mid-Roll (value indicates start delay in second)                          |
-| linearity   | int  | N   | 1: in-stream; 2: overlay, ZPLAY Ads only support 1                     |
-| minbitrate  | int  | N   | minimum bit rate in Kbps                                                     |
-| maxbitrate  | int  | N   | maximum bit rate in Kbps                                                     |
-| pos         | int  | Y   | the positioning of the ad unit, 1: unknown; 4: header; 5: footer; 6: side bar; 7: full screen       |
-| ext         | object | N   |                                                                              |
+| Parameter   | Type   | Mandatory | Description                                                                                                                      |
+| ----------- | ------ | --------- | -------------------------------------------------------------------------------------------------------------------------------- |
+| mimes       | array  | Y         | video format you support, such as "mimes":["video、mp4"], ZPLAY Ads only support MP4 for now                                     |
+| minduration | int    | N         | minimum video duration in second                                                                                                 |
+| maxduration | int    | N         | maximum video duration in second                                                                                                 |
+| protocols   | array  | N         | Array of supported video bid response protocol, such as [3,6]; it should not included in request if don't support VAST protocols |
+| w           | int    | N         | Width of the video player in pixels, such as 1280                                                                                |
+| h           | int    | N         | Height of the video player in pixels, such as 720                                                                                |
+| startdelay  | int    | N         | 0: Pre-Roll; -1:Generic Mid-Roll ; -2: Generic Post-Roll; >0:Mid-Roll (value indicates start delay in second)                    |
+| linearity   | int    | N         | 1: in-stream; 2: overlay, ZPLAY Ads only support 1                                                                               |
+| minbitrate  | int    | N         | minimum bit rate in Kbps                                                                                                         |
+| maxbitrate  | int    | N         | maximum bit rate in Kbps                                                                                                         |
+| pos         | int    | Y         | the positioning of the ad unit, 1: unknown; 4: header; 5: footer; 6: side bar; 7: full screen                                    |
+| ext         | object | N         |                                                                                                                                  |
 
 ### Response Information
 
@@ -224,41 +225,41 @@ Data format: UTF-8
 
 #### Ad Information
 
-| Parameter         | Type   | Mandatory | Description                                                                                                                                                                                                                                                                                                       |
-| ----------------- | ------ | --------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| id                | string | Y         | Ad id                                                                                                                                                                                                                                                                                                             |
-| ad_unit_id        | string | Y         | Ad unit id, it's the same with ad_unit_id in request                                                                                                                                                                                                                                                              |
-| app_bundle        | string | Y         | APP packageName for Android, Bundle ID for iOS, please listen to install event, open build-in APP Store or Google Play                                                                                                                                                                                            |
-| store_bundle     | string  | N         | Bundle ID for distrbution platform. For iOS, this parameter has no value; for Android, this value is bundie ID for distrbution platform                                                        |
-| playable_ads_html | string | Y         | Playable ad HTML snippet, make sure to load it with in-app webview. There is no value if video object has value when you request                                                                                                                                                                                                                                            |
-| adm                                           | string | N   | If video object has value in request, and support VAST protocols, this parameter has value                                                                                                                                                                                                                 |
-| target_url        | string | Y         | Target url to download APP, which will jump to when user click ad                                                                                                                                                                                                                                                 |
+| Parameter         | Type   | Mandatory | Description                                                                                                                                                                                                                                                                                                                                                     |
+| ----------------- | ------ | --------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| id                | string | Y         | Ad id                                                                                                                                                                                                                                                                                                                                                           |
+| ad_unit_id        | string | Y         | Ad unit id, it's the same with ad_unit_id in request                                                                                                                                                                                                                                                                                                            |
+| app_bundle        | string | Y         | APP packageName for Android, Bundle ID for iOS, please listen to install event, open build-in APP Store or Google Play                                                                                                                                                                                                                                          |
+| store_bundle      | string | N         | Bundle ID for distrbution platform. For iOS, this parameter has no value; for Android, this value is bundie ID for distrbution platform                                                                                                                                                                                                                         |
+| playable_ads_html | string | Y         | Playable ad HTML snippet, make sure to load it with in-app webview. There is no value if video object has value when you request                                                                                                                                                                                                                                |
+| adm               | string | N         | If video object has value in request, and support VAST protocols, this parameter has value                                                                                                                                                                                                                                                                      |
+| target_url        | string | Y         | Target url to download APP, which will jump to when user click ad                                                                                                                                                                                                                                                                                               |
 | target_url_type   | int    | N         | Type of actions when user click ad, 1: open the url within webview in-app, 2: open the url within system browser, 3: open map, 4: open dial, 5: play video, 6：open application market, make sure to open App Store or Google Play in the app, 7: download installadtion package. If the value of support_function in your request is 1, this parameter is null |
-| imp_tracker       | array  | N         | If this parameter is not null, please be sure to report all tracking URLs when the playable ad start showing                                                                                                                                                                                                      |
-| click_tracker     | array  | N         | If this parameter is not null, please be sure to report all tracking URLs when the playable ad is clicked                                                                                                                                                                                                         |
-| close_tracker     | array  | N         | If this parameter is not null, please be sure to report all tracking URLs when the playable ad is closed                                                                                                                                                                                                          |
-| price             | float  | N         | Ad price, empty means 0, unit: cent                                                                                                                                                                                                                                                                               |
-| native            | object | N         | Native object, it will return native object if unit_type is native                                                                                                                                                                                                                                                |
+| imp_tracker       | array  | N         | If this parameter is not null, please be sure to report all tracking URLs when the playable ad start showing                                                                                                                                                                                                                                                    |
+| click_tracker     | array  | N         | If this parameter is not null, please be sure to report all tracking URLs when the playable ad is clicked                                                                                                                                                                                                                                                       |
+| close_tracker     | array  | N         | If this parameter is not null, please be sure to report all tracking URLs when the playable ad is closed                                                                                                                                                                                                                                                        |
+| price             | float  | N         | Ad price, empty means 0, unit: cent                                                                                                                                                                                                                                                                                                                             |
+| native            | object | N         | Native object, it will return native object if unit_type is native                                                                                                                                                                                                                                                                                              |
 
 ##### Video Information
 
-| 字段名称                   |  Type           | Mandatory | Description                                                         |
-| -------------------------- | ------ | ---- | ------------------------------------------------------------ |
-| video_url                  | string | Y   | video url                                             |
-| duration                   | int    | Y  | video duration in second                                           |
-| mimes                      | string | Y   | video format, such as mp4                                              |
-| bitrate                    | int    | Y   | video biterate                                                   |
-| end_card                   | string | Y   | end card, show this picture after video is finished |
-| download_start_tracker     | array   | Y   | report when start to download video                                               |
-| download_ended_tracker     | array   | Y   | report when video download ended                                               |
-| start_playing_tracker      | array   | Y   | report when video is started                                               |
-| pause_tracker              | array   | Y   | report when video is paused                                               |
-| resume_tracker             | array   | Y   | report when video is resumed                                           |
-| end_playing_tracker        | array   | Y   | report when video is finished                                               |
-| end_card_displayed_tracker | array   | Y   | report when end card is displayed                                             |
-| video_click_tracker        | array   | Y   | report when download button is clicked during video is playing                           |
-| end_card_click_tracker     | array  | Y   | report when end card is clicked                                             |
-| close_tracker              | array   | Y   | report when end card is closed                                             |
+| 字段名称                   | Type   | Mandatory | Description                                                    |
+| -------------------------- | ------ | --------- | -------------------------------------------------------------- |
+| video_url                  | string | Y         | video url                                                      |
+| duration                   | int    | Y         | video duration in second                                       |
+| mimes                      | string | Y         | video format, such as mp4                                      |
+| bitrate                    | int    | Y         | video biterate                                                 |
+| end_card                   | string | Y         | end card, show this picture after video is finished            |
+| download_start_tracker     | array  | Y         | report when start to download video                            |
+| download_ended_tracker     | array  | Y         | report when video download ended                               |
+| start_playing_tracker      | array  | Y         | report when video is started                                   |
+| pause_tracker              | array  | Y         | report when video is paused                                    |
+| resume_tracker             | array  | Y         | report when video is resumed                                   |
+| end_playing_tracker        | array  | Y         | report when video is finished                                  |
+| end_card_displayed_tracker | array  | Y         | report when end card is displayed                              |
+| video_click_tracker        | array  | Y         | report when download button is clicked during video is playing |
+| end_card_click_tracker     | array  | Y         | report when end card is clicked                                |
+| close_tracker              | array  | Y         | report when end card is closed                                 |
 
 ##### Native Information
 
@@ -302,66 +303,66 @@ Data format: UTF-8
 
 ##### Link Information
 
-| Parameter       | Type   | Mandatory | Description                                                                                                                                                                                                                        |
-| --------------- | ------ | --------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| target_url      | string | Y         | Target link to download APP                                                                                                                                                                                                        |
-| app_bundle      | string | Y         | APP packageName for Android, Bundle ID for iOS, please listen to install event, open build-in APP Store or Google Play, for install event, refer to [Check_list](check_list_en.md)                                                 |
-| click_tracker   | array  | N         | click tracker,  please be sure to report all tracking URLs when the native ad is clicked                                                                                                                                           |
+| Parameter       | Type   | Mandatory | Description                                                                                                                                                                                                                                                                      |
+| --------------- | ------ | --------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| target_url      | string | Y         | Target link to download APP                                                                                                                                                                                                                                                      |
+| app_bundle      | string | Y         | APP packageName for Android, Bundle ID for iOS, please listen to install event, open build-in APP Store or Google Play, for install event, refer to [Check_list](check_list_en.md)                                                                                               |
+| click_tracker   | array  | N         | click tracker, please be sure to report all tracking URLs when the native ad is clicked                                                                                                                                                                                          |
 | target_url_type | int    | Y         | Type of actions when user click ad, 1: open the url within webview in-app, 2: open the url within system browser, 3: open map, 4: open dial, 5: play video, 6：open application market, make sure to open App Store or Google Play in the app, 7: download installadtion package |
 
 #### ATTACHMENT
 
 ##### Macro
 
-| supported macro       | description                                                                               |
-| ---------- | ---------------------------------------------------------------------------------- |
-| {progress} | the video played progress, the unit is millisecond. This parameter should included in the reporting, you should replace this parameter when reporting |
+| supported macro | description                                                                                                                                           |
+| --------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------- |
+| {progress}      | the video played progress, the unit is millisecond. This parameter should included in the reporting, you should replace this parameter when reporting |
 
 ##### CATEGORY
 
-|  Chinese  |  English  |
-|  -  |  -  |
-|  新闻  |  News  |
-|  图书  |  Library  |
-|  社交  |  Social  |
-|  生活  |  Life  |
-|  财务  |  Finance  |
-|  娱乐  |  Entertain  |
-|  教育  |  Education  |
-|  旅行  |  Travel  |
-|  导航  |  Navigation  |
-|  商业  |  Business  |
-|  工具  |  Tool  |
-|  效率  |  Efficiency  |
-|  健康健美  |  Fitness  |
-|  摄影与录像  |  Camera  |
-|  商品指南  |  Product Guide  |
-|  美食佳饮  |  Food and Drink  |
-|  参考  |  Reference  |
-|  报刊杂志  |  Magazine  |
-|  体育  |  Sports  |
-|  天气  |  Weather  |
-|  医疗  |  Medical Treatment  |
-|  音乐  |  Music  |
-|  视频  |  Video  |
-|  购物  |  Shopping  |
-|  交通  |  Traffic  |
-|  动作游戏  |  Action Game  |
-|  益智解谜  |  Puzzle Game  |
-|  卡牌游戏  |  Card Game  |
-|  休闲游戏  |  Casual Game  |
-|  冒险游戏  |  Adventure Game  |
-|  角色扮演游戏  |  Role-playing Game  |
-|  策略游戏  |  Strategy Game  |
-|  街机游戏  |  Arcade Game  |
-|  儿童游戏  |  Kids Game  |
-|  竞速游戏  |  Racing Game  |
-|  聚会游戏  |  Family Game  |
-|  模拟游戏  |  Simulation Game  |
-|  体育游戏  |  Sports Game  |
-|  文字游戏  |  Word Game  |
-|  问答游戏  |  Trivia Game  |
-|  音乐游戏  |  Music Game  |
-|  桌面游戏  |  Board Game  |
-|  赌场游戏  |  Casino Game  |
-|  教育游戏  |  Education Game  |
+| Chinese      | English           |
+| ------------ | ----------------- |
+| 新闻         | News              |
+| 图书         | Library           |
+| 社交         | Social            |
+| 生活         | Life              |
+| 财务         | Finance           |
+| 娱乐         | Entertain         |
+| 教育         | Education         |
+| 旅行         | Travel            |
+| 导航         | Navigation        |
+| 商业         | Business          |
+| 工具         | Tool              |
+| 效率         | Efficiency        |
+| 健康健美     | Fitness           |
+| 摄影与录像   | Camera            |
+| 商品指南     | Product Guide     |
+| 美食佳饮     | Food and Drink    |
+| 参考         | Reference         |
+| 报刊杂志     | Magazine          |
+| 体育         | Sports            |
+| 天气         | Weather           |
+| 医疗         | Medical Treatment |
+| 音乐         | Music             |
+| 视频         | Video             |
+| 购物         | Shopping          |
+| 交通         | Traffic           |
+| 动作游戏     | Action Game       |
+| 益智解谜     | Puzzle Game       |
+| 卡牌游戏     | Card Game         |
+| 休闲游戏     | Casual Game       |
+| 冒险游戏     | Adventure Game    |
+| 角色扮演游戏 | Role-playing Game |
+| 策略游戏     | Strategy Game     |
+| 街机游戏     | Arcade Game       |
+| 儿童游戏     | Kids Game         |
+| 竞速游戏     | Racing Game       |
+| 聚会游戏     | Family Game       |
+| 模拟游戏     | Simulation Game   |
+| 体育游戏     | Sports Game       |
+| 文字游戏     | Word Game         |
+| 问答游戏     | Trivia Game       |
+| 音乐游戏     | Music Game        |
+| 桌面游戏     | Board Game        |
+| 赌场游戏     | Casino Game       |
+| 教育游戏     | Education Game    |

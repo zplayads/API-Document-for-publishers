@@ -334,6 +334,8 @@ Data format: UTF-8
 | supported macro | description                                                                                                                                           |
 | --------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------- |
 | {progress}      | the video played progress, the unit is millisecond. This parameter should included in the reporting, you should replace this parameter when reporting |
+| {click_x} | the X coordinate value of the advertisement click is calculated based on the upper left corner of the advertisement view. this parameter is included in the report node of click monitoring，you should replace this parameter when reporting |
+| {click_y} | the Y coordinate value of the advertisement click is calculated based on the upper left corner of the advertisement view. this parameter is included in the report node of click monitoring，you should replace this parameter when reporting |
 
 ##### CATEGORY
 

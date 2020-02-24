@@ -43,6 +43,7 @@ This document is only for developers who integrate with ZPLAY Ads using the API.
 | Version | Modifier  | Time       | Description |
 | ------- | --------- | ---------- | ----------- |
 | v1.0    | ZPALY Ads | 2018.09.20 | Creat       |
+| v1.2    | ZPLAY Ads | 2020.02.24 | Request.Device object add `oaid` param |
 
 ## Preparation before integration
 
@@ -122,6 +123,7 @@ Data format: UTF-8
 | os_version      | string | Y         | Operation system version, such as 11.4.1，12.0，7.1.0. Please note: the main version of iOS are limited in 9.x， 10.x， 11.x， 12.x； the main version of Android are limited in 5.x， 6.x， 7.x， 8.x， 9.x;                                                                                                                                                                            |
 | screen          | object | Y         | Device screen info                                                                                                                                                                                                                                                                                                                                                                       |
 | geo             | object | N         | Device geo info                                                                                                                                                                                                                                                                                                                                                                          |
+| oaid            | string | 否     | unique ID identification of domestic Android devices defined by China security alliance, IOS does not need to be filled in |
 
 ##### Screen Information
 
@@ -334,6 +336,8 @@ Data format: UTF-8
 | supported macro | description                                                                                                                                           |
 | --------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------- |
 | {progress}      | the video played progress, the unit is millisecond. This parameter should included in the reporting, you should replace this parameter when reporting |
+| {click_x} | the X coordinate value of the advertisement click is calculated based on the upper left corner of the advertisement view. this parameter is included in the report node of click monitoring，you should replace this parameter when reporting |
+| {click_y} | the Y coordinate value of the advertisement click is calculated based on the upper left corner of the advertisement view. this parameter is included in the report node of click monitoring，you should replace this parameter when reporting |
 
 ##### CATEGORY
 
